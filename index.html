@@ -31,15 +31,141 @@ img { max-width: 100%; height: auto; }
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* ========== Scroll Animations ========== */
 .fade-in {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(40px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
 }
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fade-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fade-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.scale-in {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.scale-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Staggered children */
+.stagger-children .fade-in:nth-child(1) { transition-delay: 0s; }
+.stagger-children .fade-in:nth-child(2) { transition-delay: 0.08s; }
+.stagger-children .fade-in:nth-child(3) { transition-delay: 0.16s; }
+.stagger-children .fade-in:nth-child(4) { transition-delay: 0.24s; }
+.stagger-children .fade-in:nth-child(5) { transition-delay: 0.32s; }
+.stagger-children .fade-in:nth-child(6) { transition-delay: 0.4s; }
+.stagger-children .fade-in:nth-child(7) { transition-delay: 0.48s; }
+.stagger-children .fade-in:nth-child(8) { transition-delay: 0.56s; }
+.stagger-children .fade-in:nth-child(9) { transition-delay: 0.64s; }
+.stagger-children .fade-in:nth-child(10) { transition-delay: 0.72s; }
+.stagger-children .fade-in:nth-child(11) { transition-delay: 0.8s; }
+.stagger-children .fade-in:nth-child(12) { transition-delay: 0.88s; }
+
+/* ========== Keyframe Animations ========== */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
+}
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+@keyframes glow-rotate {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+@keyframes particle-rise {
+  0% { transform: translateY(0) scale(1); opacity: 0.6; }
+  100% { transform: translateY(-100vh) scale(0); opacity: 0; }
+}
+@keyframes waveform {
+  0%, 100% { height: 12px; }
+  50% { height: 36px; }
+}
+@keyframes slide-right {
+  0% { transform: translateX(-8px); opacity: 0.3; }
+  50% { transform: translateX(8px); opacity: 1; }
+  100% { transform: translateX(-8px); opacity: 0.3; }
+}
+@keyframes orbit {
+  0% { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+}
+@keyframes typing {
+  0%, 100% { width: 0; }
+  50% { width: 100%; }
+}
+
+/* ========== Floating Particles Background ========== */
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgba(96, 165, 250, 0.3);
+  border-radius: 50%;
+  animation: particle-rise linear infinite;
+}
+.particle:nth-child(1) { left: 10%; animation-duration: 18s; animation-delay: 0s; width: 2px; height: 2px; }
+.particle:nth-child(2) { left: 25%; animation-duration: 22s; animation-delay: 3s; background: rgba(167, 139, 250, 0.25); }
+.particle:nth-child(3) { left: 40%; animation-duration: 16s; animation-delay: 1s; width: 4px; height: 4px; }
+.particle:nth-child(4) { left: 55%; animation-duration: 25s; animation-delay: 5s; background: rgba(244, 114, 182, 0.2); }
+.particle:nth-child(5) { left: 70%; animation-duration: 20s; animation-delay: 2s; }
+.particle:nth-child(6) { left: 85%; animation-duration: 19s; animation-delay: 4s; background: rgba(167, 139, 250, 0.2); width: 2px; height: 2px; }
+.particle:nth-child(7) { left: 15%; animation-duration: 23s; animation-delay: 7s; }
+.particle:nth-child(8) { left: 50%; animation-duration: 17s; animation-delay: 6s; background: rgba(244, 114, 182, 0.15); width: 4px; height: 4px; }
+.particle:nth-child(9) { left: 65%; animation-duration: 21s; animation-delay: 8s; }
+.particle:nth-child(10) { left: 90%; animation-duration: 24s; animation-delay: 1s; background: rgba(96, 165, 250, 0.2); }
+.particle:nth-child(11) { left: 5%; animation-duration: 26s; animation-delay: 10s; width: 2px; height: 2px; }
+.particle:nth-child(12) { left: 35%; animation-duration: 15s; animation-delay: 3s; background: rgba(167, 139, 250, 0.3); }
 
 /* ========== Navigation ========== */
 nav {
@@ -83,9 +209,9 @@ nav .container {
   font-size: 0.85rem;
   font-weight: 600;
   color: #fff !important;
-  transition: opacity 0.2s;
+  transition: opacity 0.2s, transform 0.2s;
 }
-.nav-cta:hover { opacity: 0.9; }
+.nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
 .mobile-menu { display: none; cursor: pointer; }
 .mobile-menu span {
   display: block;
@@ -114,6 +240,8 @@ nav .container {
     radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.15), transparent),
     radial-gradient(ellipse 60% 40% at 70% 80%, rgba(139, 92, 246, 0.1), transparent),
     radial-gradient(ellipse 50% 30% at 20% 60%, rgba(244, 114, 182, 0.08), transparent);
+  animation: gradient-shift 10s ease infinite;
+  background-size: 200% 200%;
 }
 .hero-grid {
   position: absolute;
@@ -126,6 +254,95 @@ nav .container {
   -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black, transparent);
 }
 .hero-content { position: relative; z-index: 1; }
+
+/* ========== App Icon in Hero ========== */
+.hero-icon-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 32px;
+  animation: float 6s ease-in-out infinite;
+}
+.hero-icon {
+  width: 140px;
+  height: 140px;
+  border-radius: 30px;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 0 40px rgba(59, 130, 246, 0.3)) drop-shadow(0 0 80px rgba(139, 92, 246, 0.15));
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+}
+.hero-icon:hover {
+  transform: scale(1.08) rotate(-2deg);
+  filter: drop-shadow(0 0 60px rgba(59, 130, 246, 0.5)) drop-shadow(0 0 100px rgba(139, 92, 246, 0.3));
+}
+.hero-icon-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, rgba(139, 92, 246, 0.1) 40%, transparent 70%);
+  animation: pulse 4s ease-in-out infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+.hero-icon-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 160px;
+  height: 160px;
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  border-radius: 34px;
+  transform: translate(-50%, -50%);
+  animation: pulse-ring 3s ease-out infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+.hero-icon-ring:nth-child(3) {
+  animation-delay: 1s;
+}
+.hero-icon-ring:nth-child(4) {
+  animation-delay: 2s;
+}
+
+/* Orbiting dots */
+.orbit-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.orbit-dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  animation: orbit 12s linear infinite;
+}
+.orbit-dot:nth-child(1) {
+  background: rgba(96, 165, 250, 0.6);
+  animation-duration: 12s;
+}
+.orbit-dot:nth-child(2) {
+  background: rgba(167, 139, 250, 0.5);
+  animation-duration: 16s;
+  animation-delay: -4s;
+  width: 4px;
+  height: 4px;
+}
+.orbit-dot:nth-child(3) {
+  background: rgba(244, 114, 182, 0.4);
+  animation-duration: 20s;
+  animation-delay: -8s;
+  width: 5px;
+  height: 5px;
+}
+
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -146,10 +363,6 @@ nav .container {
   background: #60a5fa;
   border-radius: 50%;
   animation: pulse 2s infinite;
-}
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
 }
 .hero h1 {
   font-size: clamp(2.8rem, 6vw, 4.5rem);
@@ -197,12 +410,29 @@ nav .container {
   gap: 8px;
   padding: 14px 32px;
   background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
   border-radius: 12px;
   font-size: 1rem;
   font-weight: 600;
   color: #fff;
   transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
 }
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(transparent, rgba(255,255,255,0.08), transparent);
+  transform: rotate(45deg);
+  transition: 0.5s;
+  opacity: 0;
+}
+.btn-primary:hover::after { opacity: 1; }
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 30px rgba(59, 130, 246, 0.3);
@@ -218,18 +448,53 @@ nav .container {
   font-size: 1rem;
   font-weight: 500;
   color: #e0e0e8;
-  transition: background 0.2s, border-color 0.2s;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
 }
 .btn-secondary:hover {
   background: rgba(255,255,255,0.1);
   border-color: rgba(255,255,255,0.2);
+  transform: translateY(-2px);
 }
+
+/* ========== Waveform Animation ========== */
+.waveform-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  margin: 32px auto 0;
+  height: 40px;
+  opacity: 0.4;
+}
+.waveform-bar {
+  width: 3px;
+  background: linear-gradient(180deg, #60a5fa, #a78bfa);
+  border-radius: 2px;
+  animation: waveform 1.2s ease-in-out infinite;
+}
+.waveform-bar:nth-child(1) { animation-delay: 0s; height: 12px; }
+.waveform-bar:nth-child(2) { animation-delay: 0.1s; height: 20px; }
+.waveform-bar:nth-child(3) { animation-delay: 0.2s; height: 28px; }
+.waveform-bar:nth-child(4) { animation-delay: 0.3s; height: 36px; }
+.waveform-bar:nth-child(5) { animation-delay: 0.15s; height: 24px; }
+.waveform-bar:nth-child(6) { animation-delay: 0.25s; height: 32px; }
+.waveform-bar:nth-child(7) { animation-delay: 0.35s; height: 16px; }
+.waveform-bar:nth-child(8) { animation-delay: 0.05s; height: 28px; }
+.waveform-bar:nth-child(9) { animation-delay: 0.2s; height: 36px; }
+.waveform-bar:nth-child(10) { animation-delay: 0.1s; height: 20px; }
+.waveform-bar:nth-child(11) { animation-delay: 0.3s; height: 12px; }
+.waveform-bar:nth-child(12) { animation-delay: 0.15s; height: 24px; }
+.waveform-bar:nth-child(13) { animation-delay: 0.25s; height: 32px; }
+.waveform-bar:nth-child(14) { animation-delay: 0.35s; height: 16px; }
+.waveform-bar:nth-child(15) { animation-delay: 0s; height: 28px; }
+.waveform-bar:nth-child(16) { animation-delay: 0.2s; height: 20px; }
 
 /* ========== Highlights Bar ========== */
 .highlights {
   padding: 60px 0;
   border-top: 1px solid rgba(255,255,255,0.05);
   border-bottom: 1px solid rgba(255,255,255,0.05);
+  position: relative;
 }
 .highlights-grid {
   display: grid;
@@ -239,11 +504,18 @@ nav .container {
 .highlight-item {
   text-align: center;
   padding: 24px;
+  transition: transform 0.3s ease;
 }
+.highlight-item:hover { transform: translateY(-4px); }
 .highlight-icon {
   font-size: 2rem;
   margin-bottom: 12px;
+  display: inline-block;
+  animation: float-slow 4s ease-in-out infinite;
 }
+.highlight-item:nth-child(2) .highlight-icon { animation-delay: 1s; }
+.highlight-item:nth-child(3) .highlight-icon { animation-delay: 2s; }
+.highlight-item:nth-child(4) .highlight-icon { animation-delay: 3s; }
 .highlight-title {
   font-size: 0.95rem;
   font-weight: 700;
@@ -251,6 +523,155 @@ nav .container {
 }
 .highlight-desc {
   font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* ========== Screenshot/Demo Section ========== */
+.demo-section {
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+.demo-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(59, 130, 246, 0.05), transparent);
+}
+.demo-container {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  perspective: 1200px;
+}
+.demo-mockup {
+  position: relative;
+  background: linear-gradient(145deg, rgba(30, 30, 50, 0.8), rgba(15, 15, 30, 0.9));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.5), 0 0 60px rgba(59, 130, 246, 0.08);
+  transform: rotateX(2deg);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.demo-mockup:hover {
+  transform: rotateX(0deg) translateY(-8px);
+}
+.demo-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 18px;
+  background: rgba(255,255,255,0.03);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.demo-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.demo-dot.red { background: #ff5f57; }
+.demo-dot.yellow { background: #ffbd2e; }
+.demo-dot.green { background: #28c840; }
+.demo-titlebar-text {
+  flex: 1;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+.demo-body {
+  display: flex;
+  min-height: 340px;
+}
+.demo-sidebar {
+  width: 200px;
+  padding: 20px 16px;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.demo-sidebar-item {
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.demo-sidebar-item.active {
+  background: rgba(59, 130, 246, 0.12);
+  color: #60a5fa;
+}
+.demo-sidebar-icon {
+  font-size: 0.9rem;
+}
+.demo-main {
+  flex: 1;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+.demo-waveform {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  height: 60px;
+  margin-bottom: 20px;
+}
+.demo-wave-bar {
+  width: 3px;
+  background: linear-gradient(180deg, #3b82f6, #8b5cf6);
+  border-radius: 2px;
+  animation: waveform 1.5s ease-in-out infinite;
+}
+.demo-text-area {
+  flex: 1;
+  padding: 16px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+}
+.demo-text-line {
+  height: 10px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+.demo-text-line:nth-child(1) { width: 85%; }
+.demo-text-line:nth-child(2) { width: 72%; }
+.demo-text-line:nth-child(3) { width: 90%; }
+.demo-text-line:nth-child(4) { width: 60%; }
+.demo-typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 14px;
+  background: #60a5fa;
+  animation: pulse 1s infinite;
+  vertical-align: middle;
+}
+.demo-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  font-size: 0.72rem;
+  color: #6b7280;
+}
+.demo-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #34d399;
+  animation: pulse 2s infinite;
+}
+.demo-caption {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.85rem;
   color: #6b7280;
 }
 
@@ -291,7 +712,19 @@ nav .container {
   border: 1px solid rgba(255,255,255,0.06);
   border-radius: 16px;
   transition: background 0.3s, border-color 0.3s, transform 0.3s;
+  overflow: hidden;
 }
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+  transition: left 0.6s ease;
+}
+.feature-card:hover::before { left: 100%; }
 .feature-card:hover {
   background: rgba(255,255,255,0.04);
   border-color: rgba(255,255,255,0.12);
@@ -306,7 +739,9 @@ nav .container {
   border-radius: 12px;
   font-size: 1.3rem;
   margin-bottom: 16px;
+  transition: transform 0.3s ease;
 }
+.feature-card:hover .icon { transform: scale(1.1) rotate(-3deg); }
 .feature-card h3 {
   font-size: 1.05rem;
   font-weight: 700;
@@ -347,9 +782,13 @@ nav .container {
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 16px;
   min-width: 140px;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s, transform 0.3s, background 0.3s;
 }
-.pipeline-step:hover { border-color: rgba(96, 165, 250, 0.3); }
+.pipeline-step:hover {
+  border-color: rgba(96, 165, 250, 0.3);
+  transform: translateY(-4px);
+  background: rgba(255,255,255,0.05);
+}
 .pipeline-step .num {
   font-size: 0.65rem;
   font-weight: 700;
@@ -370,6 +809,7 @@ nav .container {
 .pipeline-arrow {
   font-size: 1.2rem;
   color: #374151;
+  animation: slide-right 2s ease-in-out infinite;
 }
 
 /* ========== AI Section ========== */
@@ -386,9 +826,12 @@ nav .container {
   background: rgba(255,255,255,0.02);
   border: 1px solid rgba(255,255,255,0.06);
   border-radius: 12px;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s, transform 0.3s;
 }
-.ai-provider:hover { border-color: rgba(139, 92, 246, 0.3); }
+.ai-provider:hover {
+  border-color: rgba(139, 92, 246, 0.3);
+  transform: translateY(-4px);
+}
 .ai-provider .name {
   font-size: 0.9rem;
   font-weight: 700;
@@ -413,6 +856,11 @@ nav .container {
   text-align: center;
   font-size: 0.85rem;
   font-weight: 500;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.ai-mode:hover {
+  border-color: rgba(167, 139, 250, 0.3);
+  transform: translateY(-2px);
 }
 .ai-mode .emoji { font-size: 1.2rem; margin-bottom: 6px; display: block; }
 
@@ -435,6 +883,9 @@ nav .container {
   color: #6b7280;
 }
 .models-table td { font-size: 0.9rem; }
+.models-table tr {
+  transition: background 0.2s;
+}
 .models-table tr:hover td { background: rgba(255,255,255,0.02); }
 .recommended {
   display: inline-block;
@@ -445,12 +896,14 @@ nav .container {
   font-size: 0.7rem;
   font-weight: 600;
   margin-left: 8px;
+  animation: pulse 3s ease-in-out infinite;
 }
 .accuracy-bar {
   display: inline-block;
   height: 4px;
   border-radius: 2px;
   background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  transition: width 1s ease;
 }
 
 /* ========== Spec Section ========== */
@@ -465,6 +918,11 @@ nav .container {
   background: rgba(255,255,255,0.02);
   border: 1px solid rgba(255,255,255,0.06);
   border-radius: 14px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.spec-card:hover {
+  border-color: rgba(96, 165, 250, 0.2);
+  transform: translateY(-4px);
 }
 .spec-card h3 {
   font-size: 0.95rem;
@@ -507,8 +965,20 @@ nav .container {
   background:
     radial-gradient(ellipse 60% 50% at 50% 50%, rgba(59, 130, 246, 0.08), transparent),
     radial-gradient(ellipse 40% 30% at 30% 70%, rgba(139, 92, 246, 0.06), transparent);
+  animation: gradient-shift 8s ease infinite;
+  background-size: 200% 200%;
 }
 .cta-section .container { position: relative; }
+.cta-icon {
+  margin-bottom: 32px;
+}
+.cta-icon img {
+  width: 80px;
+  height: 80px;
+  border-radius: 18px;
+  filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.3));
+  animation: float 5s ease-in-out infinite;
+}
 .cta-section h2 {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
@@ -572,6 +1042,10 @@ footer {
   .footer-links { flex-wrap: wrap; justify-content: center; }
   .models-table { font-size: 0.8rem; }
   .models-table th, .models-table td { padding: 10px 8px; }
+  .hero-icon { width: 100px; height: 100px; border-radius: 22px; }
+  .demo-sidebar { display: none; }
+  .demo-body { min-height: 220px; }
+  .orbit-container { display: none; }
 }
 @media (max-width: 480px) {
   .highlights-grid { grid-template-columns: 1fr; }
@@ -581,6 +1055,22 @@ footer {
 </style>
 </head>
 <body>
+
+<!-- ========== Floating Particles ========== -->
+<div class="particles">
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+</div>
 
 <!-- ========== Navigation ========== -->
 <nav id="navbar">
@@ -605,6 +1095,21 @@ footer {
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="hero-content">
+
+    <!-- App Icon with glow & orbit effects -->
+    <div class="hero-icon-wrapper">
+      <div class="hero-icon-glow"></div>
+      <div class="hero-icon-ring"></div>
+      <div class="hero-icon-ring"></div>
+      <div class="hero-icon-ring"></div>
+      <img src="icon.png" alt="RocketWhisper" class="hero-icon">
+      <div class="orbit-container">
+        <div class="orbit-dot"></div>
+        <div class="orbit-dot"></div>
+        <div class="orbit-dot"></div>
+      </div>
+    </div>
+
     <div class="hero-badge">Apple Silicon Optimized</div>
     <h1>
       <span class="gradient-text">声を、テキストに。</span>
@@ -617,19 +1122,19 @@ footer {
     </p>
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="hero-stat-value gradient-text">11</div>
+        <div class="hero-stat-value gradient-text" data-count="11">0</div>
         <div class="hero-stat-label">対応言語</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-value gradient-text">4</div>
+        <div class="hero-stat-value gradient-text" data-count="4">0</div>
         <div class="hero-stat-label">AIモデル</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-value gradient-text">5</div>
+        <div class="hero-stat-value gradient-text" data-count="5">0</div>
         <div class="hero-stat-label">LLMプロバイダ</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-value gradient-text">100%</div>
+        <div class="hero-stat-value gradient-text" data-count="100" data-suffix="%">0</div>
         <div class="hero-stat-label">オフライン</div>
       </div>
     </div>
@@ -642,13 +1147,33 @@ footer {
         機能を見る
       </a>
     </div>
+
+    <!-- Waveform animation -->
+    <div class="waveform-visual">
+      <div class="waveform-bar"></div>
+      <div class="waveform-bar"></div>
+      <div class="waveform-bar"></div>
+      <div class="waveform-bar"></div>
+      <div class="waveform-bar"></div>
+      <div class="waveform-bar"></div>
+      <div class="waveform-bar"></div>
+      <div class="waveform-bar"></div>
+      <div class="waveform-bar"></div>
+      <div class="waveform-bar"></div>
+      <div class="waveform-bar"></div>
+      <div class="waveform-bar"></div>
+      <div class="waveform-bar"></div>
+      <div class="waveform-bar"></div>
+      <div class="waveform-bar"></div>
+      <div class="waveform-bar"></div>
+    </div>
   </div>
 </section>
 
 <!-- ========== Highlights ========== -->
 <section class="highlights">
   <div class="container">
-    <div class="highlights-grid">
+    <div class="highlights-grid stagger-children">
       <div class="highlight-item fade-in">
         <div class="highlight-icon">&#9889;</div>
         <div class="highlight-title">Neural Engine 加速</div>
@@ -665,11 +1190,90 @@ footer {
         <div class="highlight-desc">7つの句読点ルールと専門用語辞書で自然な日本語テキストを生成</div>
       </div>
       <div class="highlight-item fade-in">
-        <div class="highlight-icon">&#9889;</div>
+        <div class="highlight-icon">&#128187;</div>
         <div class="highlight-title">メニューバー常駐</div>
         <div class="highlight-desc">ホットキー一発でどのアプリからでも即座に録音開始</div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ========== App Demo Mockup ========== -->
+<section class="demo-section">
+  <div class="container">
+    <div class="features-header scale-in">
+      <div class="label">Experience</div>
+      <h2>直感的な<span class="gradient-text">インターフェース</span></h2>
+      <p>メニューバーから起動し、話すだけ。認識テキストはアクティブなアプリに自動入力。</p>
+    </div>
+    <div class="demo-container scale-in">
+      <div class="demo-mockup">
+        <div class="demo-titlebar">
+          <div class="demo-dot red"></div>
+          <div class="demo-dot yellow"></div>
+          <div class="demo-dot green"></div>
+          <div class="demo-titlebar-text">RocketWhisper</div>
+        </div>
+        <div class="demo-body">
+          <div class="demo-sidebar">
+            <div class="demo-sidebar-item active">
+              <span class="demo-sidebar-icon">&#127908;</span> 録音
+            </div>
+            <div class="demo-sidebar-item">
+              <span class="demo-sidebar-icon">&#128196;</span> バッチ処理
+            </div>
+            <div class="demo-sidebar-item">
+              <span class="demo-sidebar-icon">&#128218;</span> 単語辞書
+            </div>
+            <div class="demo-sidebar-item">
+              <span class="demo-sidebar-icon">&#10024;</span> AI整形
+            </div>
+            <div class="demo-sidebar-item">
+              <span class="demo-sidebar-icon">&#128640;</span> ランチャー
+            </div>
+            <div class="demo-sidebar-item">
+              <span class="demo-sidebar-icon">&#9881;</span> 設定
+            </div>
+          </div>
+          <div class="demo-main">
+            <div class="demo-waveform">
+              <div class="demo-wave-bar" style="animation-delay:0s; height:12px;"></div>
+              <div class="demo-wave-bar" style="animation-delay:0.08s; height:20px;"></div>
+              <div class="demo-wave-bar" style="animation-delay:0.16s; height:30px;"></div>
+              <div class="demo-wave-bar" style="animation-delay:0.24s; height:22px;"></div>
+              <div class="demo-wave-bar" style="animation-delay:0.1s; height:36px;"></div>
+              <div class="demo-wave-bar" style="animation-delay:0.2s; height:28px;"></div>
+              <div class="demo-wave-bar" style="animation-delay:0.3s; height:14px;"></div>
+              <div class="demo-wave-bar" style="animation-delay:0.05s; height:32px;"></div>
+              <div class="demo-wave-bar" style="animation-delay:0.22s; height:18px;"></div>
+              <div class="demo-wave-bar" style="animation-delay:0.14s; height:26px;"></div>
+              <div class="demo-wave-bar" style="animation-delay:0.28s; height:38px;"></div>
+              <div class="demo-wave-bar" style="animation-delay:0.06s; height:20px;"></div>
+              <div class="demo-wave-bar" style="animation-delay:0.18s; height:30px;"></div>
+              <div class="demo-wave-bar" style="animation-delay:0.12s; height:16px;"></div>
+              <div class="demo-wave-bar" style="animation-delay:0.26s; height:24px;"></div>
+              <div class="demo-wave-bar" style="animation-delay:0.04s; height:34px;"></div>
+              <div class="demo-wave-bar" style="animation-delay:0.2s; height:12px;"></div>
+              <div class="demo-wave-bar" style="animation-delay:0.1s; height:28px;"></div>
+              <div class="demo-wave-bar" style="animation-delay:0.3s; height:22px;"></div>
+              <div class="demo-wave-bar" style="animation-delay:0.15s; height:36px;"></div>
+            </div>
+            <div class="demo-text-area">
+              <div class="demo-text-line"></div>
+              <div class="demo-text-line"></div>
+              <div class="demo-text-line"></div>
+              <div class="demo-text-line"></div>
+              <span class="demo-typing-cursor"></span>
+            </div>
+            <div class="demo-status">
+              <div class="demo-status-dot"></div>
+              <span>large-v3-turbo / 録音中... / 16kHz</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="demo-caption fade-in">ホットキーで起動 &rarr; 音声認識 &rarr; 自動テキスト入力の全自動フロー</div>
   </div>
 </section>
 
@@ -681,7 +1285,7 @@ footer {
       <h2>12の<span class="gradient-text">プレミアム機能</span></h2>
       <p>プロフェッショナルの要求に応える、妥協のない機能群。</p>
     </div>
-    <div class="features-grid">
+    <div class="features-grid stagger-children">
 
       <div class="feature-card fade-in">
         <div class="icon icon-blue">&#127908;</div>
@@ -905,8 +1509,8 @@ footer {
       <div class="label">Specifications</div>
       <h2>動作環境</h2>
     </div>
-    <div class="spec-grid fade-in">
-      <div class="spec-card">
+    <div class="spec-grid stagger-children">
+      <div class="spec-card fade-in">
         <h3>&#128187; システム要件</h3>
         <ul>
           <li>macOS 14.0 Sonoma 以降</li>
@@ -916,7 +1520,7 @@ footer {
           <li>マイク入力</li>
         </ul>
       </div>
-      <div class="spec-card">
+      <div class="spec-card fade-in">
         <h3>&#127925; 対応フォーマット</h3>
         <ul>
           <li>入力: WAV, MP3, M4A, FLAC, OGG, WMA, AAC, AIFF</li>
@@ -925,7 +1529,7 @@ footer {
           <li>バッチ処理: 複数ファイル一括変換</li>
         </ul>
       </div>
-      <div class="spec-card">
+      <div class="spec-card fade-in">
         <h3>&#127760; 対応言語</h3>
         <ul>
           <li>日本語 / English / 中文</li>
@@ -934,7 +1538,7 @@ footer {
           <li>&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081; / 自動検出</li>
         </ul>
       </div>
-      <div class="spec-card">
+      <div class="spec-card fade-in">
         <h3>&#128272; プライバシー</h3>
         <ul>
           <li>音声認識は100%ローカル処理</li>
@@ -950,6 +1554,9 @@ footer {
 <!-- ========== CTA ========== -->
 <section class="cta-section" id="download">
   <div class="container fade-in">
+    <div class="cta-icon">
+      <img src="icon.png" alt="RocketWhisper">
+    </div>
     <h2><span class="gradient-text">あなたの声で、</span>仕事を加速させよう。</h2>
     <p>7日間のフルトライアル。クレジットカード不要。</p>
     <div class="hero-buttons">
@@ -986,7 +1593,8 @@ window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 40);
 });
 
-// Fade-in on scroll
+// Enhanced intersection observer with multiple animation classes
+const animClasses = ['fade-in', 'fade-in-left', 'fade-in-right', 'scale-in'];
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -995,7 +1603,69 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+animClasses.forEach(cls => {
+  document.querySelectorAll('.' + cls).forEach(el => observer.observe(el));
+});
+
+// Counter animation for hero stats
+function animateCounters() {
+  const counters = document.querySelectorAll('[data-count]');
+  counters.forEach(counter => {
+    const target = parseInt(counter.getAttribute('data-count'));
+    const suffix = counter.getAttribute('data-suffix') || '';
+    const duration = 2000;
+    const start = performance.now();
+
+    function update(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(target * eased);
+      counter.textContent = current + suffix;
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      }
+    }
+    requestAnimationFrame(update);
+  });
+}
+
+// Trigger counters when hero is in view
+const heroObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateCounters();
+      heroObserver.disconnect();
+    }
+  });
+}, { threshold: 0.3 });
+heroObserver.observe(document.querySelector('.hero'));
+
+// Parallax effect for hero background
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY;
+  const heroBg = document.querySelector('.hero-bg');
+  const heroGrid = document.querySelector('.hero-grid');
+  if (heroBg && scrolled < window.innerHeight) {
+    heroBg.style.transform = `translateY(${scrolled * 0.3}px)`;
+    heroGrid.style.transform = `translateY(${scrolled * 0.15}px)`;
+  }
+});
+
+// Smooth tilt effect on demo mockup
+const demoMockup = document.querySelector('.demo-mockup');
+if (demoMockup) {
+  demoMockup.addEventListener('mousemove', (e) => {
+    const rect = demoMockup.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    demoMockup.style.transform = `rotateX(${-y * 6}deg) rotateY(${x * 6}deg)`;
+  });
+  demoMockup.addEventListener('mouseleave', () => {
+    demoMockup.style.transform = 'rotateX(2deg)';
+  });
+}
 </script>
 </body>
 </html>
