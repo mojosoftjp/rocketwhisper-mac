@@ -81,8 +81,6 @@ img { max-width: 100%; height: auto; }
 .stagger-children .fade-in:nth-child(8) { transition-delay: 0.56s; }
 .stagger-children .fade-in:nth-child(9) { transition-delay: 0.64s; }
 .stagger-children .fade-in:nth-child(10) { transition-delay: 0.72s; }
-.stagger-children .fade-in:nth-child(11) { transition-delay: 0.8s; }
-.stagger-children .fade-in:nth-child(12) { transition-delay: 0.88s; }
 
 /* ========== Keyframe Animations ========== */
 @keyframes float {
@@ -98,16 +96,8 @@ img { max-width: 100%; height: auto; }
   50% { opacity: 0.4; }
 }
 @keyframes pulse-ring {
-  0% { transform: scale(0.8); opacity: 0.8; }
-  100% { transform: scale(2.2); opacity: 0; }
-}
-@keyframes glow-rotate {
-  0% { transform: translate(-50%, -50%) rotate(0deg); }
-  100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.8; }
+  100% { transform: translate(-50%, -50%) scale(2.2); opacity: 0; }
 }
 @keyframes gradient-shift {
   0%, 100% { background-position: 0% 50%; }
@@ -125,14 +115,6 @@ img { max-width: 100%; height: auto; }
   0% { transform: translateX(-8px); opacity: 0.3; }
   50% { transform: translateX(8px); opacity: 1; }
   100% { transform: translateX(-8px); opacity: 0.3; }
-}
-@keyframes orbit {
-  0% { transform: rotate(0deg) translateX(120px) rotate(0deg); }
-  100% { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
-}
-@keyframes typing {
-  0%, 100% { width: 0; }
-  50% { width: 100%; }
 }
 
 /* ========== Floating Particles Background ========== */
@@ -258,8 +240,12 @@ nav .container {
 /* ========== App Icon in Hero ========== */
 .hero-icon-wrapper {
   position: relative;
-  display: inline-block;
-  margin-bottom: 32px;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   animation: float 6s ease-in-out infinite;
 }
 .hero-icon {
@@ -279,8 +265,8 @@ nav .container {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 200%;
-  height: 200%;
+  width: 280px;
+  height: 280px;
   transform: translate(-50%, -50%);
   background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, rgba(139, 92, 246, 0.1) 40%, transparent 70%);
   animation: pulse 4s ease-in-out infinite;
@@ -295,7 +281,6 @@ nav .container {
   height: 160px;
   border: 1px solid rgba(96, 165, 250, 0.2);
   border-radius: 34px;
-  transform: translate(-50%, -50%);
   animation: pulse-ring 3s ease-out infinite;
   z-index: 1;
   pointer-events: none;
@@ -305,42 +290,6 @@ nav .container {
 }
 .hero-icon-ring:nth-child(4) {
   animation-delay: 2s;
-}
-
-/* Orbiting dots */
-.orbit-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  z-index: 1;
-  pointer-events: none;
-}
-.orbit-dot {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  animation: orbit 12s linear infinite;
-}
-.orbit-dot:nth-child(1) {
-  background: rgba(96, 165, 250, 0.6);
-  animation-duration: 12s;
-}
-.orbit-dot:nth-child(2) {
-  background: rgba(167, 139, 250, 0.5);
-  animation-duration: 16s;
-  animation-delay: -4s;
-  width: 4px;
-  height: 4px;
-}
-.orbit-dot:nth-child(3) {
-  background: rgba(244, 114, 182, 0.4);
-  animation-duration: 20s;
-  animation-delay: -8s;
-  width: 5px;
-  height: 5px;
 }
 
 .hero-badge {
@@ -525,6 +474,72 @@ nav .container {
   font-size: 0.8rem;
   color: #6b7280;
 }
+
+/* ========== Comparison Section ========== */
+.compare-section {
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+.compare-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 40% at 50% 50%, rgba(251, 191, 36, 0.04), transparent);
+}
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 48px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.compare-card {
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.compare-card.standard {
+  background: rgba(255,255,255,0.02);
+}
+.compare-card.rocket {
+  background: linear-gradient(145deg, rgba(59, 130, 246, 0.06), rgba(139, 92, 246, 0.04));
+  border-color: rgba(96, 165, 250, 0.2);
+}
+.compare-card-header {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.compare-card-header .badge {
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(52, 211, 153, 0.15);
+  color: #34d399;
+}
+.compare-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.compare-list li {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.5;
+}
+.compare-list .check { color: #34d399; font-weight: 700; flex-shrink: 0; }
+.compare-list .cross { color: #6b7280; font-weight: 700; flex-shrink: 0; }
 
 /* ========== Screenshot/Demo Section ========== */
 .demo-section {
@@ -730,6 +745,14 @@ nav .container {
   border-color: rgba(255,255,255,0.12);
   transform: translateY(-4px);
 }
+.feature-card.featured {
+  border-color: rgba(251, 191, 36, 0.2);
+  background: rgba(251, 191, 36, 0.03);
+}
+.feature-card.featured:hover {
+  border-color: rgba(251, 191, 36, 0.4);
+  background: rgba(251, 191, 36, 0.05);
+}
 .feature-card .icon {
   width: 44px;
   height: 44px;
@@ -752,6 +775,17 @@ nav .container {
   font-size: 0.85rem;
   color: #9ca3af;
   line-height: 1.6;
+}
+.feature-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  background: rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  margin-left: 6px;
+  vertical-align: middle;
 }
 .icon-blue { background: rgba(59, 130, 246, 0.12); }
 .icon-purple { background: rgba(139, 92, 246, 0.12); }
@@ -1038,14 +1072,15 @@ footer {
   .pipeline-flow { flex-direction: column; }
   .pipeline-arrow { transform: rotate(90deg); }
   .spec-grid { grid-template-columns: 1fr; }
+  .compare-grid { grid-template-columns: 1fr; }
   .footer-content { flex-direction: column; gap: 16px; text-align: center; }
   .footer-links { flex-wrap: wrap; justify-content: center; }
   .models-table { font-size: 0.8rem; }
   .models-table th, .models-table td { padding: 10px 8px; }
   .hero-icon { width: 100px; height: 100px; border-radius: 22px; }
+  .hero-icon-wrapper { width: 140px; height: 140px; }
   .demo-sidebar { display: none; }
   .demo-body { min-height: 220px; }
-  .orbit-container { display: none; }
 }
 @media (max-width: 480px) {
   .highlights-grid { grid-template-columns: 1fr; }
@@ -1078,10 +1113,10 @@ footer {
     <div class="nav-logo">Rocket<span>Whisper</span></div>
     <ul class="nav-links">
       <li><a href="#features">Features</a></li>
+      <li><a href="#compare">Compare</a></li>
       <li><a href="#pipeline">Pipeline</a></li>
       <li><a href="#ai">AI</a></li>
       <li><a href="#models">Models</a></li>
-      <li><a href="#specs">Specs</a></li>
       <li><a href="#download" class="nav-cta">Download</a></li>
     </ul>
     <div class="mobile-menu" onclick="document.querySelector('.nav-links').classList.toggle('show')">
@@ -1096,18 +1131,13 @@ footer {
   <div class="hero-grid"></div>
   <div class="hero-content">
 
-    <!-- App Icon with glow & orbit effects -->
+    <!-- App Icon with glow effects - explicitly centered -->
     <div class="hero-icon-wrapper">
       <div class="hero-icon-glow"></div>
       <div class="hero-icon-ring"></div>
       <div class="hero-icon-ring"></div>
       <div class="hero-icon-ring"></div>
       <img src="icon.png" alt="RocketWhisper" class="hero-icon">
-      <div class="orbit-container">
-        <div class="orbit-dot"></div>
-        <div class="orbit-dot"></div>
-        <div class="orbit-dot"></div>
-      </div>
     </div>
 
     <div class="hero-badge">Apple Silicon Optimized</div>
@@ -1122,10 +1152,6 @@ footer {
     </p>
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="hero-stat-value gradient-text" data-count="11">0</div>
-        <div class="hero-stat-label">対応言語</div>
-      </div>
-      <div class="hero-stat">
         <div class="hero-stat-value gradient-text" data-count="4">0</div>
         <div class="hero-stat-label">AIモデル</div>
       </div>
@@ -1135,7 +1161,11 @@ footer {
       </div>
       <div class="hero-stat">
         <div class="hero-stat-value gradient-text" data-count="100" data-suffix="%">0</div>
-        <div class="hero-stat-label">オフライン</div>
+        <div class="hero-stat-label">オフライン認識</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value gradient-text" data-count="0" data-suffix="円">0</div>
+        <div class="hero-stat-label">月額料金</div>
       </div>
     </div>
     <div class="hero-buttons">
@@ -1198,6 +1228,45 @@ footer {
   </div>
 </section>
 
+<!-- ========== Comparison: vs macOS Built-in ========== -->
+<section class="compare-section" id="compare">
+  <div class="container">
+    <div class="features-header fade-in">
+      <div class="label">Why RocketWhisper?</div>
+      <h2>Mac標準の音声入力では<span class="gradient-text">できないこと</span></h2>
+      <p>RocketWhisperは、macOS内蔵の音声入力にはない高度な機能を提供します。</p>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-card standard fade-in-left">
+        <div class="compare-card-header">macOS 標準音声入力</div>
+        <ul class="compare-list">
+          <li><span class="cross">&times;</span> 専門用語の辞書登録ができない</li>
+          <li><span class="cross">&times;</span> 誤認識の自動修正ルールがない</li>
+          <li><span class="cross">&times;</span> AI による文章整形がない</li>
+          <li><span class="cross">&times;</span> 音声コマンドが限定的</li>
+          <li><span class="cross">&times;</span> アプリごとの処理切替がない</li>
+          <li><span class="cross">&times;</span> 句読点の制御ができない</li>
+          <li><span class="cross">&times;</span> 音声でアプリを起動できない</li>
+          <li><span class="cross">&times;</span> Apple のサーバーに音声を送信</li>
+        </ul>
+      </div>
+      <div class="compare-card rocket fade-in-right">
+        <div class="compare-card-header">RocketWhisper <span class="badge">PRO</span></div>
+        <ul class="compare-list">
+          <li><span class="check">&#10003;</span> <strong>単語辞書</strong>で社名・人名・専門用語を正確に認識</li>
+          <li><span class="check">&#10003;</span> 正規表現対応の<strong>自動修正ルール</strong></li>
+          <li><span class="check">&#10003;</span> GPT-4o / Claude / Gemini で<strong>自動整形</strong></li>
+          <li><span class="check">&#10003;</span> 「改行」「削除」等の<strong>音声コマンド</strong></li>
+          <li><span class="check">&#10003;</span> <strong>アプリ別モード</strong>で自動切替</li>
+          <li><span class="check">&#10003;</span> 7段階の<strong>自動句読点</strong>エンジン</li>
+          <li><span class="check">&#10003;</span> <strong>ボイスランチャー</strong>でアプリ・URL起動</li>
+          <li><span class="check">&#10003;</span> <strong>100%ローカル処理</strong>、データ送信なし</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ========== App Demo Mockup ========== -->
 <section class="demo-section">
   <div class="container">
@@ -1220,10 +1289,10 @@ footer {
               <span class="demo-sidebar-icon">&#127908;</span> 録音
             </div>
             <div class="demo-sidebar-item">
-              <span class="demo-sidebar-icon">&#128196;</span> バッチ処理
+              <span class="demo-sidebar-icon">&#128218;</span> 単語辞書
             </div>
             <div class="demo-sidebar-item">
-              <span class="demo-sidebar-icon">&#128218;</span> 単語辞書
+              <span class="demo-sidebar-icon">&#128736;</span> テキスト処理
             </div>
             <div class="demo-sidebar-item">
               <span class="demo-sidebar-icon">&#10024;</span> AI整形
@@ -1282,7 +1351,7 @@ footer {
   <div class="container">
     <div class="features-header fade-in">
       <div class="label">Features</div>
-      <h2>12の<span class="gradient-text">プレミアム機能</span></h2>
+      <h2>10の<span class="gradient-text">プレミアム機能</span></h2>
       <p>プロフェッショナルの要求に応える、妥協のない機能群。</p>
     </div>
     <div class="features-grid stagger-children">
@@ -1290,7 +1359,7 @@ footer {
       <div class="feature-card fade-in">
         <div class="icon icon-blue">&#127908;</div>
         <h3>高精度音声認識</h3>
-        <p>WhisperKit CoreML エンジンにより、日本語をはじめ11言語を高精度に認識。4つのモデルから用途に応じて選択可能。</p>
+        <p>WhisperKit CoreML エンジンによる高精度認識。4つのモデルから用途に応じて選択可能。Large V3 Turbo を推奨。</p>
       </div>
 
       <div class="feature-card fade-in">
@@ -1305,6 +1374,12 @@ footer {
         <p>カスタマイズ可能なショートカットキーで、どのアプリからでもワンタッチで録音・テキスト入力。</p>
       </div>
 
+      <div class="feature-card featured fade-in">
+        <div class="icon icon-amber">&#128218;</div>
+        <h3>単語辞書 <span class="feature-badge">Mac標準にない機能</span></h3>
+        <p>専門用語・社名・人名・略語を辞書登録し、認識精度を大幅に向上。macOS標準の音声入力では絶対にできない、業界固有の用語を正確に認識。</p>
+      </div>
+
       <div class="feature-card fade-in">
         <div class="icon icon-pink">&#10024;</div>
         <h3>AI テキスト整形</h3>
@@ -1312,21 +1387,9 @@ footer {
       </div>
 
       <div class="feature-card fade-in">
-        <div class="icon icon-amber">&#128218;</div>
-        <h3>単語辞書</h3>
-        <p>専門用語・社名・人名を辞書登録。誤認識を自動修正し、業界固有のテキストも正確に出力。</p>
-      </div>
-
-      <div class="feature-card fade-in">
         <div class="icon icon-red">&#128640;</div>
         <h3>ボイスランチャー</h3>
         <p>音声でアプリ起動やURL表示。キーワードを話すだけで、よく使うツールに即座にアクセス。</p>
-      </div>
-
-      <div class="feature-card fade-in">
-        <div class="icon icon-blue">&#128196;</div>
-        <h3>バッチ処理</h3>
-        <p>複数の音声ファイルを一括変換。WAV・MP3・M4A・FLAC など8形式に対応。SRT/VTT字幕出力も。</p>
       </div>
 
       <div class="feature-card fade-in">
@@ -1345,12 +1408,6 @@ footer {
         <div class="icon icon-pink">&#9998;</div>
         <h3>自動句読点挿入</h3>
         <p>日本語に特化した7段階の句読点ルールで、自然な読点・句点・疑問符を自動挿入。</p>
-      </div>
-
-      <div class="feature-card fade-in">
-        <div class="icon icon-amber">&#128200;</div>
-        <h3>リアルタイム波形表示</h3>
-        <p>録音中の音声波形をリアルタイムで表示。入力レベルを視覚的に確認しながら最適な録音が可能。</p>
       </div>
 
       <div class="feature-card fade-in">
@@ -1521,21 +1578,21 @@ footer {
         </ul>
       </div>
       <div class="spec-card fade-in">
-        <h3>&#127925; 対応フォーマット</h3>
+        <h3>&#127908; 入出力</h3>
         <ul>
-          <li>入力: WAV, MP3, M4A, FLAC, OGG, WMA, AAC, AIFF</li>
-          <li>出力: テキスト / クリップボード / 直接貼り付け</li>
-          <li>字幕出力: SRT, VTT (WebVTT)</li>
-          <li>バッチ処理: 複数ファイル一括変換</li>
+          <li>入力: マイク (リアルタイム録音)</li>
+          <li>出力: 直接テキスト入力 / クリップボード</li>
+          <li>ホットキーによる自動貼り付け対応</li>
+          <li>アプリ検出による自動処理切替</li>
         </ul>
       </div>
       <div class="spec-card fade-in">
         <h3>&#127760; 対応言語</h3>
         <ul>
-          <li>日本語 / English / 中文</li>
-          <li>한국어 / Fran&ccedil;ais / Deutsch</li>
-          <li>Espa&ntilde;ol / Portugu&ecirc;s / Italiano</li>
-          <li>&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081; / 自動検出</li>
+          <li>日本語 (メイン対象)</li>
+          <li>English / 中文 / 한국어</li>
+          <li>Fran&ccedil;ais / Deutsch / Espa&ntilde;ol</li>
+          <li>Portugu&ecirc;s / Italiano / &#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</li>
         </ul>
       </div>
       <div class="spec-card fade-in">
