@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>プライバシーポリシー - RocketWhisper for Mac</title>
+<meta name="description" content="RocketWhisper for Macのプライバシーポリシー。データの取り扱いについて説明します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+/* ========== Reset & Base ========== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Noto Sans JP', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #050510;
+  color: #e0e0e8;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; }
+
+/* ========== Utility ========== */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.gradient-text {
+  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========== Scroll Animations ========== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== Keyframe Animations ========== */
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+@keyframes particle-rise {
+  0% { transform: translateY(0) scale(1); opacity: 0.6; }
+  100% { transform: translateY(-100vh) scale(0); opacity: 0; }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* ========== Floating Particles Background ========== */
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgba(96, 165, 250, 0.3);
+  border-radius: 50%;
+  animation: particle-rise linear infinite;
+}
+.particle:nth-child(1) { left: 10%; animation-duration: 18s; animation-delay: 0s; width: 2px; height: 2px; }
+.particle:nth-child(2) { left: 25%; animation-duration: 22s; animation-delay: 3s; background: rgba(167, 139, 250, 0.25); }
+.particle:nth-child(3) { left: 40%; animation-duration: 16s; animation-delay: 1s; width: 4px; height: 4px; }
+.particle:nth-child(4) { left: 55%; animation-duration: 25s; animation-delay: 5s; background: rgba(244, 114, 182, 0.2); }
+.particle:nth-child(5) { left: 70%; animation-duration: 20s; animation-delay: 2s; }
+.particle:nth-child(6) { left: 85%; animation-duration: 19s; animation-delay: 4s; background: rgba(167, 139, 250, 0.2); width: 2px; height: 2px; }
+.particle:nth-child(7) { left: 15%; animation-duration: 23s; animation-delay: 7s; }
+.particle:nth-child(8) { left: 50%; animation-duration: 17s; animation-delay: 6s; background: rgba(244, 114, 182, 0.15); width: 4px; height: 4px; }
+.particle:nth-child(9) { left: 65%; animation-duration: 21s; animation-delay: 8s; }
+.particle:nth-child(10) { left: 90%; animation-duration: 24s; animation-delay: 1s; background: rgba(96, 165, 250, 0.2); }
+.particle:nth-child(11) { left: 5%; animation-duration: 26s; animation-delay: 10s; width: 2px; height: 2px; }
+.particle:nth-child(12) { left: 35%; animation-duration: 15s; animation-delay: 3s; background: rgba(167, 139, 250, 0.3); }
+
+/* ========== Navigation ========== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 16px 0;
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+nav.scrolled {
+  background: rgba(5, 5, 16, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-logo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.nav-logo span { color: #60a5fa; }
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #9ca3af;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: #fff; }
+.nav-links a.active {
+  color: #fff;
+  position: relative;
+}
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  border-radius: 1px;
+}
+.nav-cta {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff !important;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+.mobile-menu { display: none; cursor: pointer; }
+.mobile-menu span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #e0e0e8;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+/* ========== Page Header ========== */
+.page-header {
+  position: relative;
+  padding: 160px 0 80px;
+  text-align: center;
+  overflow: hidden;
+}
+.page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.12), transparent),
+    radial-gradient(ellipse 60% 40% at 70% 80%, rgba(139, 92, 246, 0.08), transparent),
+    radial-gradient(ellipse 50% 30% at 20% 60%, rgba(244, 114, 182, 0.06), transparent);
+  animation: gradient-shift 10s ease infinite;
+  background-size: 200% 200%;
+}
+.page-header .container {
+  position: relative;
+  z-index: 1;
+}
+.page-header-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  margin-bottom: 24px;
+  filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.3));
+}
+.page-header h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+}
+.page-header p {
+  font-size: 1.05rem;
+  color: #9ca3af;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.page-header .last-updated {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: #6b7280;
+  padding: 4px 14px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 100px;
+}
+
+/* ========== Content Sections ========== */
+.content-section {
+  padding: 60px 0;
+  position: relative;
+}
+.content-section .container {
+  position: relative;
+  z-index: 1;
+  max-width: 820px;
+}
+.content-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.content-section h2 .section-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(139, 92, 246, 0.15));
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #60a5fa;
+  flex-shrink: 0;
+}
+.content-section h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 28px;
+  margin-bottom: 12px;
+  color: #c8c8d4;
+}
+.content-section p {
+  font-size: 0.95rem;
+  color: #b0b0bc;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+.content-section ul,
+.content-section ol {
+  margin-bottom: 16px;
+  padding-left: 0;
+  list-style: none;
+}
+.content-section ul li,
+.content-section ol li {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  padding: 6px 0 6px 24px;
+  position: relative;
+  line-height: 1.7;
+}
+.content-section ul li::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 14px;
+  width: 5px;
+  height: 5px;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  border-radius: 50%;
+}
+.content-section ol {
+  counter-reset: step;
+}
+.content-section ol li {
+  counter-increment: step;
+}
+.content-section ol li::before {
+  content: counter(step);
+  position: absolute;
+  left: 4px;
+  top: 6px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(96, 165, 250, 0.1);
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  border-radius: 50%;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #60a5fa;
+}
+.content-section a {
+  color: #60a5fa;
+  transition: color 0.2s;
+}
+.content-section a:hover { color: #93bbfd; }
+.content-section code {
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+  font-size: 0.82rem;
+  background: rgba(96, 165, 250, 0.08);
+  border: 1px solid rgba(96, 165, 250, 0.12);
+  padding: 2px 8px;
+  border-radius: 4px;
+  color: #93bbfd;
+}
+.content-section strong {
+  color: #e0e0e8;
+  font-weight: 600;
+}
+
+/* ========== Data Storage Card ========== */
+.storage-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 20px 0;
+}
+.storage-card {
+  padding: 20px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.storage-card:hover {
+  border-color: rgba(96, 165, 250, 0.2);
+  transform: translateY(-2px);
+}
+.storage-card h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #e0e0e8;
+}
+.storage-card p {
+  font-size: 0.82rem;
+  color: #9ca3af;
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+.storage-card .path {
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+  font-size: 0.72rem;
+  color: #60a5fa;
+  background: rgba(96, 165, 250, 0.06);
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: block;
+  word-break: break-all;
+}
+
+/* ========== Info Card ========== */
+.info-card {
+  padding: 28px 32px;
+  background: linear-gradient(145deg, rgba(59, 130, 246, 0.06), rgba(139, 92, 246, 0.04));
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  border-radius: 16px;
+  margin: 32px 0;
+  position: relative;
+  overflow: hidden;
+}
+.info-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #60a5fa, #a78bfa, #f472b6);
+}
+.info-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  margin-top: 0;
+  color: #e0e0e8;
+}
+.info-card p {
+  font-size: 0.92rem;
+  color: #b0b0bc;
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+/* ========== Tip Box ========== */
+.tip-box {
+  padding: 20px 24px;
+  background: rgba(52, 211, 153, 0.05);
+  border: 1px solid rgba(52, 211, 153, 0.15);
+  border-radius: 12px;
+  margin: 20px 0;
+}
+.tip-box h4 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #34d399;
+  margin-bottom: 8px;
+}
+.tip-box p {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+.tip-box ol {
+  margin-bottom: 0;
+}
+
+/* ========== Section Divider ========== */
+.section-divider {
+  border: none;
+  height: 1px;
+  background: rgba(255,255,255,0.04);
+  margin: 0;
+}
+
+/* ========== Network Table ========== */
+.network-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+}
+.network-table th,
+.network-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-size: 0.85rem;
+}
+.network-table th {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+}
+.network-table td {
+  color: #9ca3af;
+}
+.network-table tr:hover td {
+  background: rgba(255,255,255,0.02);
+}
+
+/* ========== Footer ========== */
+footer {
+  padding: 48px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-logo {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+.footer-logo span { color: #60a5fa; }
+.footer-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+.footer-links a {
+  font-size: 0.8rem;
+  color: #6b7280;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: #e0e0e8; }
+.footer-copy {
+  font-size: 0.75rem;
+  color: #4b5563;
+  text-align: center;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-links.show {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(5, 5, 16, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 20px 24px;
+    gap: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .mobile-menu { display: block; }
+  .page-header { padding: 130px 0 60px; }
+  .page-header h1 { font-size: 1.8rem; }
+  .storage-grid { grid-template-columns: 1fr; }
+  .footer-content { flex-direction: column; gap: 16px; text-align: center; }
+  .footer-links { flex-wrap: wrap; justify-content: center; }
+  .content-section h2 { font-size: 1.25rem; }
+  .info-card { padding: 20px 24px; }
+}
+@media (max-width: 480px) {
+  .page-header { padding: 120px 0 48px; }
+  .page-header h1 { font-size: 1.5rem; }
+  .content-section .container { padding: 0 16px; }
+  .network-table th,
+  .network-table td { padding: 8px 10px; font-size: 0.78rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== Floating Particles ========== -->
+<div class="particles">
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+</div>
+
+<!-- ========== Navigation ========== -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-logo">Rocket<span>Whisper</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="purchase.html">Purchase</a></li>
+      <li><a href="help.html">Help</a></li>
+      <li><a href="privacy.html" class="active">Privacy</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="index.html#download" class="nav-cta">Download</a></li>
+    </ul>
+    <div class="mobile-menu" onclick="document.querySelector('.nav-links').classList.toggle('show')">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== Page Header ========== -->
+<section class="page-header">
+  <div class="container">
+    <img src="icon.png" alt="RocketWhisper" class="page-header-icon">
+    <h1><span class="gradient-text">プライバシーポリシー</span></h1>
+    <p>RocketWhisper for Mac におけるデータの取り扱いについて説明します。</p>
+    <div class="last-updated">最終更新日: 2026年2月2日</div>
+  </div>
+</section>
+
+<!-- ========== Introduction ========== -->
+<section class="content-section fade-in">
+  <div class="container">
+    <p>本プライバシーポリシーは、RocketWhisper for Mac（以下「本アプリ」）におけるデータの取り扱いについて説明します。Mojosoft Co., Ltd.（以下「当社」）は、ユーザーのプライバシー保護を最優先に考え、本アプリを設計・開発しています。</p>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ========== 1. 基本方針 ========== -->
+<section class="content-section fade-in">
+  <div class="container">
+    <h2><span class="section-number">1</span>基本方針</h2>
+    <div class="info-card">
+      <h3>完全オフライン・完全ローカル処理</h3>
+      <p>音声認識処理はすべてお使いのMac内で行われ、音声データや認識結果が外部サーバーに送信されることは一切ありません。</p>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ========== 2. 収集しないデータ ========== -->
+<section class="content-section fade-in">
+  <div class="container">
+    <h2><span class="section-number">2</span>収集しないデータ</h2>
+    <p>本アプリは以下のデータを<strong>一切収集しません</strong>。</p>
+    <ul>
+      <li>音声データ（録音された音声）</li>
+      <li>音声認識結果（テキストデータ）</li>
+      <li>個人を特定できる情報（氏名、メールアドレス、IPアドレス等）</li>
+      <li>使用状況のテレメトリデータ</li>
+      <li>位置情報</li>
+      <li>デバイス識別情報</li>
+    </ul>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ========== 3. ローカル処理について ========== -->
+<section class="content-section fade-in">
+  <div class="container">
+    <h2><span class="section-number">3</span>ローカル処理について</h2>
+    <p>本アプリの音声認識機能は、WhisperKitフレームワークを使用し、Apple Silicon（Neural Engine + Metal GPU）でローカル実行されます。</p>
+    <h3>処理の流れ</h3>
+    <ol>
+      <li>マイクから音声を録音</li>
+      <li>お使いのMac上でWhisperKitが音声を解析（Neural Engine + Metal GPU）</li>
+      <li>認識結果がアプリ内に表示</li>
+    </ol>
+    <p>この処理の全過程において、データがインターネットを経由することはありません。</p>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ========== 4. ローカルに保存されるデータ ========== -->
+<section class="content-section fade-in">
+  <div class="container">
+    <h2><span class="section-number">4</span>ローカルに保存されるデータ</h2>
+    <p>本アプリは動作に必要なデータをお使いのMac内にのみ保存します。</p>
+
+    <div class="storage-grid">
+      <div class="storage-card">
+        <h4>設定情報（UserDefaults）</h4>
+        <p>選択されたWhisperモデル、認識言語設定、マイクデバイス設定、ホットキー設定、自動コピー/貼り付け設定、ウィンドウ位置・サイズ</p>
+        <span class="path">~/Library/Preferences/biz.mojosoft.RocketWhisper.plist</span>
+      </div>
+      <div class="storage-card">
+        <h4>APIキー（Keychain）</h4>
+        <p>各AIプロバイダのAPIキー（macOS Keychainによる暗号化保存）</p>
+        <span class="path">macOS Keychain（暗号化保存）</span>
+      </div>
+      <div class="storage-card">
+        <h4>認識履歴（ローカルファイル）</h4>
+        <p>過去の認識結果テキスト、認識日時、ソース情報（マイク/ファイル）</p>
+        <span class="path">~/Library/Application Support/RocketWhisper/</span>
+      </div>
+      <div class="storage-card">
+        <h4>単語辞書・修正ルール</h4>
+        <p>登録された専門用語、誤認識修正ルール、音声コマンド設定</p>
+        <span class="path">~/Library/Application Support/RocketWhisper/</span>
+      </div>
+      <div class="storage-card" style="grid-column: 1 / -1;">
+        <h4>WhisperKitモデルファイル</h4>
+        <p>ダウンロードしたWhisperモデル（CoreML形式）</p>
+        <span class="path">~/Library/Application Support/RocketWhisper/Models/</span>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <h4>データの削除方法</h4>
+      <ol>
+        <li>RocketWhisperをアンインストール（Applicationフォルダから削除）</li>
+        <li><code>~/Library/Application Support/RocketWhisper</code> フォルダを削除</li>
+        <li><code>~/Library/Preferences/biz.mojosoft.RocketWhisper.plist</code> を削除（任意）</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ========== 5. 第三者への提供 ========== -->
+<section class="content-section fade-in">
+  <div class="container">
+    <h2><span class="section-number">5</span>第三者への提供</h2>
+    <p>本アプリはデータを外部に送信しないため、第三者へのデータ提供は一切行いません。</p>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ========== 6. ネットワーク通信 ========== -->
+<section class="content-section fade-in">
+  <div class="container">
+    <h2><span class="section-number">6</span>ネットワーク通信</h2>
+
+    <h3>WhisperKitモデルのダウンロード</h3>
+    <table class="network-table">
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th>詳細</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>接続先</strong></td>
+          <td>Hugging Face（モデルホスティングサービス）</td>
+        </tr>
+        <tr>
+          <td><strong>目的</strong></td>
+          <td>音声認識モデルファイルのダウンロード</td>
+        </tr>
+        <tr>
+          <td><strong>送信データ</strong></td>
+          <td>なし（ダウンロードリクエストのみ）</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>モデルダウンロード後は完全にオフラインで動作します。</p>
+
+    <h3>AI処理機能（オプション）</h3>
+    <table class="network-table">
+      <thead>
+        <tr>
+          <th>接続方式</th>
+          <th>説明</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>ローカルLLM</strong><br>(LM Studio / Ollama)</td>
+          <td>データは外部に送信されません。完全オフラインでAI処理可能。</td>
+        </tr>
+        <tr>
+          <td><strong>クラウドAPI</strong><br>(OpenAI / Anthropic / Groq / Gemini)</td>
+          <td>認識結果テキストが各プロバイダのサーバーに送信されます。</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="tip-box">
+      <h4>完全オフライン運用</h4>
+      <p>ローカルLLM（LM Studio または Ollama）を選択すれば、AI整形機能も含めて完全オフラインで利用できます。</p>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ========== 7. セキュリティ ========== -->
+<section class="content-section fade-in">
+  <div class="container">
+    <h2><span class="section-number">7</span>セキュリティ</h2>
+    <ul>
+      <li>すべての処理がローカルで完結</li>
+      <li>App Sandbox + Hardened Runtime で保護</li>
+      <li>APIキーはmacOS Keychainで暗号化保存</li>
+      <li>ネットワーク経由でのデータ送信がないため中間者攻撃のリスクなし</li>
+    </ul>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ========== 8. お子様のプライバシー ========== -->
+<section class="content-section fade-in">
+  <div class="container">
+    <h2><span class="section-number">8</span>お子様のプライバシー</h2>
+    <p>本アプリには年齢制限はありません。13歳未満のお子様は保護者の監督のもとでご利用ください。本アプリは個人情報を収集しないため、お子様のプライバシーに関するリスクは最小限です。</p>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ========== 9. プライバシーポリシーの変更 ========== -->
+<section class="content-section fade-in">
+  <div class="container">
+    <h2><span class="section-number">9</span>プライバシーポリシーの変更</h2>
+    <p>当社は必要に応じて本プライバシーポリシーを更新することがあります。重要な変更がある場合は、本ページにて通知いたします。</p>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ========== 10. お問い合わせ ========== -->
+<section class="content-section fade-in">
+  <div class="container">
+    <h2><span class="section-number">10</span>お問い合わせ</h2>
+    <p>プライバシーに関するご質問やお問い合わせは、以下のメールアドレスまでご連絡ください。</p>
+    <p>メール: <a href="mailto:support@mojosoft.biz">support@mojosoft.biz</a></p>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ========== まとめ ========== -->
+<section class="content-section fade-in">
+  <div class="container">
+    <div class="info-card">
+      <h3>まとめ</h3>
+      <p>RocketWhisper for Macは、あなたの音声データとプライバシーを完全に保護します。すべての処理はお使いのMac内で完結し、外部への送信は一切行いません。安心してご利用ください。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Footer ========== -->
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo">Rocket<span>Whisper</span> for Mac</div>
+      <ul class="footer-links">
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="purchase.html">Purchase</a></li>
+        <li><a href="help.html">Help</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="support.html">Support</a></li>
+      </ul>
+    </div>
+    <div class="footer-copy">&copy; 2026 Mojosoft Co., Ltd. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- ========== Scripts ========== -->
+<script>
+// Navbar scroll effect
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// Intersection observer for fade-in animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

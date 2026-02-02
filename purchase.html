@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ライセンス購入 - RocketWhisper for Mac</title>
+<meta name="description" content="RocketWhisper for Mac ライセンス購入 - Apple Silicon最適化の高精度音声認識アプリのライセンスを購入">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+/* ========== Reset & Base ========== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Noto Sans JP', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #050510;
+  color: #e0e0e8;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; }
+
+/* ========== Utility ========== */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 100px 0; }
+.gradient-text {
+  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========== Scroll Animations ========== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.scale-in {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.scale-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Staggered children */
+.stagger-children .fade-in:nth-child(1) { transition-delay: 0s; }
+.stagger-children .fade-in:nth-child(2) { transition-delay: 0.08s; }
+.stagger-children .fade-in:nth-child(3) { transition-delay: 0.16s; }
+.stagger-children .fade-in:nth-child(4) { transition-delay: 0.24s; }
+
+/* ========== Keyframe Animations ========== */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+@keyframes particle-rise {
+  0% { transform: translateY(0) scale(1); opacity: 0.6; }
+  100% { transform: translateY(-100vh) scale(0); opacity: 0; }
+}
+@keyframes slide-down {
+  0% { opacity: 0; transform: translateY(-30px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes fade-overlay {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ========== Floating Particles Background ========== */
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgba(96, 165, 250, 0.3);
+  border-radius: 50%;
+  animation: particle-rise linear infinite;
+}
+.particle:nth-child(1) { left: 10%; animation-duration: 18s; animation-delay: 0s; width: 2px; height: 2px; }
+.particle:nth-child(2) { left: 25%; animation-duration: 22s; animation-delay: 3s; background: rgba(167, 139, 250, 0.25); }
+.particle:nth-child(3) { left: 40%; animation-duration: 16s; animation-delay: 1s; width: 4px; height: 4px; }
+.particle:nth-child(4) { left: 55%; animation-duration: 25s; animation-delay: 5s; background: rgba(244, 114, 182, 0.2); }
+.particle:nth-child(5) { left: 70%; animation-duration: 20s; animation-delay: 2s; }
+.particle:nth-child(6) { left: 85%; animation-duration: 19s; animation-delay: 4s; background: rgba(167, 139, 250, 0.2); width: 2px; height: 2px; }
+.particle:nth-child(7) { left: 15%; animation-duration: 23s; animation-delay: 7s; }
+.particle:nth-child(8) { left: 50%; animation-duration: 17s; animation-delay: 6s; background: rgba(244, 114, 182, 0.15); width: 4px; height: 4px; }
+.particle:nth-child(9) { left: 65%; animation-duration: 21s; animation-delay: 8s; }
+.particle:nth-child(10) { left: 90%; animation-duration: 24s; animation-delay: 1s; background: rgba(96, 165, 250, 0.2); }
+.particle:nth-child(11) { left: 5%; animation-duration: 26s; animation-delay: 10s; width: 2px; height: 2px; }
+.particle:nth-child(12) { left: 35%; animation-duration: 15s; animation-delay: 3s; background: rgba(167, 139, 250, 0.3); }
+
+/* ========== Navigation ========== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 16px 0;
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+nav.scrolled {
+  background: rgba(5, 5, 16, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-logo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.nav-logo span { color: #60a5fa; }
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #9ca3af;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: #fff; }
+.nav-links a.active { color: #60a5fa !important; }
+.nav-cta {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff !important;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+.mobile-menu { display: none; cursor: pointer; }
+.mobile-menu span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #e0e0e8;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+/* ========== Page Header ========== */
+.page-header {
+  position: relative;
+  padding: 160px 0 80px;
+  text-align: center;
+  overflow: hidden;
+}
+.page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(59, 130, 246, 0.12), transparent),
+    radial-gradient(ellipse 60% 40% at 70% 100%, rgba(139, 92, 246, 0.08), transparent),
+    radial-gradient(ellipse 50% 30% at 20% 60%, rgba(244, 114, 182, 0.06), transparent);
+  animation: gradient-shift 10s ease infinite;
+  background-size: 200% 200%;
+}
+.page-header .container { position: relative; z-index: 1; }
+.page-header .label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #60a5fa;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+.page-header h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+}
+.page-header p {
+  font-size: 1.05rem;
+  color: #9ca3af;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* ========== Trial Notice ========== */
+.trial-notice {
+  max-width: 700px;
+  margin: 0 auto 60px;
+  padding: 20px 28px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(139, 92, 246, 0.06));
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  border-radius: 14px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #c4c8d4;
+}
+.trial-notice strong {
+  color: #60a5fa;
+}
+
+/* ========== Pricing Cards ========== */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-bottom: 80px;
+}
+.pricing-card {
+  position: relative;
+  padding: 40px 36px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  transition: border-color 0.4s, transform 0.4s, background 0.4s;
+  overflow: hidden;
+}
+.pricing-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.pricing-card:hover {
+  border-color: rgba(96, 165, 250, 0.25);
+  transform: translateY(-6px);
+  background: rgba(255,255,255,0.04);
+}
+.pricing-card:hover::before { opacity: 1; }
+.pricing-card.recommended {
+  border-color: rgba(96, 165, 250, 0.3);
+  background: linear-gradient(145deg, rgba(59, 130, 246, 0.06), rgba(139, 92, 246, 0.04));
+}
+.pricing-card.recommended::before { opacity: 1; }
+.pricing-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+.pricing-card .plan-name {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+  letter-spacing: -0.02em;
+}
+.pricing-card .plan-sku {
+  font-size: 0.75rem;
+  color: #4b5563;
+  margin-bottom: 20px;
+}
+.pricing-card .price {
+  font-size: 2.8rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin-bottom: 4px;
+}
+.pricing-card .price .currency {
+  font-size: 1.2rem;
+  font-weight: 600;
+  vertical-align: super;
+  margin-right: 2px;
+}
+.pricing-card .price-note {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-bottom: 28px;
+}
+.pricing-card .features-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.pricing-card .features-list li {
+  font-size: 0.88rem;
+  color: #c4c8d4;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.5;
+}
+.pricing-card .features-list .check {
+  color: #34d399;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.pricing-card .btn-purchase {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
+  font-family: inherit;
+  position: relative;
+  overflow: hidden;
+}
+.pricing-card .btn-purchase::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(transparent, rgba(255,255,255,0.08), transparent);
+  transform: rotate(45deg);
+  transition: 0.5s;
+  opacity: 0;
+}
+.pricing-card .btn-purchase:hover::after { opacity: 1; }
+.pricing-card .btn-purchase:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.3);
+}
+.pricing-card .btn-purchase:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ========== Hardware ID Section ========== */
+.hw-section {
+  max-width: 700px;
+  margin: 0 auto 80px;
+  text-align: center;
+}
+.hw-section h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.hw-section p {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  margin-bottom: 24px;
+  line-height: 1.7;
+}
+.hw-input-group {
+  display: flex;
+  gap: 12px;
+  max-width: 480px;
+  margin: 0 auto 16px;
+}
+.hw-input {
+  flex: 1;
+  padding: 14px 18px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-family: 'Inter', monospace;
+  color: #e0e0e8;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  letter-spacing: 0.02em;
+}
+.hw-input::placeholder { color: #4b5563; }
+.hw-input:focus {
+  border-color: rgba(96, 165, 250, 0.5);
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1), 0 0 20px rgba(96, 165, 250, 0.1);
+}
+.hw-input.valid {
+  border-color: rgba(52, 211, 153, 0.5);
+  box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.1);
+}
+.hw-input.invalid {
+  border-color: rgba(248, 113, 113, 0.5);
+  box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.1);
+}
+.hw-status {
+  font-size: 0.8rem;
+  min-height: 1.2em;
+  transition: color 0.3s;
+}
+.hw-status.valid { color: #34d399; }
+.hw-status.invalid { color: #f87171; }
+.hw-hint {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+/* ========== Purchase Steps ========== */
+.steps-section {
+  padding: 80px 0;
+  position: relative;
+}
+.steps-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 40% at 50% 50%, rgba(139, 92, 246, 0.04), transparent);
+}
+.steps-section .container { position: relative; }
+.steps-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.steps-header .label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #60a5fa;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+.steps-header h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.step-card {
+  text-align: center;
+  padding: 32px 20px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.step-card:hover {
+  border-color: rgba(96, 165, 250, 0.2);
+  transform: translateY(-4px);
+}
+.step-number {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(139, 92, 246, 0.15));
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  font-size: 1.1rem;
+  font-weight: 800;
+  background-clip: padding-box;
+}
+.step-number span {
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.step-card h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.step-card p {
+  font-size: 0.82rem;
+  color: #9ca3af;
+  line-height: 1.6;
+}
+
+/* ========== Bank Transfer Section ========== */
+.bank-section {
+  padding: 80px 0;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+.bank-section .section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.bank-section .section-header .label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #60a5fa;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+.bank-section .section-header h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+.bank-section .section-header p {
+  font-size: 0.95rem;
+  color: #9ca3af;
+}
+.bank-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.bank-card {
+  padding: 32px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+}
+.bank-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.bank-info-table {
+  width: 100%;
+}
+.bank-info-table tr {
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.bank-info-table tr:last-child {
+  border-bottom: none;
+}
+.bank-info-table th {
+  padding: 10px 12px 10px 0;
+  text-align: left;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #6b7280;
+  white-space: nowrap;
+  vertical-align: top;
+}
+.bank-info-table td {
+  padding: 10px 0;
+  font-size: 0.88rem;
+  color: #c4c8d4;
+}
+.bank-prices {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.bank-prices li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+.bank-prices .price-label { color: #9ca3af; }
+.bank-prices .price-value {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.bank-email-note {
+  margin-top: 24px;
+  padding: 16px 20px;
+  background: rgba(59, 130, 246, 0.06);
+  border: 1px solid rgba(96, 165, 250, 0.15);
+  border-radius: 10px;
+  font-size: 0.82rem;
+  color: #9ca3af;
+  line-height: 1.7;
+}
+.bank-email-note strong { color: #60a5fa; }
+.bank-email-note a {
+  color: #60a5fa;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ========== FAQ Section ========== */
+.faq-section {
+  padding: 80px 0;
+}
+.faq-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.faq-header .label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #60a5fa;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+.faq-header h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.faq-list {
+  max-width: 740px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.faq-item {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+.faq-item:hover {
+  border-color: rgba(255,255,255,0.12);
+}
+.faq-item.active {
+  border-color: rgba(96, 165, 250, 0.25);
+}
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #e0e0e8;
+  transition: color 0.2s;
+  user-select: none;
+}
+.faq-question:hover { color: #fff; }
+.faq-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  font-size: 1rem;
+  color: #6b7280;
+  transition: transform 0.3s, background 0.3s, color 0.3s;
+}
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+  background: rgba(96, 165, 250, 0.15);
+  color: #60a5fa;
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.faq-item.active .faq-answer {
+  max-height: 300px;
+}
+.faq-answer-inner {
+  padding: 0 24px 20px;
+  font-size: 0.88rem;
+  color: #9ca3af;
+  line-height: 1.8;
+}
+
+/* ========== Success Modal ========== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 5, 16, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: fade-overlay 0.3s ease;
+}
+.modal-overlay.active {
+  display: flex;
+}
+.modal {
+  width: 100%;
+  max-width: 520px;
+  background: #0d0d1a;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
+  animation: slide-down 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 50%;
+  font-size: 1.1rem;
+  color: #6b7280;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.modal-close:hover {
+  background: rgba(255,255,255,0.1);
+  color: #e0e0e8;
+}
+.modal-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(52, 211, 153, 0.15), rgba(52, 211, 153, 0.05));
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  border-radius: 50%;
+  font-size: 1.8rem;
+}
+.modal h3 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 8px;
+}
+.modal .modal-sub {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #9ca3af;
+  margin-bottom: 28px;
+}
+.modal-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+.modal-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.88rem;
+}
+.modal-detail-row .label { color: #6b7280; }
+.modal-detail-row .value { font-weight: 600; color: #e0e0e8; }
+.modal-note {
+  text-align: center;
+  font-size: 0.82rem;
+  color: #6b7280;
+  line-height: 1.6;
+}
+.modal .btn-modal-close {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin-top: 20px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #e0e0e8;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  font-family: inherit;
+  text-align: center;
+}
+.modal .btn-modal-close:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.2);
+}
+
+/* ========== PayPal Loading ========== */
+.paypal-button-wrapper {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.paypal-loading {
+  font-size: 0.82rem;
+  color: #6b7280;
+  text-align: center;
+  padding: 12px;
+}
+
+/* ========== Footer ========== */
+footer {
+  padding: 48px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-logo {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+.footer-logo span { color: #60a5fa; }
+.footer-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+.footer-links a {
+  font-size: 0.8rem;
+  color: #6b7280;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: #e0e0e8; }
+.footer-copy {
+  font-size: 0.75rem;
+  color: #4b5563;
+  text-align: center;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-links.show {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(5, 5, 16, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 20px 24px;
+    gap: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .mobile-menu { display: block; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: repeat(2, 1fr); }
+  .bank-grid { grid-template-columns: 1fr; }
+  .hw-input-group { flex-direction: column; }
+  .footer-content { flex-direction: column; gap: 16px; text-align: center; }
+  .footer-links { flex-wrap: wrap; justify-content: center; }
+  .page-header { padding: 120px 0 60px; }
+  .modal { padding: 28px; }
+}
+@media (max-width: 480px) {
+  .steps-grid { grid-template-columns: 1fr; }
+  .pricing-card { padding: 28px 24px; }
+  .pricing-card .price { font-size: 2.2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== Floating Particles ========== -->
+<div class="particles">
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+</div>
+
+<!-- ========== Navigation ========== -->
+<nav id="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">Rocket<span>Whisper</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="purchase.html" class="active">Purchase</a></li>
+      <li><a href="help.html">Help</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="index.html#download" class="nav-cta">Download</a></li>
+    </ul>
+    <div class="mobile-menu" onclick="document.querySelector('.nav-links').classList.toggle('show')">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== Page Header ========== -->
+<section class="page-header">
+  <div class="container fade-in">
+    <div class="label">Pricing &amp; License</div>
+    <h1><span class="gradient-text">ライセンス購入</span></h1>
+    <p>RocketWhisper for Mac の全機能を永続的にご利用いただけます。<br>7日間の無料試用で、まずはお試しください。</p>
+  </div>
+</section>
+
+<!-- ========== Trial Notice ========== -->
+<div class="container">
+  <div class="trial-notice fade-in">
+    <strong>7日間の無料試用</strong>をご利用いただけます。試用期間中はすべての機能を制限なくお使いいただけます。<br>試用後もお使いいただくには、ライセンスの購入が必要です。
+  </div>
+</div>
+
+<!-- ========== Hardware ID Input ========== -->
+<div class="container">
+  <div class="hw-section fade-in">
+    <h3>ハードウェアID の入力</h3>
+    <p>個人版ライセンスの購入にはハードウェアIDが必要です。<br>法人版は任意です（入力すると最初のMacに自動適用されます）。</p>
+    <div class="hw-input-group">
+      <input type="text" id="hardwareId" class="hw-input" placeholder="RW-HW-XXXXXXXXXXXXXXXX" maxlength="22" autocomplete="off" spellcheck="false">
+    </div>
+    <div id="hwStatus" class="hw-status"></div>
+    <div class="hw-hint">
+      ハードウェアIDの確認方法: RocketWhisper 設定画面 &rarr; ライセンスタブ に表示されています。<br>
+      形式: <code style="background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;font-size:0.8rem;">RW-HW-</code> に続く16桁の英数字（大文字）
+    </div>
+  </div>
+</div>
+
+<!-- ========== Pricing Cards ========== -->
+<div class="container">
+  <div class="pricing-grid">
+
+    <!-- Personal License -->
+    <div class="pricing-card recommended fade-in" id="personalCard">
+      <div class="pricing-badge">Most Popular</div>
+      <div class="plan-name">個人版ライセンス</div>
+      <div class="plan-sku">SKU: MJ020</div>
+      <div class="price"><span class="currency">&yen;</span>4,800</div>
+      <div class="price-note">1台のMac / 税抜 &middot; 買い切り</div>
+      <ul class="features-list">
+        <li><span class="check">&#10003;</span> すべての機能を利用可能</li>
+        <li><span class="check">&#10003;</span> 永続ライセンス（月額料金なし）</li>
+        <li><span class="check">&#10003;</span> 無料アップデート</li>
+        <li><span class="check">&#10003;</span> メールサポート</li>
+        <li><span class="check">&#10003;</span> 1台のMacで利用可能</li>
+      </ul>
+      <div id="paypal-button-personal" class="paypal-button-wrapper">
+        <div class="paypal-loading">PayPal を読み込み中...</div>
+      </div>
+    </div>
+
+    <!-- Business License -->
+    <div class="pricing-card fade-in" id="businessCard">
+      <div class="plan-name">法人版ライセンス</div>
+      <div class="plan-sku">SKU: MJ021</div>
+      <div class="price"><span class="currency">&yen;</span>59,800</div>
+      <div class="price-note">Mac台数無制限 / 税抜 &middot; 買い切り</div>
+      <ul class="features-list">
+        <li><span class="check">&#10003;</span> すべての機能を利用可能</li>
+        <li><span class="check">&#10003;</span> 永続ライセンス（月額料金なし）</li>
+        <li><span class="check">&#10003;</span> 無料アップデート</li>
+        <li><span class="check">&#10003;</span> 優先メールサポート</li>
+        <li><span class="check">&#10003;</span> Mac台数無制限</li>
+        <li><span class="check">&#10003;</span> 請求書払い対応</li>
+      </ul>
+      <div id="paypal-button-business" class="paypal-button-wrapper">
+        <div class="paypal-loading">PayPal を読み込み中...</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ========== Purchase Steps ========== -->
+<section class="steps-section">
+  <div class="container">
+    <div class="steps-header fade-in">
+      <div class="label">How to Purchase</div>
+      <h2><span class="gradient-text">ご購入の流れ</span></h2>
+    </div>
+    <div class="steps-grid stagger-children">
+      <div class="step-card fade-in">
+        <div class="step-number"><span>1</span></div>
+        <h4>お支払い</h4>
+        <p>PayPal（クレジットカード対応）または銀行振込でお支払い。</p>
+      </div>
+      <div class="step-card fade-in">
+        <div class="step-number"><span>2</span></div>
+        <h4>ライセンスキー受け取り</h4>
+        <p>お支払い確認後、24時間以内にメールでライセンスキーをお届けします。</p>
+      </div>
+      <div class="step-card fade-in">
+        <div class="step-number"><span>3</span></div>
+        <h4>アプリでキーを入力</h4>
+        <p>RocketWhisper 設定画面のライセンスタブでキーを入力してください。</p>
+      </div>
+      <div class="step-card fade-in">
+        <div class="step-number"><span>4</span></div>
+        <h4>利用開始</h4>
+        <p>すべての機能が有効になり、試用期間の制限が解除されます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Bank Transfer ========== -->
+<section class="bank-section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="label">Bank Transfer</div>
+      <h2>銀行振込でのお支払い</h2>
+      <p>PayPal をご利用できない場合は、銀行振込もご利用いただけます。</p>
+    </div>
+    <div class="bank-grid">
+      <div class="bank-card fade-in">
+        <h3>&#127974; お振込先</h3>
+        <table class="bank-info-table">
+          <tr>
+            <th>銀行名</th>
+            <td>三菱UFJ銀行</td>
+          </tr>
+          <tr>
+            <th>支店名</th>
+            <td>新瑞橋（あらたまばし）支店</td>
+          </tr>
+          <tr>
+            <th>口座種別</th>
+            <td>普通</td>
+          </tr>
+          <tr>
+            <th>口座番号</th>
+            <td>1402999</td>
+          </tr>
+          <tr>
+            <th>口座名義</th>
+            <td>ユ）モジヨソフト</td>
+          </tr>
+        </table>
+      </div>
+      <div class="bank-card fade-in">
+        <h3>&#128176; お振込金額（税込）</h3>
+        <ul class="bank-prices">
+          <li>
+            <span class="price-label">個人版ライセンス</span>
+            <span class="price-value gradient-text">&yen;5,280</span>
+          </li>
+          <li>
+            <span class="price-label">法人版ライセンス</span>
+            <span class="price-value gradient-text">&yen;65,780</span>
+          </li>
+        </ul>
+        <div class="bank-email-note">
+          お振込後、以下の情報を <a href="mailto:support@mojosoft.biz?subject=RocketWhisper%20for%20Mac%20%E9%8A%80%E8%A1%8C%E6%8C%AF%E8%BE%BC%20%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E7%94%B3%E8%AB%8B">support@mojosoft.biz</a> までお送りください。<br>
+          <strong>件名:</strong> RocketWhisper for Mac 銀行振込 ライセンス申請<br>
+          <strong>本文:</strong> お名前 / ライセンス種別 / ハードウェアID / 振込日
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section class="faq-section">
+  <div class="container">
+    <div class="faq-header fade-in">
+      <div class="label">FAQ</div>
+      <h2><span class="gradient-text">よくあるご質問</span></h2>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item fade-in">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>ライセンスキーはすぐに届きますか？</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            PayPal でのお支払い確認後、24時間以内にご登録のメールアドレスへライセンスキーをお届けします。銀行振込の場合は、入金確認後にメールで送付いたします。
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item fade-in">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Macを買い替えた場合はどうなりますか？</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            個人版ライセンスは1台のMacに紐付けられるため、Mac買い替え時はサポート (<a href="mailto:support@mojosoft.biz" style="color:#60a5fa;">support@mojosoft.biz</a>) にご連絡いただければ、新しいMac用にライセンスキーを再発行いたします。法人版ライセンスはMac台数無制限のため、再発行の手続きは不要です。
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item fade-in">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>返金はできますか？</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            ライセンス購入後の返金は原則としてお受けしておりません。ご購入前に7日間の無料試用で、すべての機能を十分にお試しいただくことをお勧めします。
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item fade-in">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>領収書は発行できますか？</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            はい、メール (<a href="mailto:support@mojosoft.biz" style="color:#60a5fa;">support@mojosoft.biz</a>) にてご依頼いただければ、領収書を発行いたします。宛名や但し書きなどのご指定がありましたら、あわせてお知らせください。
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== Success Modal ========== -->
+<div class="modal-overlay" id="successModal">
+  <div class="modal">
+    <div class="modal-close" onclick="closeModal()">&times;</div>
+    <div class="modal-icon">&#10003;</div>
+    <h3>お支払いが完了しました</h3>
+    <p class="modal-sub">ありがとうございます。24時間以内にライセンスキーをお届けします。</p>
+    <div class="modal-details">
+      <div class="modal-detail-row">
+        <span class="label">商品</span>
+        <span class="value" id="modalProduct">-</span>
+      </div>
+      <div class="modal-detail-row">
+        <span class="label">金額</span>
+        <span class="value" id="modalAmount">-</span>
+      </div>
+      <div class="modal-detail-row">
+        <span class="label">メール</span>
+        <span class="value" id="modalEmail">-</span>
+      </div>
+      <div class="modal-detail-row">
+        <span class="label">ハードウェアID</span>
+        <span class="value" id="modalHwId">-</span>
+      </div>
+    </div>
+    <p class="modal-note">ライセンスキーは上記メールアドレスに送信されます。<br>届かない場合は support@mojosoft.biz までお問い合わせください。</p>
+    <button class="btn-modal-close" onclick="closeModal()">閉じる</button>
+  </div>
+</div>
+
+<!-- ========== Footer ========== -->
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo">Rocket<span>Whisper</span> for Mac</div>
+      <ul class="footer-links">
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="purchase.html">Purchase</a></li>
+        <li><a href="help.html">Help</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="support.html">Support</a></li>
+      </ul>
+    </div>
+    <div class="footer-copy">&copy; 2026 Mojosoft Co., Ltd. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- ========== PayPal SDK ========== -->
+<script src="https://www.paypal.com/sdk/js?client-id=AQW_pNfSyvlWxHshLEfmnSzEq85x3im5k-2Khrpns2wh7XV2yp5oYYkwb1_8-8fT2U6fnVIX4xlrTvgO&currency=JPY&locale=ja_JP"></script>
+
+<!-- ========== Scripts ========== -->
+<script>
+// Navbar scroll effect
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', function() {
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// Scroll animations
+const animClasses = ['fade-in', 'scale-in'];
+const observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+animClasses.forEach(function(cls) {
+  document.querySelectorAll('.' + cls).forEach(function(el) { observer.observe(el); });
+});
+
+// Hardware ID validation
+const hwInput = document.getElementById('hardwareId');
+const hwStatus = document.getElementById('hwStatus');
+const hwRegex = /^RW-HW-[A-Z0-9]{16}$/;
+
+hwInput.addEventListener('input', function() {
+  const val = this.value.toUpperCase();
+  this.value = val;
+  validateHardwareId();
+});
+
+function validateHardwareId() {
+  const val = hwInput.value.trim();
+  if (val === '') {
+    hwInput.classList.remove('valid', 'invalid');
+    hwStatus.textContent = '';
+    hwStatus.className = 'hw-status';
+    return false;
+  }
+  if (hwRegex.test(val)) {
+    hwInput.classList.add('valid');
+    hwInput.classList.remove('invalid');
+    hwStatus.textContent = 'ハードウェアIDが有効です';
+    hwStatus.className = 'hw-status valid';
+    return true;
+  } else {
+    hwInput.classList.add('invalid');
+    hwInput.classList.remove('valid');
+    hwStatus.textContent = '形式が正しくありません (RW-HW- + 英数字16桁)';
+    hwStatus.className = 'hw-status invalid';
+    return false;
+  }
+}
+
+function getHardwareId() {
+  return hwInput.value.trim();
+}
+
+// FAQ accordion
+function toggleFaq(el) {
+  var item = el.parentElement;
+  var isActive = item.classList.contains('active');
+
+  // Close all
+  document.querySelectorAll('.faq-item').forEach(function(faq) {
+    faq.classList.remove('active');
+  });
+
+  // Toggle clicked
+  if (!isActive) {
+    item.classList.add('active');
+  }
+}
+
+// Success modal
+function showSuccessModal(product, amount, email, hwId) {
+  document.getElementById('modalProduct').textContent = product;
+  document.getElementById('modalAmount').textContent = amount;
+  document.getElementById('modalEmail').textContent = email;
+  document.getElementById('modalHwId').textContent = hwId || '(未入力)';
+  document.getElementById('successModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('successModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Close modal on overlay click
+document.getElementById('successModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+// Close modal on Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeModal();
+});
+
+// PayPal integration
+function initPayPal() {
+  if (typeof paypal === 'undefined') {
+    setTimeout(initPayPal, 500);
+    return;
+  }
+
+  // Personal license button
+  paypal.Buttons({
+    style: {
+      layout: 'horizontal',
+      color: 'blue',
+      shape: 'pill',
+      label: 'pay',
+      height: 48
+    },
+    createOrder: function(data, actions) {
+      var hwId = getHardwareId();
+      if (!hwId || !hwRegex.test(hwId)) {
+        alert('個人版ライセンスの購入にはハードウェアIDが必要です。\n\nRocketWhisper 設定画面のライセンスタブで確認できます。');
+        return actions.reject();
+      }
+      return actions.order.create({
+        purchase_units: [{
+          description: 'RocketWhisper for Mac \u500b\u4eba\u7248\u30e9\u30a4\u30bb\u30f3\u30b9 [HW:' + hwId + ']',
+          custom_id: 'MJ020|' + hwId,
+          amount: {
+            currency_code: 'JPY',
+            value: '4800'
+          }
+        }]
+      });
+    },
+    onApprove: function(data, actions) {
+      return actions.order.capture().then(function(details) {
+        var payer = details.payer;
+        var email = payer && payer.email_address ? payer.email_address : '(PayPal account)';
+        showSuccessModal(
+          'RocketWhisper for Mac \u500b\u4eba\u7248',
+          '\u00a54,800',
+          email,
+          getHardwareId()
+        );
+      });
+    },
+    onError: function(err) {
+      console.error('PayPal Error:', err);
+      alert('\u304a\u652f\u6255\u3044\u4e2d\u306b\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3057\u307e\u3057\u305f\u3002\u3082\u3046\u4e00\u5ea6\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002');
+    }
+  }).render('#paypal-button-personal');
+
+  // Business license button
+  paypal.Buttons({
+    style: {
+      layout: 'horizontal',
+      color: 'blue',
+      shape: 'pill',
+      label: 'pay',
+      height: 48
+    },
+    createOrder: function(data, actions) {
+      var hwId = getHardwareId();
+      var customId = 'MJ021|' + (hwId || 'none');
+      var description = 'RocketWhisper for Mac \u6cd5\u4eba\u7248\u30e9\u30a4\u30bb\u30f3\u30b9\uff08Mac\u53f0\u6570\u7121\u5236\u9650\uff09';
+      if (hwId) {
+        description += ' [HW:' + hwId + ']';
+      }
+      return actions.order.create({
+        purchase_units: [{
+          description: description,
+          custom_id: customId,
+          amount: {
+            currency_code: 'JPY',
+            value: '59800'
+          }
+        }]
+      });
+    },
+    onApprove: function(data, actions) {
+      return actions.order.capture().then(function(details) {
+        var payer = details.payer;
+        var email = payer && payer.email_address ? payer.email_address : '(PayPal account)';
+        showSuccessModal(
+          'RocketWhisper for Mac \u6cd5\u4eba\u7248',
+          '\u00a559,800',
+          email,
+          getHardwareId()
+        );
+      });
+    },
+    onError: function(err) {
+      console.error('PayPal Error:', err);
+      alert('\u304a\u652f\u6255\u3044\u4e2d\u306b\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3057\u307e\u3057\u305f\u3002\u3082\u3046\u4e00\u5ea6\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002');
+    }
+  }).render('#paypal-button-business');
+}
+
+// Initialize PayPal when ready
+initPayPal();
+</script>
+</body>
+</html>
