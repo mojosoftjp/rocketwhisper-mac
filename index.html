@@ -81,6 +81,9 @@ img { max-width: 100%; height: auto; }
 .stagger-children .fade-in:nth-child(8) { transition-delay: 0.56s; }
 .stagger-children .fade-in:nth-child(9) { transition-delay: 0.64s; }
 .stagger-children .fade-in:nth-child(10) { transition-delay: 0.72s; }
+.stagger-children .fade-in:nth-child(11) { transition-delay: 0.8s; }
+.stagger-children .fade-in:nth-child(12) { transition-delay: 0.88s; }
+.stagger-children .fade-in:nth-child(13) { transition-delay: 0.96s; }
 
 /* ========== Keyframe Animations ========== */
 @keyframes float {
@@ -1092,10 +1095,12 @@ footer {
           <li><span class="cross">&times;</span> 専門用語の辞書登録ができない</li>
           <li><span class="cross">&times;</span> 誤認識の自動修正ルールがない</li>
           <li><span class="cross">&times;</span> AI による文章整形がない</li>
+          <li><span class="cross">&times;</span> 選択テキストをAIで編集できない</li>
           <li><span class="cross">&times;</span> 音声コマンドが限定的</li>
           <li><span class="cross">&times;</span> アプリごとの処理切替がない</li>
           <li><span class="cross">&times;</span> 句読点の制御ができない</li>
           <li><span class="cross">&times;</span> 音声でアプリを起動できない</li>
+          <li><span class="cross">&times;</span> 音声で検索できない</li>
           <li><span class="cross">&times;</span> Apple のサーバーに音声を送信</li>
         </ul>
       </div>
@@ -1105,10 +1110,12 @@ footer {
           <li><span class="check">&#10003;</span> <strong>単語辞書</strong>で社名・人名・専門用語を正確に認識</li>
           <li><span class="check">&#10003;</span> 正規表現対応の<strong>自動修正ルール</strong></li>
           <li><span class="check">&#10003;</span> GPT-4o / Claude / Gemini で<strong>自動整形</strong></li>
+          <li><span class="check">&#10003;</span> <strong>AIコマンド</strong>で選択テキストを音声指示で編集</li>
           <li><span class="check">&#10003;</span> 「改行」「削除」等の<strong>音声コマンド</strong></li>
           <li><span class="check">&#10003;</span> <strong>アプリ別モード</strong>で自動切替</li>
           <li><span class="check">&#10003;</span> 7段階の<strong>自動句読点</strong>エンジン</li>
           <li><span class="check">&#10003;</span> <strong>ボイスランチャー</strong>でアプリ・URL起動</li>
+          <li><span class="check">&#10003;</span> <strong>音声検索</strong>で「〜を調べて」とGoogle検索</li>
           <li><span class="check">&#10003;</span> <strong>100%ローカル処理</strong>、データ送信なし</li>
         </ul>
       </div>
@@ -1121,7 +1128,7 @@ footer {
   <div class="container">
     <div class="features-header fade-in">
       <div class="label">Features</div>
-      <h2>10の<span class="gradient-text">プレミアム機能</span></h2>
+      <h2>13の<span class="gradient-text">プレミアム機能</span></h2>
       <p>プロフェッショナルの要求に応える、妥協のない機能群。</p>
     </div>
     <div class="features-grid stagger-children">
@@ -1141,7 +1148,7 @@ footer {
       <div class="feature-card fade-in">
         <div class="icon icon-green">&#9000;</div>
         <h3>グローバルホットキー</h3>
-        <p>カスタマイズ可能なショートカットキーで、どのアプリからでもワンタッチで録音・テキスト入力。</p>
+        <p>カスタマイズ可能なショートカットキーに加え、右Optionキーのタップ/長押し(Push-to-Talk)にも対応。どのアプリからでも即座に録音開始。</p>
       </div>
 
       <div class="feature-card featured fade-in">
@@ -1154,6 +1161,18 @@ footer {
         <div class="icon icon-pink">&#10024;</div>
         <h3>AI テキスト整形</h3>
         <p>OpenAI・Claude・Gemini・Groq・ローカルLLMの5プロバイダ対応。文法修正、ビジネス文、要約、翻訳を自動処理。</p>
+      </div>
+
+      <div class="feature-card featured fade-in">
+        <div class="icon icon-purple">&#129302;</div>
+        <h3>AIコマンド <span class="feature-badge">NEW</span></h3>
+        <p>テキストを選択し、&#8963;&#8679;Space で音声指示。「敬語にして」「英訳して」「要約して」等、選択テキストをAIが即座に編集・変換。</p>
+      </div>
+
+      <div class="feature-card fade-in">
+        <div class="icon icon-blue">&#128269;</div>
+        <h3>音声検索 <span class="feature-badge">NEW</span></h3>
+        <p>「〜について調べて」「〜を検索して」「〜って何？」等、10パターンの音声コマンドでGoogle検索を即座に起動。</p>
       </div>
 
       <div class="feature-card fade-in">
@@ -1186,6 +1205,12 @@ footer {
         <p>正規表現対応の修正ルールで誤認識を自動修正。27件のハルシネーションフィルターも内蔵。</p>
       </div>
 
+      <div class="feature-card fade-in">
+        <div class="icon icon-blue">&#128193;</div>
+        <h3>バッチ処理 <span class="feature-badge">NEW</span></h3>
+        <p>WAV・MP3・M4A・FLAC等の音声ファイルを一括文字起こし。ドラッグ&amp;ドロップで複数ファイルをまとめて処理。</p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1195,7 +1220,7 @@ footer {
   <div class="container">
     <div class="features-header fade-in">
       <div class="label">Processing Pipeline</div>
-      <h2><span class="gradient-text">4段階</span>テキスト処理パイプライン</h2>
+      <h2><span class="gradient-text">6段階</span>テキスト処理パイプライン</h2>
       <p>認識テキストを自動的に高品質な出力に変換する、インテリジェントな処理フロー。</p>
     </div>
     <div class="pipeline-flow fade-in">
@@ -1203,6 +1228,12 @@ footer {
         <div class="num">Stage 0</div>
         <div class="name">&#128640; ランチャー</div>
         <div class="desc">キーワードでアプリ起動</div>
+      </div>
+      <div class="pipeline-arrow">&rarr;</div>
+      <div class="pipeline-step">
+        <div class="num">Stage 0.5</div>
+        <div class="name">&#128269; 音声検索</div>
+        <div class="desc">「〜を調べて」で検索</div>
       </div>
       <div class="pipeline-arrow">&rarr;</div>
       <div class="pipeline-step">
@@ -1247,7 +1278,7 @@ footer {
       </div>
       <div class="ai-provider">
         <div class="name">Claude</div>
-        <div class="models">Opus 4.5<br>Sonnet 4.5<br>Haiku 4.5</div>
+        <div class="models">Sonnet 4.5<br>Haiku 4.5<br>Opus 4.5</div>
       </div>
       <div class="ai-provider">
         <div class="name">Gemini</div>
@@ -1350,9 +1381,10 @@ footer {
       <div class="spec-card fade-in">
         <h3>&#127908; 入出力</h3>
         <ul>
-          <li>入力: マイク (リアルタイム録音)</li>
+          <li>入力: マイク / 音声ファイル (バッチ処理)</li>
           <li>出力: 直接テキスト入力 / クリップボード</li>
-          <li>ホットキーによる自動貼り付け対応</li>
+          <li>ホットキー / 右Optionキー (タップ&amp;長押し)</li>
+          <li>AIコマンド (&#8963;&#8679;Space) で選択テキスト編集</li>
           <li>アプリ検出による自動処理切替</li>
         </ul>
       </div>
