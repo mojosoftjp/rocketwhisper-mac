@@ -576,6 +576,7 @@ footer {
       <li><a href="#voice-launcher">ボイスランチャー</a></li>
       <li><a href="#voice-search">音声検索</a></li>
       <li><a href="#menubar">メニューバーアイコン</a></li>
+      <li><a href="#batch">バッチ処理</a></li>
       <li><a href="#troubleshooting">トラブルシューティング</a></li>
     </ol>
   </nav>
@@ -1303,9 +1304,68 @@ footer {
     </div>
   </section>
 
-  <!-- ========== Section 16: トラブルシューティング ========== -->
+  <!-- ========== Section 16: バッチ処理 ========== -->
+  <section id="batch" class="content-section">
+    <h2><span class="section-num">16</span>バッチ処理</h2>
+
+    <p>複数の音声ファイルをまとめて文字起こしできる機能です。録音済みの会議音声やインタビューファイルを一括処理するのに便利です。</p>
+
+    <h3>起動方法</h3>
+    <ol class="steps-list">
+      <li>メニューバーのポップアップを開きます。</li>
+      <li>ヘッダー右側の<strong>バッチ処理ボタン</strong>（書類アイコン）をクリックします。</li>
+      <li>独立したバッチ処理ウィンドウが開きます。</li>
+    </ol>
+
+    <h3>使い方</h3>
+    <ol class="steps-list">
+      <li><strong>ファイルを追加</strong>: 「ファイルを追加」ボタンで音声ファイルを選択、またはウィンドウにドラッグ&amp;ドロップします。</li>
+      <li><strong>一括認識開始</strong>: 「一括認識開始」ボタンをクリックすると、追加したファイルを順番に文字起こしします。</li>
+      <li><strong>結果確認</strong>: 各ファイルの認識結果（文字数）がリストに表示されます。</li>
+      <li><strong>エクスポート</strong>: 「エクスポート」メニューから出力形式を選び、保存先フォルダを指定します。</li>
+    </ol>
+
+    <h3>対応ファイル形式</h3>
+    <div class="info-box">
+      <p>WAV, MP3, M4A, FLAC, OGG, WMA, AAC, AIFF</p>
+    </div>
+
+    <h3>エクスポート形式</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>形式</th>
+          <th>説明</th>
+          <th>用途</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>TXT</strong></td>
+          <td>プレーンテキスト</td>
+          <td>一般的な文字起こしテキスト</td>
+        </tr>
+        <tr>
+          <td><strong>SRT</strong></td>
+          <td>SubRip字幕形式</td>
+          <td>動画編集ソフトでの字幕作成</td>
+        </tr>
+        <tr>
+          <td><strong>VTT</strong></td>
+          <td>WebVTT字幕形式</td>
+          <td>Web動画やHTML5での字幕表示</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="tip-box">
+      <p><strong>Tip:</strong> バッチ処理は独自のWhisperモデルインスタンスを使用するため、リアルタイム音声入力と同時に使用できます。ただし、大量のファイルを処理する場合はメモリ使用量にご注意ください。</p>
+    </div>
+  </section>
+
+  <!-- ========== Section 17: トラブルシューティング ========== -->
   <section id="troubleshooting" class="content-section">
-    <h2><span class="section-num">16</span>トラブルシューティング</h2>
+    <h2><span class="section-num">17</span>トラブルシューティング</h2>
 
     <p>問題が発生した場合は、以下のFAQを参考にしてください。</p>
 
