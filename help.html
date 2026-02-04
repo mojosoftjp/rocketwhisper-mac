@@ -1091,15 +1091,32 @@ footer {
       <li>AI処理を有効にして、処理モードを選択します。</li>
     </ol>
 
-    <h3>ローカルLLM（LM Studio）の設定例</h3>
+    <h3>ローカルLLM の設定例</h3>
     <div class="info-card">
       <h4>LM Studio と連携する場合</h4>
       <ol>
         <li><a href="https://lmstudio.ai">LM Studio</a> をインストールし、お好みのモデルをダウンロードします。</li>
         <li>LM Studio でローカルサーバーを起動します（デフォルト: <code>http://localhost:1234</code>）。</li>
         <li>RocketWhisper の AI処理設定で「ローカルLLM」を選択します。</li>
-        <li>エンドポイントURLに <code>http://localhost:1234/v1</code> を入力します。</li>
+        <li>ベースURLに <code>http://localhost:1234</code> を入力します。</li>
+        <li>モデルIDは空欄でOKです（LM Studio がロード中のモデルを自動使用します）。</li>
         <li>APIキーは空欄、またはダミーの値（例: <code>lm-studio</code>）を入力します。</li>
+      </ol>
+    </div>
+
+    <div class="info-card" style="margin-top: 12px;">
+      <h4>Ollama と連携する場合</h4>
+      <ol>
+        <li><a href="https://ollama.com">Ollama</a> をインストールします。</li>
+        <li>ターミナルで使いたいモデルをダウンロードします:
+          <br><code>ollama pull llama3.2</code>（例: Llama 3.2 の場合）
+        </li>
+        <li>Ollama サーバーが起動していることを確認します（通常はインストール後に自動起動）。</li>
+        <li>RocketWhisper の AI処理設定で「ローカルLLM」を選択します。</li>
+        <li>ベースURLに <code>http://localhost:11434</code> を入力します。</li>
+        <li><strong>モデルIDにダウンロード済みのモデル名を入力します</strong>（例: <code>llama3.2</code>、<code>qwen2.5</code>、<code>gemma2</code> 等）。
+          <br>※ <code>ollama list</code> コマンドで利用可能なモデル名を確認できます。</li>
+        <li>APIキーは空欄のままでOKです（Ollama では不要）。</li>
       </ol>
     </div>
 
