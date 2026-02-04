@@ -85,6 +85,8 @@ img { max-width: 100%; height: auto; }
 .stagger-children .fade-in:nth-child(12) { transition-delay: 0.88s; }
 .stagger-children .fade-in:nth-child(13) { transition-delay: 0.96s; }
 .stagger-children .fade-in:nth-child(14) { transition-delay: 1.04s; }
+.stagger-children .fade-in:nth-child(15) { transition-delay: 1.12s; }
+.stagger-children .fade-in:nth-child(16) { transition-delay: 1.2s; }
 
 /* ========== Keyframe Animations ========== */
 @keyframes float {
@@ -1135,7 +1137,7 @@ footer {
   <div class="container">
     <div class="features-header fade-in">
       <div class="label">Features</div>
-      <h2>15の<span class="gradient-text">プレミアム機能</span></h2>
+      <h2>16の<span class="gradient-text">プレミアム機能</span></h2>
       <p>プロフェッショナルの要求に応える、妥協のない機能群。</p>
     </div>
     <div class="features-grid stagger-children">
@@ -1222,6 +1224,12 @@ footer {
         <div class="icon icon-green">&#9196;</div>
         <h3>右Option 押し続けモード <span class="feature-badge">NEW</span></h3>
         <p>右Optionキーを押している間だけ録音し、離すと自動停止して認識開始。Push-to-Talk スタイルで、より直感的な音声入力を実現。</p>
+      </div>
+
+      <div class="feature-card fade-in">
+        <div class="icon icon-blue">&#127760;</div>
+        <h3>Fnキー Push-to-Talk <span class="feature-badge">NEW</span></h3>
+        <p>Fnキー(&#127760;)を押している間だけ録音するPush-to-Talkモード。ダブルタップで常時録音に切替も可能。Wispr Flow や macOS 音声入力と同じ操作感。</p>
       </div>
 
       <div class="feature-card fade-in">
@@ -1403,7 +1411,7 @@ footer {
         <ul>
           <li>入力: マイク (リアルタイム録音)</li>
           <li>出力: 直接テキスト入力 / クリップボード</li>
-          <li>ホットキー (⌥Space) / 右Optionキー (タップ&amp;長押し)</li>
+          <li>ホットキー (⌥Space) / 右Option / Fnキー (タップ&amp;Push-to-Talk)</li>
           <li>AIコマンド (&#8963;&#8679;Space) で選択テキスト編集</li>
           <li>アプリ検出による自動処理切替</li>
         </ul>
