@@ -878,7 +878,7 @@ footer {
       <div class="pricing-badge">Most Popular</div>
       <div class="plan-name">Personal License</div>
       <div class="plan-sku">SKU: MJ020</div>
-      <div class="price"><span class="currency">$</span>48</div>
+      <div class="price"><span class="currency">$</span>39.99</div>
       <div class="price-note">1 Mac &middot; One-time purchase</div>
       <ul class="features-list">
         <li><span class="check">&#10003;</span> All features included</li>
@@ -896,7 +896,7 @@ footer {
     <div class="pricing-card fade-in" id="businessCard">
       <div class="plan-name">Business License</div>
       <div class="plan-sku">SKU: MJ021</div>
-      <div class="price"><span class="currency">$</span>598</div>
+      <div class="price"><span class="currency">$</span>299.99</div>
       <div class="price-note">Unlimited Macs &middot; One-time purchase</div>
       <ul class="features-list">
         <li><span class="check">&#10003;</span> All features included</li>
@@ -1186,7 +1186,7 @@ function initPayPal() {
           custom_id: 'MJ020|' + hwId,
           amount: {
             currency_code: 'USD',
-            value: '48.00'
+            value: '39.99'
           }
         }]
       });
@@ -1197,7 +1197,7 @@ function initPayPal() {
         var email = payer && payer.email_address ? payer.email_address : '(PayPal account)';
         showSuccessModal(
           'RocketWhisper for Mac Personal',
-          '$48',
+          '$39.99',
           email,
           getHardwareId()
         );
@@ -1231,7 +1231,7 @@ function initPayPal() {
           custom_id: customId,
           amount: {
             currency_code: 'USD',
-            value: '598.00'
+            value: '299.99'
           }
         }]
       });
@@ -1242,7 +1242,7 @@ function initPayPal() {
         var email = payer && payer.email_address ? payer.email_address : '(PayPal account)';
         showSuccessModal(
           'RocketWhisper for Mac Business',
-          '$598',
+          '$299.99',
           email,
           getHardwareId()
         );
