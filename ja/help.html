@@ -586,6 +586,7 @@ footer {
       <li><a href="#app-modes">アプリ別処理モード</a></li>
       <li><a href="#ai">AI処理（LLM連携）</a></li>
       <li><a href="#ai-command">AIコマンドモード</a></li>
+      <li><a href="#custom-instructions">カスタム指示</a></li>
       <li><a href="#voice-launcher">ボイスランチャー</a></li>
       <li><a href="#voice-search">音声検索</a></li>
       <li><a href="#menubar">メニューバーアイコン</a></li>
@@ -1234,9 +1235,91 @@ footer {
     </div>
   </section>
 
-  <!-- ========== Section 13: ボイスランチャー ========== -->
+  <!-- ========== Section 13: カスタム指示 ========== -->
+  <section id="custom-instructions" class="content-section">
+    <h2><span class="section-num">13</span>カスタム指示</h2>
+
+    <p>カスタム指示は、専用ホットキーにAI処理指示を事前に割り当てておく機能です。AIコマンドとは異なり、音声で指示を出す必要がなく、認識されたテキストがそのまま事前設定されたプロンプトでAI処理されます。</p>
+
+    <h3>AIコマンドとの違い</h3>
+    <table class="command-table">
+      <thead>
+        <tr>
+          <th>機能</th>
+          <th>AIコマンド</th>
+          <th>カスタム指示</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>AI指示の方法</td>
+          <td>毎回音声で指示</td>
+          <td>事前にプロンプトを設定</td>
+        </tr>
+        <tr>
+          <td>テキスト選択</td>
+          <td>必要（選択テキストを処理）</td>
+          <td>不要（音声入力を処理）</td>
+        </tr>
+        <tr>
+          <td>ホットキー</td>
+          <td>共通1つ（&#8963;&#8679;Space）</td>
+          <td>指示ごとに個別設定</td>
+        </tr>
+        <tr>
+          <td>用途</td>
+          <td>都度異なる指示を出したい場合</td>
+          <td>よく使う処理をワンアクションで実行</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>使い方</h3>
+    <ol class="steps-list">
+      <li>設定画面の「カスタム指示」タブで指示を作成し、ホットキーを割り当てます。</li>
+      <li>任意のアプリで、割り当てたホットキーを押して録音を開始します。</li>
+      <li>マイクに向かって話します（認識テキストがAI処理の入力になります）。</li>
+      <li>同じホットキーをもう一度押して録音を停止します。</li>
+      <li>音声が認識され、事前設定されたプロンプトでAI処理された結果が自動的に貼り付けられます。</li>
+    </ol>
+
+    <h3>プリセット指示</h3>
+    <p>初回起動時に4つのプリセットが自動作成されます。これらは編集可能ですが、削除はできません。</p>
+    <table class="command-table">
+      <thead>
+        <tr>
+          <th>プリセット</th>
+          <th>説明</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>&#127760; Translate to English</td>
+          <td>音声を英語に翻訳</td>
+        </tr>
+        <tr>
+          <td>&#128188; Business Style</td>
+          <td>ビジネス敬体に変換</td>
+        </tr>
+        <tr>
+          <td>&#128221; Summary</td>
+          <td>テキストを簡潔に要約</td>
+        </tr>
+        <tr>
+          <td>&#10004;&#65039; Grammar Fix</td>
+          <td>文法誤り・誤認識を修正</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="warning-box">
+      <p><strong>注意:</strong> カスタム指示を使用するには、AI処理設定でいずれかのプロバイダのAPIキーが設定されている必要があります。最大20件まで登録できます。</p>
+    </div>
+  </section>
+
+  <!-- ========== Section 14: ボイスランチャー ========== -->
   <section id="voice-launcher" class="content-section">
-    <h2><span class="section-num">13</span>ボイスランチャー</h2>
+    <h2><span class="section-num">14</span>ボイスランチャー</h2>
 
     <p>ボイスランチャーは、登録したキーワードを話すだけでアプリの起動やURLの表示を実行できる機能です。テキスト処理パイプラインの最初（Stage 0）で処理されるため、キーワードに一致した場合は他の処理は行われません。</p>
 
@@ -1294,9 +1377,9 @@ footer {
     </table>
   </section>
 
-  <!-- ========== Section 14: 音声検索 ========== -->
+  <!-- ========== Section 15: 音声検索 ========== -->
   <section id="voice-search" class="content-section">
-    <h2><span class="section-num">14</span>音声検索</h2>
+    <h2><span class="section-num">15</span>音声検索</h2>
 
     <p>音声検索機能を使うと、特定のフレーズを話すだけでGoogle検索を即座に実行できます。検索結果はデフォルトのブラウザで表示されます。</p>
 
@@ -1357,9 +1440,9 @@ footer {
     </div>
   </section>
 
-  <!-- ========== Section 15: メニューバーアイコン ========== -->
+  <!-- ========== Section 16: メニューバーアイコン ========== -->
   <section id="menubar" class="content-section">
-    <h2><span class="section-num">15</span>メニューバーアイコン</h2>
+    <h2><span class="section-num">16</span>メニューバーアイコン</h2>
 
     <p>RocketWhisper は macOS のメニューバーに常駐するアプリです。Dock には表示されず、メニューバーのアイコンからすべての操作にアクセスできます。</p>
 
@@ -1382,9 +1465,9 @@ footer {
     </div>
   </section>
 
-  <!-- ========== Section 16: フローティング波形インジケーター ========== -->
+  <!-- ========== Section 17: フローティング波形インジケーター ========== -->
   <section id="waveform" class="content-section">
-    <h2><span class="section-num">16</span>フローティング波形インジケーター</h2>
+    <h2><span class="section-num">17</span>フローティング波形インジケーター</h2>
 
     <p>録音中に画面上に小さなミニイコライザー風の波形バーを表示するフローティングウィンドウです。常に最前面に表示されるため、他のアプリで作業中でも録音状態を一目で確認できます。</p>
 
@@ -1419,9 +1502,9 @@ footer {
     </div>
   </section>
 
-  <!-- ========== Section 17: バッチ処理 ========== -->
+  <!-- ========== Section 18: バッチ処理 ========== -->
   <section id="batch" class="content-section">
-    <h2><span class="section-num">17</span>バッチ処理</h2>
+    <h2><span class="section-num">18</span>バッチ処理</h2>
 
     <p>複数の音声ファイルをまとめて文字起こしできる機能です。録音済みの会議音声やインタビューファイルを一括処理するのに便利です。</p>
 
@@ -1478,9 +1561,9 @@ footer {
     </div>
   </section>
 
-  <!-- ========== Section 18: トラブルシューティング ========== -->
+  <!-- ========== Section 19: トラブルシューティング ========== -->
   <section id="troubleshooting" class="content-section">
-    <h2><span class="section-num">18</span>トラブルシューティング</h2>
+    <h2><span class="section-num">19</span>トラブルシューティング</h2>
 
     <p>問題が発生した場合は、以下のFAQを参考にしてください。</p>
 

@@ -586,6 +586,7 @@ footer {
       <li><a href="#app-modes">App-Specific Processing Modes</a></li>
       <li><a href="#ai">AI Processing (LLM Integration)</a></li>
       <li><a href="#ai-command">AI Command Mode</a></li>
+      <li><a href="#custom-instructions">Custom Instructions</a></li>
       <li><a href="#voice-launcher">Voice Launcher</a></li>
       <li><a href="#voice-search">Voice Search</a></li>
       <li><a href="#menubar">Menu Bar Icon</a></li>
@@ -1203,9 +1204,91 @@ footer {
     </div>
   </section>
 
-  <!-- ========== Section 13: Voice Launcher ========== -->
+  <!-- ========== Section 13: Custom Instructions ========== -->
+  <section id="custom-instructions" class="content-section">
+    <h2><span class="section-num">13</span>Custom Instructions</h2>
+
+    <p>Custom Instructions let you pre-assign AI processing prompts to dedicated hotkeys. Unlike AI Commands, you don't need to speak instructions each time — the recognized speech is automatically processed using a pre-configured prompt.</p>
+
+    <h3>Difference from AI Commands</h3>
+    <table class="command-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>AI Commands</th>
+          <th>Custom Instructions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>AI Instruction</td>
+          <td>Speak instructions each time</td>
+          <td>Pre-configured prompt</td>
+        </tr>
+        <tr>
+          <td>Text Selection</td>
+          <td>Required (processes selected text)</td>
+          <td>Not required (processes speech input)</td>
+        </tr>
+        <tr>
+          <td>Hotkey</td>
+          <td>Single shared hotkey (&#8963;&#8679;Space)</td>
+          <td>Individual hotkey per instruction</td>
+        </tr>
+        <tr>
+          <td>Best For</td>
+          <td>Ad-hoc, varying instructions</td>
+          <td>Frequently used operations in one action</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>How to Use</h3>
+    <ol class="steps-list">
+      <li>Create an instruction in the "Custom Instructions" settings tab and assign a hotkey.</li>
+      <li>In any app, press the assigned hotkey to start recording.</li>
+      <li>Speak into the microphone (the recognized text becomes the AI input).</li>
+      <li>Press the same hotkey again to stop recording.</li>
+      <li>Speech is recognized and processed by AI with the pre-configured prompt, then automatically pasted.</li>
+    </ol>
+
+    <h3>Preset Instructions</h3>
+    <p>Four presets are automatically created on first launch. These can be edited but not deleted.</p>
+    <table class="command-table">
+      <thead>
+        <tr>
+          <th>Preset</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>&#127760; Translate to English</td>
+          <td>Translate speech to natural English</td>
+        </tr>
+        <tr>
+          <td>&#128188; Business Style</td>
+          <td>Convert to formal business Japanese</td>
+        </tr>
+        <tr>
+          <td>&#128221; Summary</td>
+          <td>Summarize text concisely</td>
+        </tr>
+        <tr>
+          <td>&#10004;&#65039; Grammar Fix</td>
+          <td>Fix grammar errors and misrecognitions</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="warning-box">
+      <p><strong>Note:</strong> Custom Instructions require an API key for one of the AI providers. Up to 20 instructions can be registered.</p>
+    </div>
+  </section>
+
+  <!-- ========== Section 14: Voice Launcher ========== -->
   <section id="voice-launcher" class="content-section">
-    <h2><span class="section-num">13</span>Voice Launcher</h2>
+    <h2><span class="section-num">14</span>Voice Launcher</h2>
 
     <p>Voice Launcher lets you launch apps or open URLs by speaking registered keywords. Processed at Stage 0 of the pipeline, so matching keywords execute actions without text output.</p>
 
@@ -1263,9 +1346,9 @@ footer {
     </table>
   </section>
 
-  <!-- ========== Section 14: Voice Search ========== -->
+  <!-- ========== Section 15: Voice Search ========== -->
   <section id="voice-search" class="content-section">
-    <h2><span class="section-num">14</span>Voice Search</h2>
+    <h2><span class="section-num">15</span>Voice Search</h2>
 
     <p>Voice Search lets you trigger Google searches instantly by speaking specific phrases. Results open in your default browser.</p>
 
@@ -1306,9 +1389,9 @@ footer {
     </div>
   </section>
 
-  <!-- ========== Section 15: Menu Bar Icon ========== -->
+  <!-- ========== Section 16: Menu Bar Icon ========== -->
   <section id="menubar" class="content-section">
-    <h2><span class="section-num">15</span>Menu Bar Icon</h2>
+    <h2><span class="section-num">16</span>Menu Bar Icon</h2>
 
     <p>RocketWhisper is a menu bar resident app. It doesn't appear in the Dock. All operations are accessible from the menu bar icon.</p>
 
@@ -1331,9 +1414,9 @@ footer {
     </div>
   </section>
 
-  <!-- ========== Section 16: Floating Waveform Indicator ========== -->
+  <!-- ========== Section 17: Floating Waveform Indicator ========== -->
   <section id="waveform" class="content-section">
-    <h2><span class="section-num">16</span>Floating Waveform Indicator</h2>
+    <h2><span class="section-num">17</span>Floating Waveform Indicator</h2>
 
     <p>A floating window showing a small mini equalizer-style waveform during recording. Always on top, so you can confirm recording status even while working in other apps.</p>
 
@@ -1368,9 +1451,9 @@ footer {
     </div>
   </section>
 
-  <!-- ========== Section 17: Batch Processing ========== -->
+  <!-- ========== Section 18: Batch Processing ========== -->
   <section id="batch" class="content-section">
-    <h2><span class="section-num">17</span>Batch Processing</h2>
+    <h2><span class="section-num">18</span>Batch Processing</h2>
 
     <p>Batch transcribe multiple audio files at once. Convenient for processing recorded meeting audio or interview files.</p>
 
@@ -1427,9 +1510,9 @@ footer {
     </div>
   </section>
 
-  <!-- ========== Section 18: Troubleshooting ========== -->
+  <!-- ========== Section 19: Troubleshooting ========== -->
   <section id="troubleshooting" class="content-section">
-    <h2><span class="section-num">18</span>Troubleshooting</h2>
+    <h2><span class="section-num">19</span>Troubleshooting</h2>
 
     <p>If you encounter issues, refer to this FAQ.</p>
 
