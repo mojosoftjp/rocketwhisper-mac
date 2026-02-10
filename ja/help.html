@@ -577,7 +577,7 @@ footer {
       <li><a href="#install">インストール方法</a></li>
       <li><a href="#basic">基本的な使い方</a></li>
       <li><a href="#settings">設定</a></li>
-      <li><a href="#hotkey">グローバルホットキー</a></li>
+      <li><a href="#shortcut">グローバルショートカット</a></li>
       <li><a href="#history">認識履歴</a></li>
       <li><a href="#text-processing">テキスト処理（句読点・改行）</a></li>
       <li><a href="#voice-commands">音声コマンド</a></li>
@@ -688,11 +688,11 @@ footer {
     <ul>
       <li><strong>コピー:</strong> コピーボタンをクリックすると、認識結果がクリップボードにコピーされます。</li>
       <li><strong>自動コピー:</strong> 設定で有効にすると、認識完了時に自動的にクリップボードにコピーされます。</li>
-      <li><strong>自動貼り付け:</strong> 設定で有効にすると、ホットキー録音時に認識結果が自動的にアクティブなアプリのテキストフィールドに貼り付けられます。</li>
+      <li><strong>自動貼り付け:</strong> 設定で有効にすると、ショートカット録音時に認識結果が自動的にアクティブなアプリのテキストフィールドに貼り付けられます。</li>
     </ul>
 
     <div class="tip-box">
-      <p><strong>Tip:</strong> ホットキーを使った録音では、録音開始前にフォーカスされていたアプリに自動的にテキストを貼り付けることができます。UIボタンからの録音では手動でコピー&ペーストする必要があります。</p>
+      <p><strong>Tip:</strong> ショートカットを使った録音では、録音開始前にフォーカスされていたアプリに自動的にテキストを貼り付けることができます。UIボタンからの録音では手動でコピー&ペーストする必要があります。</p>
     </div>
   </section>
 
@@ -719,8 +719,8 @@ footer {
           <td>マイクデバイスの選択、自動コピー、自動貼り付けの設定</td>
         </tr>
         <tr>
-          <td><strong>ホットキー</strong></td>
-          <td>録音ホットキーのカスタマイズ、右Optionキー設定、キャンセルキー、AIコマンドホットキー（<code>&#8963;&#8679;Space</code>）</td>
+          <td><strong>ショートカット</strong></td>
+          <td>録音ショートカットのカスタマイズ、右Optionキー設定、キャンセルキー、AIコマンドショートカット（<code>&#8963;&#8679;Space</code>）</td>
         </tr>
         <tr>
           <td><strong>単語辞書</strong></td>
@@ -750,11 +750,11 @@ footer {
     </table>
   </section>
 
-  <!-- ========== Section 4: グローバルホットキー ========== -->
-  <section id="hotkey" class="content-section">
-    <h2><span class="section-num">4</span>グローバルホットキー</h2>
+  <!-- ========== Section 4: グローバルショートカット ========== -->
+  <section id="shortcut" class="content-section">
+    <h2><span class="section-num">4</span>グローバルショートカット</h2>
 
-    <p>RocketWhisper はカスタマイズ可能なグローバルホットキーに対応しており、どのアプリを使用中でも即座に録音を開始できます。さらに、<strong>右Optionキー</strong>のタップや長押し（Push-to-Talk）にも対応しています。</p>
+    <p>RocketWhisper はカスタマイズ可能なグローバルショートカットに対応しており、どのアプリを使用中でも即座に録音を開始できます。さらに、<strong>右Optionキー</strong>のタップや長押し（Push-to-Talk）にも対応しています。</p>
 
     <h3>右Optionキーの操作</h3>
     <table class="command-table">
@@ -780,11 +780,11 @@ footer {
       </tbody>
     </table>
 
-    <h3>おすすめホットキー設定</h3>
+    <h3>おすすめショートカット設定</h3>
     <table class="command-table">
       <thead>
         <tr>
-          <th>ホットキー</th>
+          <th>ショートカット</th>
           <th>タイプ</th>
           <th>説明</th>
         </tr>
@@ -817,12 +817,12 @@ footer {
     <p>録音中に <code>Escape</code> キーを押すと、録音をキャンセルして認識処理を行わずに終了できます。</p>
 
     <div class="info-card">
-      <h4>AIコマンドホットキー</h4>
+      <h4>AIコマンドショートカット</h4>
       <p><code>&#8963;&#8679;Space</code>（Control + Shift + Space）で AIコマンドモードを起動できます。詳しくは <a href="#ai-command">AIコマンドモード</a> のセクションをご覧ください。</p>
     </div>
 
     <div class="warning-box">
-      <p><strong>注意:</strong> グローバルホットキーの動作には<strong>アクセシビリティ権限</strong>が必要です。初回起動時に権限の許可を求められます。<strong>システム設定</strong> &gt; <strong>プライバシーとセキュリティ</strong> &gt; <strong>アクセシビリティ</strong> で RocketWhisper が有効になっていることを確認してください。</p>
+      <p><strong>注意:</strong> グローバルショートカットの動作には<strong>アクセシビリティ権限</strong>が必要です。初回起動時に権限の許可を求められます。<strong>システム設定</strong> &gt; <strong>プライバシーとセキュリティ</strong> &gt; <strong>アクセシビリティ</strong> で RocketWhisper が有効になっていることを確認してください。</p>
     </div>
   </section>
 
@@ -1239,7 +1239,7 @@ footer {
   <section id="custom-instructions" class="content-section">
     <h2><span class="section-num">13</span>カスタム指示</h2>
 
-    <p>カスタム指示は、専用ホットキーにAI処理指示を事前に割り当てておく機能です。AIコマンドとは異なり、音声で指示を出す必要がなく、認識されたテキストがそのまま事前設定されたプロンプトでAI処理されます。</p>
+    <p>カスタム指示は、専用ショートカットにAI処理指示を事前に割り当てておく機能です。AIコマンドとは異なり、音声で指示を出す必要がなく、認識されたテキストがそのまま事前設定されたプロンプトでAI処理されます。</p>
 
     <h3>AIコマンドとの違い</h3>
     <table class="command-table">
@@ -1262,7 +1262,7 @@ footer {
           <td>不要（音声入力を処理）</td>
         </tr>
         <tr>
-          <td>ホットキー</td>
+          <td>ショートカット</td>
           <td>共通1つ（&#8963;&#8679;Space）</td>
           <td>指示ごとに個別設定</td>
         </tr>
@@ -1276,10 +1276,10 @@ footer {
 
     <h3>使い方</h3>
     <ol class="steps-list">
-      <li>設定画面の「カスタム指示」タブで指示を作成し、ホットキーを割り当てます。</li>
-      <li>任意のアプリで、割り当てたホットキーを押して録音を開始します。</li>
+      <li>設定画面の「カスタム指示」タブで指示を作成し、ショートカットを割り当てます。</li>
+      <li>任意のアプリで、割り当てたショートカットを押して録音を開始します。</li>
       <li>マイクに向かって話します（認識テキストがAI処理の入力になります）。</li>
-      <li>同じホットキーをもう一度押して録音を停止します。</li>
+      <li>同じショートカットをもう一度押して録音を停止します。</li>
       <li>音声が認識され、事前設定されたプロンプトでAI処理された結果が自動的に貼り付けられます。</li>
     </ol>
 
@@ -1461,7 +1461,7 @@ footer {
     </ol>
 
     <div class="tip-box">
-      <p><strong>Tip:</strong> メニューバーアイコンは常に表示されるため、ホットキーと組み合わせることで、作業を中断することなく即座に音声入力を開始できます。</p>
+      <p><strong>Tip:</strong> メニューバーアイコンは常に表示されるため、ショートカットと組み合わせることで、作業を中断することなく即座に音声入力を開始できます。</p>
     </div>
   </section>
 
@@ -1592,7 +1592,7 @@ footer {
     </div>
 
     <div class="faq-item">
-      <button class="faq-question">ホットキーが動作しない</button>
+      <button class="faq-question">ショートカットが動作しない</button>
       <div class="faq-answer">
         <div class="faq-answer-content">
           <p><strong>アクセシビリティ権限</strong>を確認してください。</p>
@@ -1603,7 +1603,7 @@ footer {
             <li>一覧にない場合は「+」ボタンで追加してください。</li>
             <li>既に追加済みで動作しない場合は、一度無効にしてから再度有効にしてください。</li>
           </ol>
-          <p>また、他のアプリが同じホットキーを使用していないか確認してください。競合がある場合は、別のホットキーに変更してください。</p>
+          <p>また、他のアプリが同じショートカットを使用していないか確認してください。競合がある場合は、別のショートカットに変更してください。</p>
         </div>
       </div>
     </div>
