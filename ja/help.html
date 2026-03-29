@@ -620,6 +620,7 @@ footer {
         <li><strong>プロセッサ:</strong> Apple Silicon 推奨（M1 / M2 / M3 / M4）</li>
         <li><strong>メモリ:</strong> RAM 8GB以上推奨（16GB推奨）</li>
         <li><strong>ストレージ:</strong> 200MB + モデルファイル（最大3GB）</li>
+        <li><strong>Apple Intelligence（任意）:</strong> macOS 26 以降 + Apple Intelligence が有効（<a href="#apple-intelligence-setup">設定方法</a>）</li>
       </ul>
     </div>
 
@@ -628,7 +629,12 @@ footer {
       <li><a href="index.html#download">ダウンロードページ</a>から最新版の <code>.dmg</code> ファイルをダウンロードします。</li>
       <li>ダウンロードした DMG ファイルをダブルクリックして開き、<strong>RocketWhisper</strong> アイコンを <strong>Applications</strong> フォルダにドラッグ&ドロップします。</li>
       <li>初回起動時に Gatekeeper の警告が表示される場合は、「開く」を選択してください。もしくは、<strong>システム設定</strong> &gt; <strong>プライバシーとセキュリティ</strong> から「このまま開く」をクリックしてください。</li>
-      <li>初回起動時に使用する Whisper モデルのダウンロードが始まります。ネットワーク環境に応じて数分かかる場合があります。</li>
+      <li>初回起動時の動作は OS バージョンによって異なります:
+        <ul>
+          <li><strong>macOS 26 以降:</strong> Apple SpeechAnalyzer を使用するため、<strong>モデルのダウンロードは不要</strong>で即座に使用できます。</li>
+          <li><strong>macOS 14〜15:</strong> WhisperKit モデルのダウンロードが始まります。ネットワーク環境に応じて数分かかります。</li>
+        </ul>
+      </li>
     </ol>
 
     <h3>モデルの選び方</h3>
@@ -752,7 +758,7 @@ footer {
         </tr>
         <tr>
           <td><strong>AI処理</strong></td>
-          <td>AIプロバイダの選択（OpenAI / Anthropic / Groq / Gemini / ローカルLLM）、モデル選択、APIキーの入力</td>
+          <td>AIプロバイダの選択（Apple Intelligence / OpenAI / Anthropic / Groq / Gemini / ローカルLLM）、モデル選択、APIキーの入力</td>
         </tr>
         <tr>
           <td><strong>ライセンス</strong></td>
@@ -1109,7 +1115,7 @@ footer {
   <section id="ai" class="content-section">
     <h2><span class="section-num">11</span>AI処理（LLM連携）</h2>
 
-    <p>RocketWhisper は5つのAIプロバイダと連携し、認識テキストの自動整形、翻訳、要約などの高度な処理を実行できます。</p>
+    <p>RocketWhisper は6つのAIプロバイダと連携し、認識テキストの自動整形、翻訳、要約などの高度な処理を実行できます。</p>
 
     <h3>対応AIプロバイダ</h3>
     <table class="command-table">
@@ -1122,18 +1128,23 @@ footer {
       </thead>
       <tbody>
         <tr>
+          <td><strong>Apple Intelligence</strong> <span style="color:#f59e0b;font-size:0.75em;">NEW</span></td>
+          <td>~3B オンデバイスモデル</td>
+          <td>APIキー不要、完全オフライン、macOS 26以降</td>
+        </tr>
+        <tr>
           <td><strong>OpenAI</strong></td>
-          <td>GPT-4o, GPT-4o mini</td>
+          <td>GPT-4.1, GPT-4.1 mini</td>
           <td>高精度、幅広い言語対応</td>
         </tr>
         <tr>
           <td><strong>Anthropic</strong></td>
-          <td>Claude Sonnet 4.5, Haiku 4.5</td>
+          <td>Claude Sonnet 4.6, Opus 4.6</td>
           <td>自然な日本語、丁寧な出力</td>
         </tr>
         <tr>
           <td><strong>Groq</strong></td>
-          <td>LLaMA 3.3 70B</td>
+          <td>LLaMA 3.3 70B, LLaMA 4 Scout</td>
           <td>超高速推論、無料枠あり</td>
         </tr>
         <tr>
@@ -1149,11 +1160,26 @@ footer {
       </tbody>
     </table>
 
-    <h3>設定方法</h3>
+    <!-- Apple Intelligence セットアップガイド -->
+    <h3 id="apple-intelligence-setup">Apple Intelligence の設定方法（macOS 26 以降）</h3>
+    <div class="info-card">
+      <h4>⚠️ 事前準備が必要です</h4>
+      <p>Apple Intelligence を使用するには、macOS の設定で Apple Intelligence を<strong>有効化</strong>し、必要なモデルの<strong>ダウンロードを完了</strong>させる必要があります。</p>
+      <ol>
+        <li><strong>システム設定</strong>を開きます。</li>
+        <li><strong>「Apple Intelligence と Siri」</strong>をクリックします。</li>
+        <li><strong>「Apple Intelligence をオンにする」</strong>をクリックします。</li>
+        <li>モデルのダウンロードが自動的に開始されます。<strong>ダウンロードが完了するまでお待ちください</strong>（Wi-Fi 環境で数分〜数十分）。</li>
+        <li>ダウンロード完了後、RocketWhisper の設定画面 → AI処理タブで「Apple Intelligence」を選択すると、「Available」と表示されます。</li>
+      </ol>
+      <p style="margin-top:8px;"><strong>💡 Tip:</strong> Apple Intelligence が有効になると、RocketWhisper は自動的に検出して利用可能な状態に切り替わります。アプリの再起動は不要です。</p>
+    </div>
+
+    <h3>クラウド AI の設定方法</h3>
     <ol class="steps-list">
       <li>設定画面の「AI処理」タブを開きます。</li>
       <li>使用するプロバイダを選択します。</li>
-      <li>APIキーを入力します（ローカルLLMの場合は不要）。</li>
+      <li>APIキーを入力します（Apple Intelligence / ローカルLLMの場合は不要）。</li>
       <li>使用するモデルを選択します。</li>
       <li>AI処理を有効にして、処理モードを選択します。</li>
     </ol>
@@ -1188,7 +1214,7 @@ footer {
     </div>
 
     <div class="tip-box">
-      <p><strong>Tip:</strong> コストを抑えたい場合は <strong>Groq</strong>（無料枠あり）や <strong>Google Gemini</strong>（無料枠が豊富）がおすすめです。完全なプライバシーが必要な場合は、<strong>ローカルLLM</strong> を使用すると音声認識からAI処理まですべてオフラインで完結します。</p>
+      <p><strong>Tip:</strong> macOS 26 以降をお使いなら、<strong>Apple Intelligence</strong> がおすすめです。APIキー不要・完全オフラインでAI整形が利用できます。コストを抑えたい場合は <strong>Groq</strong>（無料枠あり）や <strong>Google Gemini</strong>（無料枠が豊富）も選択肢です。</p>
     </div>
   </section>
 

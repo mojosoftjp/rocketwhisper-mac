@@ -620,6 +620,7 @@ footer {
         <li><strong>Processor:</strong> Apple Silicon recommended (M1 / M2 / M3 / M4)</li>
         <li><strong>Memory:</strong> RAM 8GB or more (16GB recommended)</li>
         <li><strong>Storage:</strong> 200MB + model files (up to 3GB)</li>
+        <li><strong>Apple Intelligence (optional):</strong> macOS 26 or later + Apple Intelligence enabled (<a href="#apple-intelligence-setup">setup guide</a>)</li>
       </ul>
     </div>
 
@@ -628,7 +629,12 @@ footer {
       <li>Download the latest <code>.dmg</code> file from the <a href="index.html#download">download page</a>.</li>
       <li>Double-click the downloaded DMG file and drag the <strong>RocketWhisper</strong> icon to the <strong>Applications</strong> folder.</li>
       <li>If Gatekeeper shows a warning on first launch, click "Open". Alternatively, go to <strong>System Settings</strong> &gt; <strong>Privacy &amp; Security</strong> and click "Open Anyway".</li>
-      <li>On first launch, the Whisper model will begin downloading. This may take a few minutes depending on your network.</li>
+      <li>First launch behavior depends on your OS version:
+        <ul>
+          <li><strong>macOS 26 or later:</strong> Uses Apple SpeechAnalyzer — <strong>no model download required</strong>, ready to use immediately.</li>
+          <li><strong>macOS 14–15:</strong> The WhisperKit model will begin downloading. This may take a few minutes.</li>
+        </ul>
+      </li>
     </ol>
 
     <h3>Choosing a Model</h3>
@@ -752,7 +758,7 @@ footer {
         </tr>
         <tr>
           <td><strong>AI Processing</strong></td>
-          <td>AI provider selection (OpenAI / Anthropic / Groq / Gemini / Local LLM), model, API keys</td>
+          <td>AI provider selection (Apple Intelligence / OpenAI / Anthropic / Groq / Gemini / Local LLM), model, API keys</td>
         </tr>
         <tr>
           <td><strong>License</strong></td>
@@ -1078,7 +1084,7 @@ footer {
   <section id="ai" class="content-section">
     <h2><span class="section-num">11</span>AI Processing (LLM Integration)</h2>
 
-    <p>RocketWhisper integrates with 5 AI providers for advanced processing like text formatting, translation, and summarization.</p>
+    <p>RocketWhisper integrates with 6 AI providers for advanced processing like text formatting, translation, and summarization.</p>
 
     <h3>Supported AI Providers</h3>
     <table class="command-table">
@@ -1091,18 +1097,23 @@ footer {
       </thead>
       <tbody>
         <tr>
+          <td><strong>Apple Intelligence</strong> <span style="color:#f59e0b;font-size:0.75em;">NEW</span></td>
+          <td>~3B on-device model</td>
+          <td>No API key, fully offline, macOS 26+</td>
+        </tr>
+        <tr>
           <td><strong>OpenAI</strong></td>
-          <td>GPT-4o, GPT-4o mini</td>
+          <td>GPT-4.1, GPT-4.1 mini</td>
           <td>High accuracy, broad language support</td>
         </tr>
         <tr>
           <td><strong>Anthropic</strong></td>
-          <td>Claude Sonnet 4.5, Haiku 4.5</td>
+          <td>Claude Sonnet 4.6, Opus 4.6</td>
           <td>Natural language, polite output</td>
         </tr>
         <tr>
           <td><strong>Groq</strong></td>
-          <td>LLaMA 3.3 70B</td>
+          <td>LLaMA 3.3 70B, LLaMA 4 Scout</td>
           <td>Ultra-fast inference, free tier available</td>
         </tr>
         <tr>
@@ -1118,11 +1129,26 @@ footer {
       </tbody>
     </table>
 
-    <h3>Setup</h3>
+    <!-- Apple Intelligence Setup Guide -->
+    <h3 id="apple-intelligence-setup">Apple Intelligence Setup (macOS 26+)</h3>
+    <div class="info-card">
+      <h4>⚠️ Initial Setup Required</h4>
+      <p>To use Apple Intelligence, you must <strong>enable</strong> it in macOS settings and wait for the <strong>model download to complete</strong>.</p>
+      <ol>
+        <li>Open <strong>System Settings</strong>.</li>
+        <li>Click <strong>"Apple Intelligence & Siri"</strong>.</li>
+        <li>Click <strong>"Turn On Apple Intelligence"</strong>.</li>
+        <li>The model download starts automatically. <strong>Wait for it to complete</strong> (a few minutes to tens of minutes on Wi-Fi).</li>
+        <li>After download, go to RocketWhisper Settings → AI Processing tab, select "Apple Intelligence". It should show "Available".</li>
+      </ol>
+      <p style="margin-top:8px;"><strong>💡 Tip:</strong> Once Apple Intelligence becomes available, RocketWhisper detects it automatically — no app restart needed.</p>
+    </div>
+
+    <h3>Cloud AI Setup</h3>
     <ol class="steps-list">
       <li>Open the "AI Processing" tab in settings.</li>
       <li>Select your provider.</li>
-      <li>Enter your API key (not needed for Local LLM).</li>
+      <li>Enter your API key (not needed for Apple Intelligence / Local LLM).</li>
       <li>Select the model to use.</li>
       <li>Enable AI processing and choose a processing mode.</li>
     </ol>
@@ -1157,7 +1183,7 @@ footer {
     </div>
 
     <div class="tip-box">
-      <p><strong>Tip:</strong> To minimize costs, <strong>Groq</strong> (free tier) or <strong>Google Gemini</strong> (generous free tier) are recommended. For complete privacy, <strong>Local LLM</strong> processes everything from speech recognition to AI formatting fully offline.</p>
+      <p><strong>Tip:</strong> On macOS 26+, <strong>Apple Intelligence</strong> is recommended — no API key needed, fully offline AI formatting. For cost savings, <strong>Groq</strong> (free tier) and <strong>Google Gemini</strong> (generous free tier) are also good options.</p>
     </div>
   </section>
 
