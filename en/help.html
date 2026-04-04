@@ -1107,7 +1107,7 @@ footer {
           <td>High accuracy, broad language support</td>
         </tr>
         <tr>
-          <td><strong>Anthropic</strong></td>
+          <td><strong>Anthropic</strong> <span class="recommended-badge">Recommended</span></td>
           <td>Claude Sonnet 4.6, Opus 4.6</td>
           <td>Natural language, polite output</td>
         </tr>
@@ -1117,8 +1117,8 @@ footer {
           <td>Ultra-fast inference, free tier available</td>
         </tr>
         <tr>
-          <td><strong>Google Gemini</strong></td>
-          <td>Gemini 2.5 Pro / Flash</td>
+          <td><strong>Google Gemini</strong> <span class="recommended-badge">Recommended</span></td>
+          <td>Gemini 2.5 Flash-Lite / Flash / Pro</td>
           <td>Generous free tier, multimodal support</td>
         </tr>
         <tr>
@@ -1183,8 +1183,67 @@ footer {
     </div>
 
     <div class="tip-box">
-      <p><strong>Tip:</strong> On macOS 26+, <strong>Apple Intelligence</strong> is recommended — no API key needed, fully offline AI formatting. For cost savings, <strong>Groq</strong> (free tier) and <strong>Google Gemini</strong> (generous free tier) are also good options.</p>
+      <p><strong>Tip:</strong> On macOS 26+, <strong>Apple Intelligence</strong> is recommended — no API key needed, fully offline AI formatting. For cost savings, <strong>Google Gemini</strong> (generous free tier) is also a great option.</p>
     </div>
+
+    <h3>Vision-Capable Providers &amp; Recommended Models</h3>
+    <p>When using AI Commands or Custom Instructions with image processing, use the following Vision-capable providers and models.</p>
+    <table class="command-table">
+      <thead>
+        <tr>
+          <th>Provider</th>
+          <th>Recommended Model</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Google Gemini</strong> <span class="recommended-badge">Recommended</span></td>
+          <td>gemini-2.5-flash-lite</td>
+          <td>Up to 1,000 requests/day for free!</td>
+        </tr>
+        <tr>
+          <td><strong>Anthropic</strong></td>
+          <td>Claude Sonnet 4.6</td>
+          <td>High accuracy, natural output</td>
+        </tr>
+        <tr>
+          <td><strong>OpenAI</strong></td>
+          <td>GPT-4.1</td>
+          <td>High accuracy, broad language support</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Gemini Free Tier</h3>
+    <p>The Google Gemini API offers a free tier with just an API key (no credit card required).</p>
+    <table class="command-table">
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Daily Requests</th>
+          <th>Per Minute Limit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Gemini 2.5 Flash-Lite</strong> <span class="recommended-badge">Recommended</span></td>
+          <td>1,000/day</td>
+          <td>15/min</td>
+        </tr>
+        <tr>
+          <td>Gemini 2.5 Flash</td>
+          <td>250/day</td>
+          <td>10/min</td>
+        </tr>
+        <tr>
+          <td>Gemini 2.5 Pro</td>
+          <td>100/day</td>
+          <td>5/min</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="color:#9ca3af;font-size:0.9em;">* Free tier resets daily at midnight Pacific Time. Limits are per project. Subject to change by Google without notice.</p>
   </section>
 
   <!-- ========== Section 12: AI Command Mode ========== -->
