@@ -6,8 +6,8 @@
 <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-<meta name="description" content="RocketWhisper for Mac with Apple Intelligence support. Blazing-fast Apple SpeechAnalyzer + on-device Foundation Models for API-key-free AI formatting. WhisperKit engine also included. Apple Silicon (M1/M2/M3/M4) native. Fully offline, one-time purchase.">
-<meta name="keywords" content="speech recognition,transcription,Mac,macOS,AI speech recognition,Apple Intelligence,SpeechAnalyzer,Foundation Models,Whisper,OpenAI Whisper,offline speech recognition,local transcription,real-time voice typing,meeting transcription,video transcription,subtitle generator,SRT,VTT,Apple Silicon,M1,M2,M3,M4,speech to text converter,Mac voice typing,AI transcription,one-time purchase,no subscription,privacy,local processing,RocketWhisper,transcription software,custom instructions,batch processing,Mac transcription">
+<meta name="description" content="RocketWhisper for Mac — Apple Intelligence native AI speech recognition. Optimized for MacBook Neo (A18 Pro / 8GB RAM) with zero-download setup. Blazing-fast Apple SpeechAnalyzer + on-device Foundation Models for API-key-free AI formatting. Apple Silicon (M1/M2/M3/M4/A18 Pro) native. Fully offline, one-time purchase.">
+<meta name="keywords" content="speech recognition,transcription,Mac,macOS,AI speech recognition,Apple Intelligence,SpeechAnalyzer,Foundation Models,MacBook Neo,MacBook Neo voice typing,A18 Pro,8GB RAM,Built for Apple Intelligence,Whisper,OpenAI Whisper,offline speech recognition,local transcription,real-time voice typing,meeting transcription,video transcription,subtitle generator,SRT,VTT,Apple Silicon,M1,M2,M3,M4,speech to text converter,Mac voice typing,AI transcription,one-time purchase,no subscription,privacy,local processing,RocketWhisper,transcription software,custom instructions,batch processing,Mac transcription">
 <meta property="og:title" content="RocketWhisper for Mac - AI Speech Recognition & Transcription | Fully Offline, One-Time Purchase">
 <meta property="og:description" content="Fully offline AI speech recognition for Mac. OpenAI Whisper powered. Native Apple Silicon support. Meeting transcription, video subtitles. No subscription.">
 <meta property="og:type" content="website">
@@ -977,6 +977,234 @@ footer {
   .ai-providers { grid-template-columns: 1fr; }
   .hero-stats { flex-direction: column; gap: 16px; }
 }
+
+/* ========== MacBook Neo Section ========== */
+.neo-section {
+  position: relative;
+  padding: 100px 0;
+  overflow: hidden;
+}
+.neo-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 40% at 20% 25%, rgba(96, 165, 250, 0.14), transparent),
+    radial-gradient(ellipse 50% 40% at 80% 75%, rgba(167, 139, 250, 0.11), transparent),
+    radial-gradient(ellipse 40% 30% at 50% 110%, rgba(244, 114, 182, 0.07), transparent);
+  animation: gradient-shift 14s ease infinite;
+  background-size: 220% 220%;
+}
+.neo-section .container { position: relative; }
+
+.neo-hero { text-align: center; margin-bottom: 56px; }
+.neo-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 22px;
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.14), rgba(167, 139, 250, 0.14));
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  border-radius: 100px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #c4b5fd;
+  margin-bottom: 24px;
+  letter-spacing: 0.04em;
+}
+.neo-eyebrow::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: #c4b5fd;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+  box-shadow: 0 0 10px rgba(196, 181, 253, 0.6);
+}
+.neo-hero h2 {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.22;
+  margin-bottom: 20px;
+}
+.neo-hero > p {
+  font-size: 1.05rem;
+  color: #9ca3af;
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.85;
+}
+.neo-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 820px;
+  margin: 52px auto 0;
+}
+.neo-stat {
+  padding: 30px 22px;
+  text-align: center;
+  background: linear-gradient(145deg, rgba(59, 130, 246, 0.06), rgba(139, 92, 246, 0.04));
+  border: 1px solid rgba(96, 165, 250, 0.15);
+  border-radius: 16px;
+  transition: transform 0.3s, border-color 0.3s, background 0.3s;
+}
+.neo-stat:hover {
+  transform: translateY(-4px);
+  border-color: rgba(96, 165, 250, 0.4);
+  background: linear-gradient(145deg, rgba(59, 130, 246, 0.10), rgba(139, 92, 246, 0.06));
+}
+.neo-stat-value {
+  font-size: 2.6rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.neo-stat-label {
+  font-size: 0.9rem;
+  color: #e0e0e8;
+  font-weight: 600;
+}
+.neo-stat-sublabel {
+  font-size: 0.72rem;
+  color: #6b7280;
+  margin-top: 4px;
+  line-height: 1.5;
+}
+.neo-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 980px;
+  margin: 52px auto 0;
+}
+.neo-problem, .neo-solution {
+  padding: 32px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.06);
+  position: relative;
+  transition: transform 0.3s, border-color 0.3s;
+}
+.neo-problem { background: rgba(255,255,255,0.02); }
+.neo-solution {
+  background: linear-gradient(145deg, rgba(59, 130, 246, 0.08), rgba(139, 92, 246, 0.05));
+  border-color: rgba(96, 165, 250, 0.25);
+}
+.neo-solution::after {
+  content: 'v2.0.7';
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  background: rgba(96, 165, 250, 0.22);
+  color: #93c5fd;
+  border-radius: 100px;
+  letter-spacing: 0.06em;
+}
+.neo-problem:hover { transform: translateY(-2px); border-color: rgba(255,255,255,0.12); }
+.neo-solution:hover { transform: translateY(-2px); border-color: rgba(96, 165, 250, 0.45); }
+.neo-card-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 4px 12px;
+  border-radius: 4px;
+  margin-bottom: 18px;
+}
+.neo-problem .neo-card-label {
+  background: rgba(248, 113, 113, 0.12);
+  color: #fca5a5;
+}
+.neo-solution .neo-card-label {
+  background: rgba(52, 211, 153, 0.14);
+  color: #6ee7b7;
+}
+.neo-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+.neo-card-body {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  line-height: 1.8;
+}
+.neo-card-body strong { color: #e0e0e8; font-weight: 600; }
+.neo-card-list {
+  list-style: none;
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.neo-card-list li {
+  font-size: 0.88rem;
+  color: #d0d0d8;
+  padding-left: 26px;
+  position: relative;
+  line-height: 1.6;
+}
+.neo-solution .neo-card-list li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  color: #34d399;
+  font-weight: 700;
+}
+.neo-problem .neo-card-list li::before {
+  content: '\2013';
+  position: absolute;
+  left: 4px;
+  color: #6b7280;
+  font-weight: 700;
+}
+.neo-banner {
+  margin-top: 52px;
+  padding: 36px 32px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.10), rgba(139, 92, 246, 0.10), rgba(244, 114, 182, 0.07));
+  border-radius: 20px;
+  border: 1px solid rgba(96, 165, 250, 0.18);
+  position: relative;
+  overflow: hidden;
+}
+.neo-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.04), transparent 60%);
+  pointer-events: none;
+}
+.neo-banner-title {
+  font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+  position: relative;
+}
+.neo-banner-sub {
+  font-size: 0.88rem;
+  color: #9ca3af;
+  position: relative;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .neo-section { padding: 72px 0; }
+  .neo-stats { grid-template-columns: 1fr; gap: 14px; }
+  .neo-compare { grid-template-columns: 1fr; }
+  .neo-stat-value { font-size: 2.1rem; }
+  .neo-banner { padding: 28px 22px; }
+}
 </style>
 <script type="application/ld+json">
 {
@@ -993,14 +1221,14 @@ footer {
         "priceCurrency": "JPY",
         "description": "Personal License (one-time purchase, no subscription)"
     },
-    "softwareVersion": "1.2.0",
+    "softwareVersion": "2.0.7",
     "author": {
         "@type": "Organization",
         "name": "Mojosoft Co., Ltd.",
         "url": "https://mojosoftjp.github.io/rocketwhisper/"
     },
     "inLanguage": ["ja", "en"],
-    "featureList": "Apple Intelligence, Apple SpeechAnalyzer, Foundation Models, Offline speech recognition, Real-time transcription, Native Apple Silicon, Video transcription, SRT/VTT subtitle export, AI processing (LLM), Custom instructions, Custom vocabulary, Voice commands, Batch processing"
+    "featureList": "Apple Intelligence, Apple SpeechAnalyzer, Foundation Models, MacBook Neo optimized (A18 Pro / 8GB RAM), Zero model download, Offline speech recognition, Real-time transcription, Native Apple Silicon, Video transcription, SRT/VTT subtitle export, AI processing (LLM), Custom instructions, Custom vocabulary, Voice commands, Batch processing"
 }
 </script>
 <script type="application/ld+json">
@@ -1030,6 +1258,14 @@ footer {
             "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes, RocketWhisper runs natively on Apple Silicon. It fully utilizes M1/M2/M3/M4 chip performance for fast speech recognition. It also works on Intel Macs."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Does it run well on the MacBook Neo (A18 Pro / 8GB RAM)?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, RocketWhisper is optimized for MacBook Neo. Since v2.0.7, the default speech engine on macOS 26+ is Apple's SpeechAnalyzer (OS-built-in), eliminating the WhisperKit model download (several hundred MB to GB). Even with the Neo's 8GB RAM / 256GB SSD, you can start using AI voice input right after install — no disk bloat, no API keys, no cloud traffic. AI text formatting via Foundation Models also runs fully on-device."
             }
         },
         {
@@ -1083,10 +1319,10 @@ footer {
   <div class="container">
     <div class="nav-logo">Rocket<span>Whisper</span></div>
     <ul class="nav-links">
+      <li><a href="#macbook-neo">MacBook Neo</a></li>
       <li><a href="#features">Features</a></li>
       <li><a href="purchase.html">Purchase</a></li>
       <li><a href="help.html">Help</a></li>
-      <li><a href="privacy.html">Privacy</a></li>
       <li><a href="support.html">Support</a></li>
       <li><a href="../ja/index.html" class="lang-switch">日本語</a></li>
       <li><a href="https://mojosoft.biz/RocketWhisper-2.0.7.dmg" class="nav-cta">Download</a></li>
@@ -1195,6 +1431,86 @@ footer {
         <div class="highlight-icon">&#127919;</div>
         <div class="highlight-title">High Accuracy</div>
         <div class="highlight-desc">7 punctuation rules and custom terminology dictionary for natural text output</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== MacBook Neo Section ========== -->
+<section class="neo-section" id="macbook-neo">
+  <div class="container">
+    <div class="neo-hero fade-in">
+      <div class="neo-eyebrow">For MacBook Neo &mdash; A18 Pro &middot; 8GB RAM &middot; &yen;99,800</div>
+      <h2>
+        AI voice input, from the <span class="gradient-text">moment</span><br>
+        you open your <span class="gradient-text">MacBook Neo.</span>
+      </h2>
+      <p>
+        Apple&rsquo;s new entry-level Mac &mdash; the MacBook Neo &mdash; is &ldquo;Built for Apple Intelligence.&rdquo;<br>
+        RocketWhisper v2.0.7 is tuned to run instantly on the Neo&rsquo;s 8GB RAM / 256GB SSD
+        with <strong>zero model downloads</strong> and <strong>zero API keys</strong>.
+      </p>
+    </div>
+
+    <div class="neo-stats stagger-children">
+      <div class="neo-stat fade-in">
+        <div class="neo-stat-value gradient-text">0 MB</div>
+        <div class="neo-stat-label">Model Download</div>
+        <div class="neo-stat-sublabel">SpeechAnalyzer ships with macOS 26</div>
+      </div>
+      <div class="neo-stat fade-in">
+        <div class="neo-stat-value gradient-text">0</div>
+        <div class="neo-stat-label">API Keys Needed</div>
+        <div class="neo-stat-sublabel">Foundation Models for AI formatting</div>
+      </div>
+      <div class="neo-stat fade-in">
+        <div class="neo-stat-value gradient-text">$0</div>
+        <div class="neo-stat-label">Cloud Cost</div>
+        <div class="neo-stat-sublabel">Everything runs on the Neural Engine</div>
+      </div>
+    </div>
+
+    <div class="neo-compare">
+      <div class="neo-problem fade-in-left">
+        <div class="neo-card-label">&#128295; The Old Friction</div>
+        <div class="neo-card-title">Whisper models are heavy for an 8GB Neo</div>
+        <div class="neo-card-body">
+          The entry-level Neo ships with tight storage and memory budgets.
+          Downloading hundreds of megabytes to several gigabytes of Whisper
+          models, then loading them into RAM on every launch, has never
+          felt great on a machine like this.
+        </div>
+        <ul class="neo-card-list">
+          <li>500 MB &ndash; 3 GB Whisper model download</li>
+          <li>Eats into the 256 GB SSD</li>
+          <li>Minutes of waiting on first launch</li>
+        </ul>
+      </div>
+
+      <div class="neo-solution fade-in-right">
+        <div class="neo-card-label">&#10024; Our v2.0.7 Answer</div>
+        <div class="neo-card-title">SpeechAnalyzer is the default on macOS 26+</div>
+        <div class="neo-card-body">
+          Starting with v2.0.7, the default speech engine on macOS 26+ is
+          Apple&rsquo;s built-in <strong>SpeechAnalyzer</strong>. The model
+          already lives inside the OS, so RocketWhisper is
+          <strong>ready the instant you install it</strong>.
+        </div>
+        <ul class="neo-card-list">
+          <li>No downloads &mdash; launches immediately</li>
+          <li>Neural Engine + unified memory = low overhead</li>
+          <li>Foundation Models AI formatting, no API keys</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="neo-banner fade-in">
+      <div class="neo-banner-title">
+        A &ldquo;Built for Apple Intelligence&rdquo; voice input<br>
+        <span class="gradient-text">for a &ldquo;Built for Apple Intelligence&rdquo; Mac.</span>
+      </div>
+      <div class="neo-banner-sub">
+        On M1&ndash;M4 Macs, you can still switch to WhisperKit anytime for maximum flexibility.
       </div>
     </div>
   </div>
@@ -1582,7 +1898,7 @@ footer {
         Free Download
       </a>
     </div>
-    <p style="margin-top: 12px; font-size: 0.85rem; color: rgba(255,255,255,0.45);">v1.2.0 | macOS 14.0 Sonoma or later | Apple Silicon &amp; Intel supported</p>
+    <p style="margin-top: 12px; font-size: 0.85rem; color: rgba(255,255,255,0.45);">v2.0.7 | macOS 14.0 Sonoma or later | Apple Silicon &amp; Intel supported</p>
   </div>
 </section>
 
@@ -1606,6 +1922,10 @@ footer {
       <details style="border-bottom: 1px solid rgba(255,255,255,0.08); padding: 20px 0;">
         <summary style="cursor: pointer; font-weight: 600; font-size: 1.05rem; color: #e0e0e8; list-style: none; display: flex; justify-content: space-between; align-items: center;">Does it support Apple Silicon?<span style="color: #60a5fa; font-size: 1.2rem; transition: transform 0.3s;">+</span></summary>
         <p style="margin-top: 12px; color: #9ca3af; line-height: 1.8;">Yes, runs natively on Apple Silicon (M1/M2/M3/M4) for optimal performance. Also works on Intel Macs.</p>
+      </details>
+      <details style="border-bottom: 1px solid rgba(255,255,255,0.08); padding: 20px 0;">
+        <summary style="cursor: pointer; font-weight: 600; font-size: 1.05rem; color: #e0e0e8; list-style: none; display: flex; justify-content: space-between; align-items: center;">Does it run well on the MacBook Neo (A18 Pro / 8GB RAM)?<span style="color: #60a5fa; font-size: 1.2rem; transition: transform 0.3s;">+</span></summary>
+        <p style="margin-top: 12px; color: #9ca3af; line-height: 1.8;">Yes, RocketWhisper is optimized for the MacBook Neo. Since v2.0.7, the default speech engine on macOS 26+ is Apple's <strong>SpeechAnalyzer</strong> (OS-built-in), so the WhisperKit model download (several hundred MB to GB) is no longer required. Even with 8GB RAM / 256GB SSD, the Neo can run AI voice input right after install — without eating disk space or API keys. AI text formatting via Foundation Models also runs entirely on-device; no cloud traffic.</p>
       </details>
       <details style="border-bottom: 1px solid rgba(255,255,255,0.08); padding: 20px 0;">
         <summary style="cursor: pointer; font-weight: 600; font-size: 1.05rem; color: #e0e0e8; list-style: none; display: flex; justify-content: space-between; align-items: center;">Can I transcribe meetings?<span style="color: #60a5fa; font-size: 1.2rem; transition: transform 0.3s;">+</span></summary>

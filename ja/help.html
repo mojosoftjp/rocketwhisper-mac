@@ -617,7 +617,7 @@ footer {
       <h4>システム要件</h4>
       <ul>
         <li><strong>OS:</strong> macOS 14.0 Sonoma 以降</li>
-        <li><strong>プロセッサ:</strong> Apple Silicon 推奨（M1 / M2 / M3 / M4）</li>
+        <li><strong>プロセッサ:</strong> Apple Silicon 推奨（M1 / M2 / M3 / M4 / A18 Pro）<br>※ <strong>MacBook Neo（A18 Pro / 8GB RAM）</strong>にも最適化済み。モデルDL不要ですぐ使えます。</li>
         <li><strong>メモリ:</strong> RAM 8GB以上推奨（16GB推奨）</li>
         <li><strong>ストレージ:</strong> 200MB + モデルファイル（最大3GB）</li>
         <li><strong>Apple Intelligence（任意）:</strong> macOS 26 以降 + Apple Intelligence が有効（<a href="#apple-intelligence-setup">設定方法</a>）</li>
@@ -631,11 +631,23 @@ footer {
       <li>初回起動時に Gatekeeper の警告が表示される場合は、「開く」を選択してください。もしくは、<strong>システム設定</strong> &gt; <strong>プライバシーとセキュリティ</strong> から「このまま開く」をクリックしてください。</li>
       <li>初回起動時の動作は OS バージョンによって異なります:
         <ul>
-          <li><strong>macOS 26 以降:</strong> Apple SpeechAnalyzer を使用するため、<strong>モデルのダウンロードは不要</strong>で即座に使用できます。</li>
+          <li><strong>macOS 26 以降:</strong> Apple SpeechAnalyzer を使用するため、<strong>モデルのダウンロードは不要</strong>で即座に使用できます。<strong>MacBook Neo（A18 Pro / 8GB RAM）</strong>ユーザーは、開封したその日から何のセットアップもなく音声入力が始められます。</li>
           <li><strong>macOS 14〜15:</strong> WhisperKit モデルのダウンロードが始まります。ネットワーク環境に応じて数分かかります。</li>
         </ul>
       </li>
     </ol>
+
+    <div class="info-card" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(59, 130, 246, 0.06)); border-color: rgba(139, 92, 246, 0.25);">
+      <h4 style="color: #a78bfa;">💡 MacBook Neo ユーザーへ</h4>
+      <p><strong>MacBook Neo（A18 Pro / 8GB RAM / ¥99,800 / "Built for Apple Intelligence"）</strong>は、RocketWhisper v2.0.7 に最適な環境です。</p>
+      <ul>
+        <li><strong>モデルDL 0MB:</strong> macOS 26+ のデフォルトエンジンが Apple SpeechAnalyzer になったため、WhisperKit モデル（最大3GB）のダウンロードは不要です。256GB SSD を圧迫しません。</li>
+        <li><strong>メモリ負荷ゼロ:</strong> 8GB RAM でも OS 内蔵エンジンを使うため、RocketWhisper 自体のメモリフットプリントは最小限に抑えられます。</li>
+        <li><strong>クラウド課金なし:</strong> 整形AI に Apple Foundation Models（オンデバイス ~3B LLM）を選べば、APIキーもクラウド送信もゼロで運用できます。</li>
+        <li><strong>完全オフライン:</strong> 飛行機・地下鉄・海外出張先でもフル機能が使えます。</li>
+      </ul>
+      <p>「Built for Apple Intelligence な Mac のための、Built for Apple Intelligence 音声入力」を目指して設計されています。</p>
+    </div>
 
     <h3>モデルの選び方</h3>
     <div class="info-card">

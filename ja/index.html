@@ -6,8 +6,8 @@
 <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-<meta name="description" content="RocketWhisper Mac版は Apple Intelligence 対応のAI音声認識・文字起こしソフトです。macOS 26 の SpeechAnalyzer で爆速認識、Foundation Models でAPIキー不要のAI整形。WhisperKitエンジンも搭載。Apple Silicon(M1/M2/M3/M4)ネイティブ対応。完全オフライン・月額不要の買い切り。">
-<meta name="keywords" content="音声認識,文字起こし,Mac,macOS,AI音声認識,Apple Intelligence,SpeechAnalyzer,Foundation Models,Whisper,OpenAI Whisper,オフライン音声認識,ローカル音声認識,リアルタイム音声入力,会議 文字起こし,議事録作成,動画 文字起こし,字幕作成,SRT,VTT,Apple Silicon,M1,M2,M3,M4,音声テキスト変換,Mac 音声入力,AI文字起こし,買い切り,月額不要,プライバシー保護,ローカル処理,RocketWhisper,音声認識ソフト,文字起こしソフト,カスタム指示,バッチ処理,Mac 文字起こし">
+<meta name="description" content="RocketWhisper Mac版は Apple Intelligence 対応のAI音声認識・文字起こしソフトです。MacBook Neo (A18 Pro / 8GB RAM) でもモデルDL不要で即起動。macOS 26 の SpeechAnalyzer で爆速認識、Foundation Models でAPIキー不要のAI整形。Apple Silicon(M1/M2/M3/M4/A18 Pro)ネイティブ対応。完全オフライン・月額不要の買い切り。">
+<meta name="keywords" content="音声認識,文字起こし,Mac,macOS,AI音声認識,Apple Intelligence,SpeechAnalyzer,Foundation Models,MacBook Neo,MacBook Neo 音声入力,A18 Pro,8GB RAM,Built for Apple Intelligence,Whisper,OpenAI Whisper,オフライン音声認識,ローカル音声認識,リアルタイム音声入力,会議 文字起こし,議事録作成,動画 文字起こし,字幕作成,SRT,VTT,Apple Silicon,M1,M2,M3,M4,音声テキスト変換,Mac 音声入力,AI文字起こし,買い切り,月額不要,プライバシー保護,ローカル処理,RocketWhisper,音声認識ソフト,文字起こしソフト,カスタム指示,バッチ処理,Mac 文字起こし">
 <meta property="og:title" content="RocketWhisper Mac版 - AI音声認識・文字起こしソフト | 完全オフライン・買い切り">
 <meta property="og:description" content="Mac対応の完全オフラインAI音声認識ソフト。OpenAI Whisper搭載。Apple Silicon(M1/M2/M3/M4)ネイティブ対応。会議の議事録、動画の字幕作成に。月額不要。">
 <meta property="og:type" content="website">
@@ -977,6 +977,234 @@ footer {
   .ai-providers { grid-template-columns: 1fr; }
   .hero-stats { flex-direction: column; gap: 16px; }
 }
+
+/* ========== MacBook Neo Section ========== */
+.neo-section {
+  position: relative;
+  padding: 100px 0;
+  overflow: hidden;
+}
+.neo-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 40% at 20% 25%, rgba(96, 165, 250, 0.14), transparent),
+    radial-gradient(ellipse 50% 40% at 80% 75%, rgba(167, 139, 250, 0.11), transparent),
+    radial-gradient(ellipse 40% 30% at 50% 110%, rgba(244, 114, 182, 0.07), transparent);
+  animation: gradient-shift 14s ease infinite;
+  background-size: 220% 220%;
+}
+.neo-section .container { position: relative; }
+
+.neo-hero { text-align: center; margin-bottom: 56px; }
+.neo-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 22px;
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.14), rgba(167, 139, 250, 0.14));
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  border-radius: 100px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #c4b5fd;
+  margin-bottom: 24px;
+  letter-spacing: 0.04em;
+}
+.neo-eyebrow::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: #c4b5fd;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+  box-shadow: 0 0 10px rgba(196, 181, 253, 0.6);
+}
+.neo-hero h2 {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.22;
+  margin-bottom: 20px;
+}
+.neo-hero > p {
+  font-size: 1.05rem;
+  color: #9ca3af;
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.85;
+}
+.neo-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 820px;
+  margin: 52px auto 0;
+}
+.neo-stat {
+  padding: 30px 22px;
+  text-align: center;
+  background: linear-gradient(145deg, rgba(59, 130, 246, 0.06), rgba(139, 92, 246, 0.04));
+  border: 1px solid rgba(96, 165, 250, 0.15);
+  border-radius: 16px;
+  transition: transform 0.3s, border-color 0.3s, background 0.3s;
+}
+.neo-stat:hover {
+  transform: translateY(-4px);
+  border-color: rgba(96, 165, 250, 0.4);
+  background: linear-gradient(145deg, rgba(59, 130, 246, 0.10), rgba(139, 92, 246, 0.06));
+}
+.neo-stat-value {
+  font-size: 2.6rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.neo-stat-label {
+  font-size: 0.9rem;
+  color: #e0e0e8;
+  font-weight: 600;
+}
+.neo-stat-sublabel {
+  font-size: 0.72rem;
+  color: #6b7280;
+  margin-top: 4px;
+  line-height: 1.5;
+}
+.neo-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 980px;
+  margin: 52px auto 0;
+}
+.neo-problem, .neo-solution {
+  padding: 32px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.06);
+  position: relative;
+  transition: transform 0.3s, border-color 0.3s;
+}
+.neo-problem { background: rgba(255,255,255,0.02); }
+.neo-solution {
+  background: linear-gradient(145deg, rgba(59, 130, 246, 0.08), rgba(139, 92, 246, 0.05));
+  border-color: rgba(96, 165, 250, 0.25);
+}
+.neo-solution::after {
+  content: 'v2.0.7';
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  background: rgba(96, 165, 250, 0.22);
+  color: #93c5fd;
+  border-radius: 100px;
+  letter-spacing: 0.06em;
+}
+.neo-problem:hover { transform: translateY(-2px); border-color: rgba(255,255,255,0.12); }
+.neo-solution:hover { transform: translateY(-2px); border-color: rgba(96, 165, 250, 0.45); }
+.neo-card-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 4px 12px;
+  border-radius: 4px;
+  margin-bottom: 18px;
+}
+.neo-problem .neo-card-label {
+  background: rgba(248, 113, 113, 0.12);
+  color: #fca5a5;
+}
+.neo-solution .neo-card-label {
+  background: rgba(52, 211, 153, 0.14);
+  color: #6ee7b7;
+}
+.neo-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+.neo-card-body {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  line-height: 1.8;
+}
+.neo-card-body strong { color: #e0e0e8; font-weight: 600; }
+.neo-card-list {
+  list-style: none;
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.neo-card-list li {
+  font-size: 0.88rem;
+  color: #d0d0d8;
+  padding-left: 26px;
+  position: relative;
+  line-height: 1.6;
+}
+.neo-solution .neo-card-list li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  color: #34d399;
+  font-weight: 700;
+}
+.neo-problem .neo-card-list li::before {
+  content: '\2013';
+  position: absolute;
+  left: 4px;
+  color: #6b7280;
+  font-weight: 700;
+}
+.neo-banner {
+  margin-top: 52px;
+  padding: 36px 32px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.10), rgba(139, 92, 246, 0.10), rgba(244, 114, 182, 0.07));
+  border-radius: 20px;
+  border: 1px solid rgba(96, 165, 250, 0.18);
+  position: relative;
+  overflow: hidden;
+}
+.neo-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.04), transparent 60%);
+  pointer-events: none;
+}
+.neo-banner-title {
+  font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+  position: relative;
+}
+.neo-banner-sub {
+  font-size: 0.88rem;
+  color: #9ca3af;
+  position: relative;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .neo-section { padding: 72px 0; }
+  .neo-stats { grid-template-columns: 1fr; gap: 14px; }
+  .neo-compare { grid-template-columns: 1fr; }
+  .neo-stat-value { font-size: 2.1rem; }
+  .neo-banner { padding: 28px 22px; }
+}
 </style>
 <script type="application/ld+json">
 {
@@ -993,14 +1221,14 @@ footer {
         "priceCurrency": "JPY",
         "description": "個人版ライセンス（買い切り・月額不要）"
     },
-    "softwareVersion": "1.2.0",
+    "softwareVersion": "2.0.7",
     "author": {
         "@type": "Organization",
         "name": "Mojosoft Co., Ltd.",
         "url": "https://mojosoftjp.github.io/rocketwhisper/"
     },
     "inLanguage": ["ja", "en"],
-    "featureList": "Apple Intelligence対応, Apple SpeechAnalyzer, Foundation Models, オフライン音声認識, リアルタイム文字起こし, Apple Siliconネイティブ, 動画文字起こし, SRT/VTT字幕出力, AI処理(LLM連携), カスタム指示, 専門用語登録, 音声コマンド, バッチ処理"
+    "featureList": "Apple Intelligence対応, Apple SpeechAnalyzer, Foundation Models, MacBook Neo 最適化 (A18 Pro / 8GB RAM), モデルDL不要, オフライン音声認識, リアルタイム文字起こし, Apple Siliconネイティブ, 動画文字起こし, SRT/VTT字幕出力, AI処理(LLM連携), カスタム指示, 専門用語登録, 音声コマンド, バッチ処理"
 }
 </script>
 <script type="application/ld+json">
@@ -1030,6 +1258,14 @@ footer {
             "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "はい、Apple Siliconにネイティブ対応しています。M1/M2/M3/M4チップの性能を最大限に活用して高速な音声認識を実現します。Intel Macでも動作します。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "MacBook Neo (A18 Pro / 8GB RAM) で使えますか？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "はい、MacBook Neo に最適化されています。v2.0.7 から macOS 26+ のデフォルト音声エンジンを Apple の SpeechAnalyzer (OS内蔵) に切り替えたため、WhisperKit モデルのダウンロード (数百MB) が不要で、8GB RAM / 256GB SSD の Neo でもインストール直後から快適に動作します。Foundation Models によるAI整形もオンデバイスで完結し、APIキーやクラウド送信は必要ありません。"
             }
         },
         {
@@ -1083,10 +1319,10 @@ footer {
   <div class="container">
     <div class="nav-logo">Rocket<span>Whisper</span></div>
     <ul class="nav-links">
+      <li><a href="#macbook-neo">MacBook Neo</a></li>
       <li><a href="#features">機能</a></li>
       <li><a href="purchase.html">購入</a></li>
       <li><a href="help.html">ヘルプ</a></li>
-      <li><a href="privacy.html">プライバシー</a></li>
       <li><a href="support.html">サポート</a></li>
       <li><a href="../en/index.html" class="lang-switch">English</a></li>
       <li><a href="https://mojosoft.biz/RocketWhisper-2.0.7.dmg" class="nav-cta">ダウンロード</a></li>
@@ -1195,6 +1431,85 @@ footer {
         <div class="highlight-icon">&#127919;</div>
         <div class="highlight-title">高精度日本語</div>
         <div class="highlight-desc">7つの句読点ルールと専門用語辞書で自然な日本語テキストを生成</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== MacBook Neo Section ========== -->
+<section class="neo-section" id="macbook-neo">
+  <div class="container">
+    <div class="neo-hero fade-in">
+      <div class="neo-eyebrow">For MacBook Neo &mdash; A18 Pro &middot; 8GB RAM &middot; &yen;99,800</div>
+      <h2>
+        MacBook Neo を開いた<span class="gradient-text">その日</span>から、<br>
+        Apple Intelligence <span class="gradient-text">音声入力。</span>
+      </h2>
+      <p>
+        &ldquo;Built for Apple Intelligence&rdquo; を掲げる Apple の新しいエントリー Mac、MacBook Neo。<br>
+        RocketWhisper v2.0.7 は、8GB RAM / 256GB SSD の Neo でも
+        モデル DL なし・API キーなしで即座に動くよう最適化されました。
+      </p>
+    </div>
+
+    <div class="neo-stats stagger-children">
+      <div class="neo-stat fade-in">
+        <div class="neo-stat-value gradient-text">0 MB</div>
+        <div class="neo-stat-label">モデルダウンロード</div>
+        <div class="neo-stat-sublabel">SpeechAnalyzer は macOS 26 に内蔵</div>
+      </div>
+      <div class="neo-stat fade-in">
+        <div class="neo-stat-value gradient-text">0</div>
+        <div class="neo-stat-label">必要な API キー</div>
+        <div class="neo-stat-sublabel">Foundation Models で AI 整形</div>
+      </div>
+      <div class="neo-stat fade-in">
+        <div class="neo-stat-value gradient-text">&yen;0</div>
+        <div class="neo-stat-label">クラウド送信コスト</div>
+        <div class="neo-stat-sublabel">Neural Engine で全処理完結</div>
+      </div>
+    </div>
+
+    <div class="neo-compare">
+      <div class="neo-problem fade-in-left">
+        <div class="neo-card-label">&#128295; これまでの課題</div>
+        <div class="neo-card-title">8GB RAM の Neo で Whisper モデルはやや重い</div>
+        <div class="neo-card-body">
+          エントリー構成の Neo は、ストレージも RAM も限られます。
+          数百 MB〜数 GB の Whisper モデルを初回起動でダウンロードし、
+          推論時にメモリへ展開するのは、快適な体験とは言いがたいものでした。
+        </div>
+        <ul class="neo-card-list">
+          <li>Whisper モデル 500 MB〜3 GB の DL が必要</li>
+          <li>256 GB SSD の空きを圧迫</li>
+          <li>初回起動まで数分のダウンロード待ち</li>
+        </ul>
+      </div>
+
+      <div class="neo-solution fade-in-right">
+        <div class="neo-card-label">&#10024; v2.0.7 の回答</div>
+        <div class="neo-card-title">macOS 26+ では SpeechAnalyzer がデフォルト</div>
+        <div class="neo-card-body">
+          v2.0.7 から、macOS 26+ のデフォルト音声エンジンを
+          <strong>Apple の SpeechAnalyzer</strong> (OS 内蔵) に変更しました。
+          モデルはすでに OS に含まれているため、RocketWhisper は
+          <strong>インストール直後から動きます</strong>。
+        </div>
+        <ul class="neo-card-list">
+          <li>モデル DL 不要 &mdash; その場で起動可能</li>
+          <li>Neural Engine + 統合メモリで低負荷・省電力</li>
+          <li>Foundation Models の AI 整形も API キー不要</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="neo-banner fade-in">
+      <div class="neo-banner-title">
+        &ldquo;Built for Apple Intelligence&rdquo; な Mac のための、<br>
+        <span class="gradient-text">&ldquo;Built for Apple Intelligence&rdquo; 音声入力。</span>
+      </div>
+      <div class="neo-banner-sub">
+        もちろん M1 &sim; M4 の上位 Mac でも、WhisperKit との切替で最高の柔軟性を維持します。
       </div>
     </div>
   </div>
@@ -1582,7 +1897,7 @@ footer {
         無料ダウンロード
       </a>
     </div>
-    <p style="margin-top: 12px; font-size: 0.85rem; color: rgba(255,255,255,0.45);">v1.2.0 | macOS 14.0 Sonoma 以降 | Apple Silicon &amp; Intel 対応</p>
+    <p style="margin-top: 12px; font-size: 0.85rem; color: rgba(255,255,255,0.45);">v2.0.7 | macOS 14.0 Sonoma 以降 | Apple Silicon &amp; Intel 対応</p>
   </div>
 </section>
 
@@ -1606,6 +1921,10 @@ footer {
       <details style="border-bottom: 1px solid rgba(255,255,255,0.08); padding: 20px 0;">
         <summary style="cursor: pointer; font-weight: 600; font-size: 1.05rem; color: #e0e0e8; list-style: none; display: flex; justify-content: space-between; align-items: center;">Apple Silicon (M1/M2/M3/M4) に対応していますか？<span style="color: #60a5fa; font-size: 1.2rem; transition: transform 0.3s;">+</span></summary>
         <p style="margin-top: 12px; color: #9ca3af; line-height: 1.8;">はい、Apple Siliconにネイティブ対応しています。チップの性能を最大限に活用して高速な音声認識を実現します。Intel Macでも動作します。</p>
+      </details>
+      <details style="border-bottom: 1px solid rgba(255,255,255,0.08); padding: 20px 0;">
+        <summary style="cursor: pointer; font-weight: 600; font-size: 1.05rem; color: #e0e0e8; list-style: none; display: flex; justify-content: space-between; align-items: center;">MacBook Neo (A18 Pro / 8GB RAM) で快適に動きますか？<span style="color: #60a5fa; font-size: 1.2rem; transition: transform 0.3s;">+</span></summary>
+        <p style="margin-top: 12px; color: #9ca3af; line-height: 1.8;">はい、MacBook Neo に最適化されています。v2.0.7 から macOS 26+ のデフォルト音声エンジンを Apple の <strong>SpeechAnalyzer</strong>（OS内蔵）に切り替えたため、WhisperKit モデルのダウンロード（数百MB〜数GB）が不要です。8GB RAM / 256GB SSD の Neo でも、インストール直後からストレージや RAM を圧迫せずに使えます。Foundation Models によるAI整形もオンデバイス完結で、APIキーやクラウド送信は一切必要ありません。</p>
       </details>
       <details style="border-bottom: 1px solid rgba(255,255,255,0.08); padding: 20px 0;">
         <summary style="cursor: pointer; font-weight: 600; font-size: 1.05rem; color: #e0e0e8; list-style: none; display: flex; justify-content: space-between; align-items: center;">会議の議事録作成に使えますか？<span style="color: #60a5fa; font-size: 1.2rem; transition: transform 0.3s;">+</span></summary>
