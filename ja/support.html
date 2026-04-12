@@ -139,6 +139,15 @@ nav .container {
   transition: opacity 0.2s, transform 0.2s;
 }
 .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+.built-by {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.4) !important;
+  padding: 4px 8px;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.built-by:hover { color: rgba(255,255,255,0.85) !important; }
 .lang-switch {
   font-size: 0.8rem;
   color: #6b7280;
@@ -528,6 +537,7 @@ footer {
       <li><a href="support.html" class="active">Support</a></li>
       <li><a href="../en/support.html" class="lang-switch">English</a></li>
       <li><a href="index.html#download" class="nav-cta">Download</a></li>
+      <li><a href="https://mojosoft.biz/" target="_blank" rel="noopener" class="built-by">Built by Mojosoft</a></li>
     </ul>
     <div class="mobile-menu" onclick="document.querySelector('.nav-links').classList.toggle('show')">
       <span></span><span></span><span></span>
