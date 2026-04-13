@@ -1110,7 +1110,7 @@ footer {
   border-color: rgba(96, 165, 250, 0.25);
 }
 .neo-solution::after {
-  content: 'v2.0.8';
+  content: 'v2.1.0';
   position: absolute;
   top: 18px;
   right: 18px;
@@ -1238,7 +1238,7 @@ footer {
         "priceCurrency": "JPY",
         "description": "個人版ライセンス（買い切り・月額不要）"
     },
-    "softwareVersion": "2.0.8",
+    "softwareVersion": "2.1.0",
     "author": {
         "@type": "Organization",
         "name": "Mojosoft Co., Ltd.",
@@ -1282,7 +1282,7 @@ footer {
             "name": "MacBook Neo (A18 Pro / 8GB RAM) で使えますか？",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "はい、MacBook Neo に最適化されています。v2.0.8 から macOS 26+ のデフォルト音声エンジンを Apple の SpeechAnalyzer (OS内蔵) に切り替えたため、WhisperKit モデルのダウンロード (数百MB) が不要で、8GB RAM / 256GB SSD の Neo でもインストール直後から快適に動作します。Foundation Models によるAI整形もオンデバイスで完結し、APIキーやクラウド送信は必要ありません。"
+                "text": "はい、MacBook Neo に最適化されています。v2.1.0 から macOS 26+ のデフォルト音声エンジンを Apple の SpeechAnalyzer (OS内蔵) に切り替えたため、WhisperKit モデルのダウンロード (数百MB) が不要で、8GB RAM / 256GB SSD の Neo でもインストール直後から快適に動作します。Foundation Models によるAI整形もオンデバイスで完結し、APIキーやクラウド送信は必要ありません。"
             }
         },
         {
@@ -1342,7 +1342,7 @@ footer {
       <li><a href="help.html">ヘルプ</a></li>
       <li><a href="support.html">サポート</a></li>
       <li><a href="../en/index.html" class="lang-switch">English</a></li>
-      <li><a href="https://mojosoft.biz/RocketWhisper-2.0.8.dmg" class="nav-cta">ダウンロード</a></li>
+      <li><a href="https://mojosoft.biz/RocketWhisper-2.1.0.dmg" class="nav-cta">ダウンロード</a></li>
       <li><a href="https://mojosoft.biz/" target="_blank" rel="noopener" class="built-by">Built by Mojosoft</a></li>
     </ul>
     <div class="mobile-menu" onclick="document.querySelector('.nav-links').classList.toggle('show')">
@@ -1366,7 +1366,7 @@ footer {
       <img src="../icon.png" alt="RocketWhisper" class="hero-icon">
     </div>
 
-    <div class="hero-badge">Apple Intelligence 対応 &#x2728; v2.0.8</div>
+    <div class="hero-badge">Apple Intelligence 対応 &#x2728; v2.1.0</div>
     <a href="https://mojosoftjp.github.io/rocketwhisper/" style="display: block; margin-bottom: 16px; font-size: 0.85rem; color: rgba(255,255,255,0.55); text-decoration: none; border-bottom: none; transition: color 0.2s;" onmouseover="this.style.color='#60a5fa'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Windows版はこちら &rarr;</a>
     <h1>
       <span class="gradient-text">声を、テキストに。</span>
@@ -1395,7 +1395,7 @@ footer {
       </div>
     </div>
     <div class="hero-buttons">
-      <a href="https://mojosoft.biz/RocketWhisper-2.0.8.dmg" class="btn-primary">
+      <a href="https://mojosoft.biz/RocketWhisper-2.1.0.dmg" class="btn-primary">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         無料ダウンロード
       </a>
@@ -1454,6 +1454,118 @@ footer {
   </div>
 </section>
 
+<!-- ========== Screenshots ========== -->
+<section class="section screenshots-section" id="screenshots">
+  <div class="container">
+    <div class="features-header fade-in">
+      <div class="label">Screenshots</div>
+      <h2>実際の<span class="gradient-text">画面</span>を見る</h2>
+      <p>メニューバーからワンクリック。全ての機能を直感的なタブで。</p>
+    </div>
+    <div class="screenshots-grid stagger-children">
+      <figure class="screenshot-card featured fade-in">
+        <img src="../screenshots/ja/ss_jp0.png" alt="RocketWhisper メインポップオーバー画面" loading="lazy">
+        <figcaption>
+          <strong>メインポップオーバー</strong>
+          <span>メニューバーから即座に起動。録音・LLM 整形・カスタム指示まで、すべてがここから始まります。</span>
+        </figcaption>
+      </figure>
+      <figure class="screenshot-card fade-in">
+        <img src="../screenshots/ja/ss_jp1.png" alt="Model タブ - 認識エンジン選択" loading="lazy">
+        <figcaption>
+          <strong>Model &mdash; 認識エンジン</strong>
+          <span>Apple SpeechAnalyzer (macOS 26+) と WhisperKit の 4 モデルをワンクリックで切り替え。</span>
+        </figcaption>
+      </figure>
+      <figure class="screenshot-card fade-in">
+        <img src="../screenshots/ja/ss_jp2.png" alt="Text Processing タブ - 句読点・辞書・修正ルール" loading="lazy">
+        <figcaption>
+          <strong>Text Processing &mdash; テキスト整形</strong>
+          <span>自動句読点・単語辞書・正規表現対応の自動修正ルール。日本語認識に特化した 7 段階ルール。</span>
+        </figcaption>
+      </figure>
+      <figure class="screenshot-card fade-in">
+        <img src="../screenshots/ja/ss_jp3.png" alt="Launcher タブ - 音声コマンド・ボイスランチャー" loading="lazy">
+        <figcaption>
+          <strong>Launcher &mdash; 音声で起動</strong>
+          <span>音声コマンド・ボイスランチャー・音声検索。「〜を調べて」でアプリや URL を即起動。</span>
+        </figcaption>
+      </figure>
+      <figure class="screenshot-card featured fade-in">
+        <img src="../screenshots/ja/ss_jp4.png" alt="AI Processing タブ - LLM 整形・カスタム指示" loading="lazy">
+        <figcaption>
+          <strong>AI Processing &mdash; AI 整形</strong>
+          <span>Apple Intelligence / OpenAI / Claude / Gemini / Groq / ローカル LLM。6 プロバイダから選択。</span>
+        </figcaption>
+      </figure>
+      <figure class="screenshot-card fade-in">
+        <img src="../screenshots/ja/ss_jp5.png" alt="Per-App タブ - アプリ別処理モード" loading="lazy">
+        <figcaption>
+          <strong>Per-App &mdash; アプリ別モード</strong>
+          <span>エディタでは句読点あり、チャットではカジュアルに。アプリごとに処理を自動切替。</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+<style>
+.screenshots-section { padding: 80px 0; }
+.screenshots-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.screenshot-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  margin: 0;
+}
+.screenshot-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(96, 165, 250, 0.35);
+  box-shadow: 0 20px 50px rgba(59, 130, 246, 0.12);
+}
+.screenshot-card.featured {
+  border-color: rgba(96, 165, 250, 0.25);
+  background: linear-gradient(145deg, rgba(59, 130, 246, 0.05), rgba(139, 92, 246, 0.03));
+}
+.screenshot-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #0a0a0f;
+}
+.screenshot-card figcaption {
+  padding: 20px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.screenshot-card figcaption strong {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #e0e0e8;
+  letter-spacing: -0.01em;
+}
+.screenshot-card figcaption span {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  line-height: 1.65;
+}
+@media (max-width: 980px) {
+  .screenshots-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 620px) {
+  .screenshots-grid { grid-template-columns: 1fr; gap: 18px; }
+  .screenshots-section { padding: 60px 0; }
+}
+</style>
+
 <!-- ========== MacBook Neo Section ========== -->
 <section class="neo-section" id="macbook-neo">
   <div class="container">
@@ -1465,7 +1577,7 @@ footer {
       </h2>
       <p>
         &ldquo;Built for Apple Intelligence&rdquo; を掲げる Apple の新しいエントリー Mac、MacBook Neo。<br>
-        RocketWhisper v2.0.8 は、8GB RAM / 256GB SSD の Neo でも
+        RocketWhisper v2.1.0 は、8GB RAM / 256GB SSD の Neo でも
         モデル DL なし・API キーなしで即座に動くよう最適化されました。
       </p>
     </div>
@@ -1505,10 +1617,10 @@ footer {
       </div>
 
       <div class="neo-solution fade-in-right">
-        <div class="neo-card-label">&#10024; v2.0.8 の回答</div>
+        <div class="neo-card-label">&#10024; v2.1.0 の回答</div>
         <div class="neo-card-title">macOS 26+ では SpeechAnalyzer がデフォルト</div>
         <div class="neo-card-body">
-          v2.0.8 から、macOS 26+ のデフォルト音声エンジンを
+          v2.1.0 から、macOS 26+ のデフォルト音声エンジンを
           <strong>Apple の SpeechAnalyzer</strong> (OS 内蔵) に変更しました。
           モデルはすでに OS に含まれているため、RocketWhisper は
           <strong>インストール直後から動きます</strong>。
@@ -1582,10 +1694,16 @@ footer {
   <div class="container">
     <div class="features-header fade-in">
       <div class="label">Features</div>
-      <h2>19の<span class="gradient-text">プレミアム機能</span></h2>
+      <h2>20の<span class="gradient-text">プレミアム機能</span></h2>
       <p>プロフェッショナルの要求に応える、妥協のない機能群。</p>
     </div>
     <div class="features-grid stagger-children">
+
+      <div class="feature-card featured fade-in">
+        <div class="icon icon-blue">&#127760;</div>
+        <h3>英語環境 完全サポート <span class="feature-badge">v2.1 NEW</span></h3>
+        <p>UI・音声コマンド・音声検索・AIコマンド・プリセットを英語環境に完全対応。&ldquo;new line&rdquo; &ldquo;new paragraph&rdquo; &ldquo;Search for ...&rdquo; などの英語コマンド、英語向けプロンプト、表示言語に追従する自動切替。日本語環境はゼロ影響。</p>
+      </div>
 
       <div class="feature-card featured fade-in">
         <div class="icon icon-purple">&#10024;</div>
@@ -1910,12 +2028,12 @@ footer {
     <h2><span class="gradient-text">あなたの声で、</span>仕事を加速させよう。</h2>
     <p>7日間のフルトライアル。クレジットカード不要。</p>
     <div class="hero-buttons">
-      <a href="https://mojosoft.biz/RocketWhisper-2.0.8.dmg" class="btn-primary" style="font-size: 1.1rem; padding: 16px 40px;">
+      <a href="https://mojosoft.biz/RocketWhisper-2.1.0.dmg" class="btn-primary" style="font-size: 1.1rem; padding: 16px 40px;">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         無料ダウンロード
       </a>
     </div>
-    <p style="margin-top: 12px; font-size: 0.85rem; color: rgba(255,255,255,0.45);">v2.0.8 | macOS 14.0 Sonoma 以降 | Apple Silicon &amp; Intel 対応</p>
+    <p style="margin-top: 12px; font-size: 0.85rem; color: rgba(255,255,255,0.45);">v2.1.0 | macOS 14.0 Sonoma 以降 | Apple Silicon &amp; Intel 対応</p>
   </div>
 </section>
 
@@ -1942,7 +2060,7 @@ footer {
       </details>
       <details style="border-bottom: 1px solid rgba(255,255,255,0.08); padding: 20px 0;">
         <summary style="cursor: pointer; font-weight: 600; font-size: 1.05rem; color: #e0e0e8; list-style: none; display: flex; justify-content: space-between; align-items: center;">MacBook Neo (A18 Pro / 8GB RAM) で快適に動きますか？<span style="color: #60a5fa; font-size: 1.2rem; transition: transform 0.3s;">+</span></summary>
-        <p style="margin-top: 12px; color: #9ca3af; line-height: 1.8;">はい、MacBook Neo に最適化されています。v2.0.8 から macOS 26+ のデフォルト音声エンジンを Apple の <strong>SpeechAnalyzer</strong>（OS内蔵）に切り替えたため、WhisperKit モデルのダウンロード（数百MB〜数GB）が不要です。8GB RAM / 256GB SSD の Neo でも、インストール直後からストレージや RAM を圧迫せずに使えます。Foundation Models によるAI整形もオンデバイス完結で、APIキーやクラウド送信は一切必要ありません。</p>
+        <p style="margin-top: 12px; color: #9ca3af; line-height: 1.8;">はい、MacBook Neo に最適化されています。v2.1.0 から macOS 26+ のデフォルト音声エンジンを Apple の <strong>SpeechAnalyzer</strong>（OS内蔵）に切り替えたため、WhisperKit モデルのダウンロード（数百MB〜数GB）が不要です。8GB RAM / 256GB SSD の Neo でも、インストール直後からストレージや RAM を圧迫せずに使えます。Foundation Models によるAI整形もオンデバイス完結で、APIキーやクラウド送信は一切必要ありません。</p>
       </details>
       <details style="border-bottom: 1px solid rgba(255,255,255,0.08); padding: 20px 0;">
         <summary style="cursor: pointer; font-weight: 600; font-size: 1.05rem; color: #e0e0e8; list-style: none; display: flex; justify-content: space-between; align-items: center;">会議の議事録作成に使えますか？<span style="color: #60a5fa; font-size: 1.2rem; transition: transform 0.3s;">+</span></summary>
