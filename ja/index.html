@@ -1539,6 +1539,62 @@ footer {
   height: auto;
   display: block;
   background: #0a0a0f;
+  cursor: zoom-in;
+}
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 5, 16, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0s linear 0.25s;
+  cursor: zoom-out;
+  padding: 40px;
+}
+.lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.25s ease;
+}
+.lightbox img {
+  max-width: min(1400px, 96vw);
+  max-height: 92vh;
+  width: auto;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  transform: scale(0.96);
+  transition: transform 0.25s ease;
+}
+.lightbox.is-open img { transform: scale(1); }
+.lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e0e0e8;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
 }
 .screenshot-card figcaption {
   padding: 20px 22px 24px;
@@ -1563,8 +1619,51 @@ footer {
 @media (max-width: 620px) {
   .screenshots-grid { grid-template-columns: 1fr; gap: 18px; }
   .screenshots-section { padding: 60px 0; }
+  .lightbox { padding: 16px; }
+  .lightbox-close { top: 12px; right: 12px; }
 }
 </style>
+
+<!-- Lightbox overlay -->
+<div class="lightbox" id="screenshotLightbox" role="dialog" aria-modal="true" aria-label="拡大表示">
+  <button class="lightbox-close" type="button" aria-label="閉じる">&times;</button>
+  <img src="" alt="" id="screenshotLightboxImg">
+</div>
+<script>
+(function() {
+  var lb = document.getElementById('screenshotLightbox');
+  if (!lb) return;
+  var lbImg = document.getElementById('screenshotLightboxImg');
+  var closeBtn = lb.querySelector('.lightbox-close');
+  var triggers = document.querySelectorAll('.screenshot-card img');
+
+  function open(src, alt) {
+    lbImg.src = src;
+    lbImg.alt = alt || '';
+    lb.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+  function close() {
+    lb.classList.remove('is-open');
+    document.body.style.overflow = '';
+    setTimeout(function() { lbImg.src = ''; }, 250);
+  }
+  triggers.forEach(function(img) {
+    img.setAttribute('tabindex', '0');
+    img.setAttribute('role', 'button');
+    img.setAttribute('aria-label', (img.alt || 'Screenshot') + ' を拡大');
+    img.addEventListener('click', function() { open(img.currentSrc || img.src, img.alt); });
+    img.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(img.currentSrc || img.src, img.alt); }
+    });
+  });
+  closeBtn.addEventListener('click', close);
+  lb.addEventListener('click', function(e) { if (e.target === lb) close(); });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && lb.classList.contains('is-open')) close();
+  });
+})();
+</script>
 
 <!-- ========== MacBook Neo Section ========== -->
 <section class="neo-section" id="macbook-neo">
