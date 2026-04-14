@@ -288,6 +288,9 @@ nav .container {
   -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black, transparent);
 }
 .hero-content { position: relative; z-index: 1; }
+.ph-badge { margin-top: 28px; display: flex; justify-content: center; }
+.ph-badge img { transition: transform 0.2s; }
+.ph-badge a:hover img { transform: translateY(-2px); }
 
 /* ========== App Icon in Hero ========== */
 .hero-icon-wrapper {
@@ -1402,6 +1405,11 @@ footer {
       <a href="#features" class="btn-secondary">
         機能を見る
       </a>
+    </div>
+
+    <!-- Product Hunt badge -->
+    <div class="ph-badge">
+      <a href="https://www.producthunt.com/products/rocketwhisper?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-rocketwhisper" target="_blank" rel="noopener noreferrer"><img alt="RocketWhisper - AI voice input for Mac — Apple Intelligence, fully offline | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1123323&amp;theme=dark&amp;t=1776154815224"></a>
     </div>
 
     <!-- Waveform animation -->
