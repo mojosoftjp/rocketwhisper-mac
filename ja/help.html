@@ -642,6 +642,7 @@ footer {
       <li><a href="#menubar">メニューバーアイコン</a></li>
       <li><a href="#waveform">フローティング波形インジケーター</a></li>
       <li><a href="#batch">バッチ処理</a></li>
+      <li><a href="#live-translation">ライブ翻訳（v2.2.0 以降）</a></li>
       <li><a href="#troubleshooting">トラブルシューティング</a></li>
     </ol>
   </nav>
@@ -1703,9 +1704,103 @@ footer {
     </div>
   </section>
 
-  <!-- ========== Section 19: トラブルシューティング ========== -->
+  <!-- ========== Section 19: ライブ翻訳 ========== -->
+  <section id="live-translation" class="content-section">
+    <h2><span class="section-num">19</span>ライブ翻訳（v2.2.0 以降）</h2>
+
+    <p>Zoom・Teams・YouTube・Podcast などシステム再生中の音声を、Apple の <strong>SpeechAnalyzer</strong> で認識し、Apple <strong>Translation</strong> で別言語に翻訳して、デスクトップ上に Netflix 風のフローティング字幕として表示する機能です。クラウド送信ゼロ、APIキー不要、完全オンデバイスで動作します。</p>
+
+    <div class="info-box">
+      <p><strong>システム要件:</strong> macOS 26 以降 が必要です（Apple Translation API と SpeechAnalyzer を使用するため）。macOS 14 / 15 では本機能は利用できません。</p>
+    </div>
+
+    <h3>起動方法</h3>
+    <ol class="steps-list">
+      <li>メニューバーアイコン（🚀）をクリックしてポップアップを開きます。</li>
+      <li>「ライブ翻訳」ボタン（字幕アイコン）をクリックします。</li>
+      <li>初回起動時は、画面収録とシステム音声の権限を要求されます（「システム設定 → プライバシーとセキュリティ → 画面収録」で RocketWhisper を許可）。</li>
+      <li>画面下部中央にフローティング字幕パネルが表示されます。</li>
+      <li>翻訳を終了するには、もう一度「ライブ翻訳」ボタンをクリックします。</li>
+    </ol>
+
+    <h3>言語設定</h3>
+    <p>設定画面の「ライブ翻訳」タブで、<strong>認識元の言語（ソース）</strong>と<strong>翻訳先の言語（ターゲット）</strong>を選択します。対応言語の組み合わせは macOS の Apple Translation が提供するペアに準じます。</p>
+    <ul class="feature-list">
+      <li>例1: 英語 → 日本語（英語講演を日本語字幕で視聴）</li>
+      <li>例2: 中国語 → 日本語（中国語ニュースを日本語で追う）</li>
+      <li>例3: 日本語 → 英語（日本語の打ち合わせを英語で表示して学習）</li>
+    </ul>
+    <div class="tip-box">
+      <p><strong>Tip:</strong> 言語ペアを初めて使う場合、macOS が翻訳モデルを自動的にダウンロードします（数十MB）。初回のみインターネット接続が必要で、それ以降は完全オフラインで動作します。</p>
+    </div>
+
+    <h3>字幕パネルの操作</h3>
+    <ul class="feature-list">
+      <li><strong>移動</strong>: パネル中央をドラッグすると、好きな位置に移動できます。</li>
+      <li><strong>幅の変更</strong>: パネルの左右端（10pt 以内）をドラッグすると、字幕の表示幅をリサイズできます。</li>
+      <li><strong>位置とサイズの保存</strong>: 変更した位置・幅は自動的に保存され、次回起動時に復元されます。</li>
+      <li><strong>常に最前面</strong>: 全画面動画プレーヤー（Netflix・YouTube・QuickTime）の上にも表示されます。</li>
+      <li><strong>全スペースで表示</strong>: Mission Control の全デスクトップ・全画面表示で共通に表示されます。</li>
+    </ul>
+
+    <h3>表示設定</h3>
+    <p>設定画面「ライブ翻訳」タブで以下を調整できます：</p>
+    <ul class="feature-list">
+      <li><strong>ソーステキスト表示</strong>: 翻訳前の原文を翻訳の上に小さく表示するかどうか。学習用途には ON が便利です。</li>
+      <li><strong>履歴行数</strong>: 現在の字幕の上に、過去の翻訳を何行まで残すか。0〜5 行の範囲で設定できます。</li>
+    </ul>
+
+    <h3>使い方の例</h3>
+    <div class="info-box">
+      <p><strong>英語の YouTube 動画を日本語字幕で視聴する</strong></p>
+      <ol>
+        <li>ソース言語を「英語」、ターゲット言語を「日本語」に設定。</li>
+        <li>YouTube を開き、動画を再生（システム音声が流れる状態）。</li>
+        <li>メニューバーから「ライブ翻訳」を開始。</li>
+        <li>画面下部に日本語字幕がリアルタイムで表示されます。</li>
+      </ol>
+    </div>
+
+    <h3>よくある質問</h3>
+    <div class="faq-item">
+      <button class="faq-question">ライブ翻訳が表示されない / 動作しない</button>
+      <div class="faq-answer">
+        <p>以下を順に確認してください：</p>
+        <ul>
+          <li>macOS 26 以降を使用していますか？（システム情報で確認）</li>
+          <li>システム設定 → プライバシーとセキュリティ → 画面収録 で RocketWhisper が ON になっていますか？</li>
+          <li>対象アプリから音声が再生されていますか？（ミュート状態では認識できません）</li>
+          <li>初回の翻訳モデルダウンロードが完了していますか？（インターネット接続必須）</li>
+        </ul>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">字幕パネルをドラッグしても動かない</button>
+      <div class="faq-answer">
+        <p>パネルの<strong>中央部分</strong>をドラッグしてください。左右の端（10pt 以内）はリサイズ領域になっています。v2.2.1 でドラッグ不具合を修正済みです。</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">マイク入力も翻訳できますか？</button>
+      <div class="faq-answer">
+        <p>ライブ翻訳は<strong>システム再生音声</strong>を対象としています。マイク入力の翻訳には、通常の音声入力＋AI整形で翻訳プロンプトを使う方法をご検討ください。</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">ライブ翻訳中も通常の音声入力は使えますか？</button>
+      <div class="faq-answer">
+        <p>はい。ライブ翻訳は独立したパイプラインで動作するため、ホットキーでの音声入力と同時に使用できます。</p>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <p><strong>プライバシー:</strong> 音声データは全て Apple のオンデバイス処理（SpeechAnalyzer + Translation）で完結します。クラウドには一切送信されません。APIキーも不要です。</p>
+    </div>
+  </section>
+
+  <!-- ========== Section 20: トラブルシューティング ========== -->
   <section id="troubleshooting" class="content-section">
-    <h2><span class="section-num">19</span>トラブルシューティング</h2>
+    <h2><span class="section-num">20</span>トラブルシューティング</h2>
 
     <p>問題が発生した場合は、以下のFAQを参考にしてください。</p>
 

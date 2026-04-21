@@ -642,6 +642,7 @@ footer {
       <li><a href="#menubar">Menu Bar Icon</a></li>
       <li><a href="#waveform">Floating Waveform Indicator</a></li>
       <li><a href="#batch">Batch Processing</a></li>
+      <li><a href="#live-translation">Live Translation (v2.2.0+)</a></li>
       <li><a href="#troubleshooting">Troubleshooting</a></li>
     </ol>
   </nav>
@@ -1652,9 +1653,103 @@ footer {
     </div>
   </section>
 
-  <!-- ========== Section 19: Troubleshooting ========== -->
+  <!-- ========== Section 19: Live Translation ========== -->
+  <section id="live-translation" class="content-section">
+    <h2><span class="section-num">19</span>Live Translation (v2.2.0+)</h2>
+
+    <p>Recognize audio playing through your system — Zoom, Teams, YouTube, Podcasts — with Apple <strong>SpeechAnalyzer</strong>, then translate it into another language with Apple <strong>Translation</strong>, displayed as Netflix-style floating subtitles on your desktop. Zero cloud traffic, no API key required, fully on-device.</p>
+
+    <div class="info-box">
+      <p><strong>System Requirement:</strong> macOS 26 or later (uses Apple Translation API + SpeechAnalyzer). This feature is not available on macOS 14 / 15.</p>
+    </div>
+
+    <h3>How to Start</h3>
+    <ol class="steps-list">
+      <li>Click the menu-bar icon (🚀) to open the popup.</li>
+      <li>Click the <strong>Live Translation</strong> button (subtitle icon).</li>
+      <li>On first launch, you will be prompted for Screen Recording + System Audio permission (System Settings → Privacy &amp; Security → Screen Recording — enable RocketWhisper).</li>
+      <li>A floating subtitle panel appears near the bottom center of your screen.</li>
+      <li>Click the Live Translation button again to stop.</li>
+    </ol>
+
+    <h3>Language Settings</h3>
+    <p>In the Settings window's <strong>Live Translation</strong> tab, choose the <strong>source language</strong> (what you want to recognize) and the <strong>target language</strong> (what you want it translated into). The supported pairs follow what Apple Translation provides on macOS.</p>
+    <ul class="feature-list">
+      <li>Example 1: English → Japanese (watch an English talk with Japanese subtitles)</li>
+      <li>Example 2: Chinese → English (follow a Chinese news stream in English)</li>
+      <li>Example 3: Japanese → English (display a Japanese meeting in English for study)</li>
+    </ul>
+    <div class="tip-box">
+      <p><strong>Tip:</strong> The first time you use a given language pair, macOS will automatically download the translation model (tens of MB). An internet connection is required the first time only — after that, translation runs entirely offline.</p>
+    </div>
+
+    <h3>Subtitle Panel Controls</h3>
+    <ul class="feature-list">
+      <li><strong>Move</strong>: Drag the middle of the panel to reposition it anywhere.</li>
+      <li><strong>Resize Width</strong>: Drag within 10pt of the left or right edge to resize the subtitle width.</li>
+      <li><strong>Persisted Position &amp; Size</strong>: Your position and width are saved automatically and restored on next launch.</li>
+      <li><strong>Always on Top</strong>: Stays above full-screen video players (Netflix, YouTube, QuickTime).</li>
+      <li><strong>All Spaces</strong>: Shows on every Mission Control space and full-screen view.</li>
+    </ul>
+
+    <h3>Display Options</h3>
+    <p>In Settings → Live Translation:</p>
+    <ul class="feature-list">
+      <li><strong>Show Source Text</strong>: Whether to display the original (pre-translation) text in small type above each translated line. Useful for language learning.</li>
+      <li><strong>History Lines</strong>: How many past translated lines stay visible above the current subtitle. Configurable 0–5 lines.</li>
+    </ul>
+
+    <h3>Example Workflow</h3>
+    <div class="info-box">
+      <p><strong>Watching an English YouTube video with Japanese subtitles</strong></p>
+      <ol>
+        <li>Set source to English, target to Japanese.</li>
+        <li>Open YouTube and start the video (so system audio is playing).</li>
+        <li>Start Live Translation from the menu bar.</li>
+        <li>Japanese subtitles appear in real-time at the bottom of the screen.</li>
+      </ol>
+    </div>
+
+    <h3>FAQ</h3>
+    <div class="faq-item">
+      <button class="faq-question">Live Translation isn't showing up / doesn't work</button>
+      <div class="faq-answer">
+        <p>Check the following in order:</p>
+        <ul>
+          <li>Are you on macOS 26 or later? (Check About This Mac.)</li>
+          <li>Is RocketWhisper enabled under System Settings → Privacy &amp; Security → Screen Recording?</li>
+          <li>Is audio actually playing from the target app? (Muted apps produce nothing to recognize.)</li>
+          <li>Has the initial translation model finished downloading? (Internet required the first time.)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Dragging the subtitle panel doesn't move it</button>
+      <div class="faq-answer">
+        <p>Drag the <strong>middle</strong> of the panel. The left and right edges (within 10pt) are reserved for the resize gesture. v2.2.1 fixed a drag issue that affected the previous release.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Can it translate my microphone input?</button>
+      <div class="faq-answer">
+        <p>Live Translation targets <strong>system playback audio</strong>. For microphone input, use the regular voice input + AI processing with a translation prompt.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Can I still use regular voice input while Live Translation is active?</button>
+      <div class="faq-answer">
+        <p>Yes. Live Translation runs in its own pipeline, so you can keep using the hotkey for voice input simultaneously.</p>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <p><strong>Privacy:</strong> All audio is processed fully on-device via Apple's SpeechAnalyzer + Translation. Nothing is ever sent to the cloud. No API key needed.</p>
+    </div>
+  </section>
+
+  <!-- ========== Section 20: Troubleshooting ========== -->
   <section id="troubleshooting" class="content-section">
-    <h2><span class="section-num">19</span>Troubleshooting</h2>
+    <h2><span class="section-num">20</span>Troubleshooting</h2>
 
     <p>If you encounter issues, refer to this FAQ.</p>
 
