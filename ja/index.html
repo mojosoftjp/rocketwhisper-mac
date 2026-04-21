@@ -1113,7 +1113,7 @@ footer {
   border-color: rgba(96, 165, 250, 0.25);
 }
 .neo-solution::after {
-  content: 'v2.1.0';
+  content: 'v2.2.0';
   position: absolute;
   top: 18px;
   right: 18px;
@@ -1241,14 +1241,14 @@ footer {
         "priceCurrency": "JPY",
         "description": "個人版ライセンス（買い切り・月額不要）"
     },
-    "softwareVersion": "2.1.0",
+    "softwareVersion": "2.2.0",
     "author": {
         "@type": "Organization",
         "name": "Mojosoft Co., Ltd.",
         "url": "https://mojosoftjp.github.io/rocketwhisper/"
     },
     "inLanguage": ["ja", "en"],
-    "featureList": "Apple Intelligence対応, Apple SpeechAnalyzer, Foundation Models, MacBook Neo 最適化 (A18 Pro / 8GB RAM), モデルDL不要, オフライン音声認識, リアルタイム文字起こし, Apple Siliconネイティブ, 動画文字起こし, SRT/VTT字幕出力, AI処理(LLM連携), カスタム指示, 専門用語登録, 音声コマンド, バッチ処理"
+    "featureList": "ライブ翻訳 (リアルタイム字幕表示), Apple Intelligence対応, Apple SpeechAnalyzer, Foundation Models, Apple Translation, MacBook Neo 最適化 (A18 Pro / 8GB RAM), モデルDL不要, オフライン音声認識, リアルタイム文字起こし, Apple Siliconネイティブ, 動画文字起こし, SRT/VTT字幕出力, AI処理(LLM連携), カスタム指示, 専門用語登録, 音声コマンド, バッチ処理"
 }
 </script>
 <script type="application/ld+json">
@@ -1285,7 +1285,7 @@ footer {
             "name": "MacBook Neo (A18 Pro / 8GB RAM) で使えますか？",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "はい、MacBook Neo に最適化されています。v2.1.0 から macOS 26+ のデフォルト音声エンジンを Apple の SpeechAnalyzer (OS内蔵) に切り替えたため、WhisperKit モデルのダウンロード (数百MB) が不要で、8GB RAM / 256GB SSD の Neo でもインストール直後から快適に動作します。Foundation Models によるAI整形もオンデバイスで完結し、APIキーやクラウド送信は必要ありません。"
+                "text": "はい、MacBook Neo に最適化されています。v2.1.0 から macOS 26+ のデフォルト音声エンジンを Apple の SpeechAnalyzer (OS内蔵) に切り替えたため、WhisperKit モデルのダウンロード (数百MB) が不要で、8GB RAM / 256GB SSD の Neo でもインストール直後から快適に動作します。Foundation Models によるAI整形もオンデバイスで完結し、APIキーやクラウド送信は必要ありません。v2.2.0 からは Apple Translation を使った完全オンデバイスのライブ翻訳機能も追加され、Zoom や YouTube の音声をリアルタイムで字幕翻訳できます。"
             }
         },
         {
@@ -1345,7 +1345,7 @@ footer {
       <li><a href="help.html">ヘルプ</a></li>
       <li><a href="support.html">サポート</a></li>
       <li><a href="../en/index.html" class="lang-switch">English</a></li>
-      <li><a href="https://mojosoft.biz/RocketWhisper-2.1.0.dmg" class="nav-cta">ダウンロード</a></li>
+      <li><a href="https://mojosoft.biz/RocketWhisper-2.2.0.dmg" class="nav-cta">ダウンロード</a></li>
       <li><a href="https://mojosoft.biz/" target="_blank" rel="noopener" class="built-by">Built by Mojosoft</a></li>
     </ul>
     <div class="mobile-menu" onclick="document.querySelector('.nav-links').classList.toggle('show')">
@@ -1369,7 +1369,7 @@ footer {
       <img src="../icon.png" alt="RocketWhisper" class="hero-icon">
     </div>
 
-    <div class="hero-badge">Apple Intelligence 対応 &#x2728; v2.1.0</div>
+    <div class="hero-badge">ライブ翻訳 &#127916; 搭載 &#x2728; v2.2.0</div>
     <a href="https://mojosoftjp.github.io/rocketwhisper/" style="display: block; margin-bottom: 16px; font-size: 0.85rem; color: rgba(255,255,255,0.55); text-decoration: none; border-bottom: none; transition: color 0.2s;" onmouseover="this.style.color='#60a5fa'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Windows版はこちら &rarr;</a>
     <h1>
       <span class="gradient-text">声を、テキストに。</span>
@@ -1377,7 +1377,8 @@ footer {
     </h1>
     <p class="hero-sub">
       Apple Intelligence 対応。爆速の Apple SpeechAnalyzer + オンデバイス AI で、<br>
-      APIキー不要・完全オフラインの音声認識 &amp; テキスト整形を実現。
+      APIキー不要・完全オフラインの音声認識 &amp; テキスト整形。<br>
+      <strong style="color:#93c5fd;">Zoom・YouTube の音声を即時に字幕翻訳する新・ライブ翻訳も搭載。</strong>
     </p>
     <div class="hero-stats">
       <div class="hero-stat">
@@ -1398,7 +1399,7 @@ footer {
       </div>
     </div>
     <div class="hero-buttons">
-      <a href="https://mojosoft.biz/RocketWhisper-2.1.0.dmg" class="btn-primary">
+      <a href="https://mojosoft.biz/RocketWhisper-2.2.0.dmg" class="btn-primary">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         無料ダウンロード
       </a>
@@ -1684,7 +1685,7 @@ footer {
       </h2>
       <p>
         &ldquo;Built for Apple Intelligence&rdquo; を掲げる Apple の新しいエントリー Mac、MacBook Neo。<br>
-        RocketWhisper v2.1.0 は、8GB RAM / 256GB SSD の Neo でも
+        RocketWhisper v2.2.0 は、8GB RAM / 256GB SSD の Neo でも
         モデル DL なし・API キーなしで即座に動くよう最適化されました。
       </p>
     </div>
@@ -1724,10 +1725,10 @@ footer {
       </div>
 
       <div class="neo-solution fade-in-right">
-        <div class="neo-card-label">&#10024; v2.1.0 の回答</div>
+        <div class="neo-card-label">&#10024; v2.2.0 の回答</div>
         <div class="neo-card-title">macOS 26+ では SpeechAnalyzer がデフォルト</div>
         <div class="neo-card-body">
-          v2.1.0 から、macOS 26+ のデフォルト音声エンジンを
+          v2.2.0 は、macOS 26+ のデフォルト音声エンジンを
           <strong>Apple の SpeechAnalyzer</strong> (OS 内蔵) に変更しました。
           モデルはすでに OS に含まれているため、RocketWhisper は
           <strong>インストール直後から動きます</strong>。
@@ -1801,13 +1802,19 @@ footer {
   <div class="container">
     <div class="features-header fade-in">
       <div class="label">Features</div>
-      <h2>20の<span class="gradient-text">プレミアム機能</span></h2>
+      <h2>21の<span class="gradient-text">プレミアム機能</span></h2>
       <p>プロフェッショナルの要求に応える、妥協のない機能群。</p>
     </div>
     <div class="features-grid stagger-children">
 
       <div class="feature-card featured fade-in">
-        <div class="icon icon-blue">&#127760;</div>
+        <div class="icon icon-blue">&#127916;</div>
+        <h3>ライブ翻訳 <span class="feature-badge">v2.2 NEW</span></h3>
+        <p>Zoom・Teams・YouTube・Podcast の音声を Mac が聞き取り、Netflix 風のフローティング字幕にリアルタイム翻訳を表示。Apple SpeechAnalyzer + Apple Translation で<strong>完全オンデバイス</strong>、APIキー・クラウド送信一切不要。英語&rarr;日本語、日本語&rarr;英語など 10 言語以上。</p>
+      </div>
+
+      <div class="feature-card featured fade-in">
+        <div class="icon icon-purple">&#127760;</div>
         <h3>英語環境 完全サポート <span class="feature-badge">v2.1 NEW</span></h3>
         <p>UI・音声コマンド・音声検索・AIコマンド・プリセットを英語環境に完全対応。&ldquo;new line&rdquo; &ldquo;new paragraph&rdquo; &ldquo;Search for ...&rdquo; などの英語コマンド、英語向けプロンプト、表示言語に追従する自動切替。日本語環境はゼロ影響。</p>
       </div>
@@ -2135,12 +2142,12 @@ footer {
     <h2><span class="gradient-text">あなたの声で、</span>仕事を加速させよう。</h2>
     <p>7日間のフルトライアル。クレジットカード不要。</p>
     <div class="hero-buttons">
-      <a href="https://mojosoft.biz/RocketWhisper-2.1.0.dmg" class="btn-primary" style="font-size: 1.1rem; padding: 16px 40px;">
+      <a href="https://mojosoft.biz/RocketWhisper-2.2.0.dmg" class="btn-primary" style="font-size: 1.1rem; padding: 16px 40px;">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         無料ダウンロード
       </a>
     </div>
-    <p style="margin-top: 12px; font-size: 0.85rem; color: rgba(255,255,255,0.45);">v2.1.0 | macOS 14.0 Sonoma 以降 | Apple Silicon &amp; Intel 対応</p>
+    <p style="margin-top: 12px; font-size: 0.85rem; color: rgba(255,255,255,0.45);">v2.2.0 | macOS 14.0 Sonoma 以降 | Apple Silicon &amp; Intel 対応 | ライブ翻訳は macOS 26+</p>
   </div>
 </section>
 
@@ -2167,7 +2174,11 @@ footer {
       </details>
       <details style="border-bottom: 1px solid rgba(255,255,255,0.08); padding: 20px 0;">
         <summary style="cursor: pointer; font-weight: 600; font-size: 1.05rem; color: #e0e0e8; list-style: none; display: flex; justify-content: space-between; align-items: center;">MacBook Neo (A18 Pro / 8GB RAM) で快適に動きますか？<span style="color: #60a5fa; font-size: 1.2rem; transition: transform 0.3s;">+</span></summary>
-        <p style="margin-top: 12px; color: #9ca3af; line-height: 1.8;">はい、MacBook Neo に最適化されています。v2.1.0 から macOS 26+ のデフォルト音声エンジンを Apple の <strong>SpeechAnalyzer</strong>（OS内蔵）に切り替えたため、WhisperKit モデルのダウンロード（数百MB〜数GB）が不要です。8GB RAM / 256GB SSD の Neo でも、インストール直後からストレージや RAM を圧迫せずに使えます。Foundation Models によるAI整形もオンデバイス完結で、APIキーやクラウド送信は一切必要ありません。</p>
+        <p style="margin-top: 12px; color: #9ca3af; line-height: 1.8;">はい、MacBook Neo に最適化されています。v2.1.0 から macOS 26+ のデフォルト音声エンジンを Apple の <strong>SpeechAnalyzer</strong>（OS内蔵）に切り替えたため、WhisperKit モデルのダウンロード（数百MB〜数GB）が不要です。8GB RAM / 256GB SSD の Neo でも、インストール直後からストレージや RAM を圧迫せずに使えます。Foundation Models によるAI整形もオンデバイス完結で、APIキーやクラウド送信は一切必要ありません。v2.2.0 で追加された<strong>ライブ翻訳</strong>も Apple Translation を使うため完全オンデバイスで動作します。</p>
+      </details>
+      <details style="border-bottom: 1px solid rgba(255,255,255,0.08); padding: 20px 0;">
+        <summary style="cursor: pointer; font-weight: 600; font-size: 1.05rem; color: #e0e0e8; list-style: none; display: flex; justify-content: space-between; align-items: center;">ライブ翻訳機能とは何ですか？&#127916;<span style="color: #60a5fa; font-size: 1.2rem; transition: transform 0.3s;">+</span></summary>
+        <p style="margin-top: 12px; color: #9ca3af; line-height: 1.8;">v2.2.0 で追加された新機能です。Zoom・Teams・YouTube・Podcast などシステム再生中の音声を Apple <strong>SpeechAnalyzer</strong> で認識し、Apple <strong>Translation</strong> で別言語に翻訳してデスクトップ上に Netflix 風のフローティング字幕として表示します。クラウド送信ゼロ・APIキー不要・完全オンデバイス。英語講演を日本語字幕で見る、中国語ニュースを日本語で追うなど、言語の壁を越える体験を提供します。ドラッグで字幕位置を変更可能、履歴行数・ソース表示も細かく設定できます。<strong>macOS 26 以降</strong>が必要です。</p>
       </details>
       <details style="border-bottom: 1px solid rgba(255,255,255,0.08); padding: 20px 0;">
         <summary style="cursor: pointer; font-weight: 600; font-size: 1.05rem; color: #e0e0e8; list-style: none; display: flex; justify-content: space-between; align-items: center;">会議の議事録作成に使えますか？<span style="color: #60a5fa; font-size: 1.2rem; transition: transform 0.3s;">+</span></summary>

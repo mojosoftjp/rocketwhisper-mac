@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regenerate hero/og image with v2.1.0."""
+"""Regenerate hero/og image with v2.2.0."""
 from PIL import Image, ImageDraw, ImageFont
 
 W, H = 1200, 630
@@ -63,11 +63,11 @@ text_x = 360
 # "RocketWhisper" title
 draw.text((text_x, 180), "RocketWhisper", fill="white", font=font_title)
 
-# "for Mac  v2.1.0"
-draw.text((text_x, 290), "for Mac  v2.1.0", fill=(170, 190, 255), font=font_sub)
+# "for Mac  v2.2.0"
+draw.text((text_x, 290), "for Mac  v2.2.0", fill=(170, 190, 255), font=font_sub)
 
 # Feature bullets
-draw.text((text_x, 370), "Apple Intelligence native", fill=(220, 225, 240), font=font_body)
+draw.text((text_x, 370), "Live Translation + Apple Intelligence", fill=(220, 225, 240), font=font_body)
 draw.text((text_x, 415), "AI speech recognition", fill=(220, 225, 240), font=font_body)
 draw.text((text_x, 470), "Fully offline, one-time purchase", fill=(120, 200, 255), font=font_accent)
 
