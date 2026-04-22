@@ -1660,28 +1660,68 @@ footer {
     <p>Recognize audio playing through your system — Zoom, Teams, YouTube, Podcasts — with Apple <strong>SpeechAnalyzer</strong>, then translate it into another language with Apple <strong>Translation</strong>, displayed as Netflix-style floating subtitles on your desktop. Zero cloud traffic, no API key required, fully on-device.</p>
 
     <div class="info-box">
-      <p><strong>System Requirement:</strong> macOS 26 or later (uses Apple Translation API + SpeechAnalyzer). This feature is not available on macOS 14 / 15.</p>
+      <p><strong>System Requirement:</strong> <strong>macOS 26 Tahoe or later</strong> (uses Apple Translation API + SpeechAnalyzer). <strong>Not available on macOS 14 Sonoma / 15 Sequoia.</strong> The rest of RocketWhisper (voice input, transcription, etc.) still works on macOS 14+.</p>
     </div>
 
     <h3>How to Start</h3>
     <ol class="steps-list">
       <li>Click the menu-bar icon (🚀) to open the popup.</li>
       <li>Click the <strong>Live Translation</strong> button (subtitle icon).</li>
-      <li>On first launch, you will be prompted for Screen Recording + System Audio permission (System Settings → Privacy &amp; Security → Screen Recording — enable RocketWhisper).</li>
-      <li>A floating subtitle panel appears near the bottom center of your screen.</li>
+      <li>On first launch you will be asked for System Audio Recording permission (see "System Audio Recording Permission" below).</li>
+      <li>A floating subtitle panel appears near the bottom center of your screen (initially it shows "Listening…").</li>
+      <li>Once audio starts playing from the target app, recognition and translation begin automatically.</li>
       <li>Click the Live Translation button again to stop.</li>
     </ol>
 
-    <h3>Language Settings</h3>
-    <p>In the Settings window's <strong>Live Translation</strong> tab, choose the <strong>source language</strong> (what you want to recognize) and the <strong>target language</strong> (what you want it translated into). The supported pairs follow what Apple Translation provides on macOS.</p>
-    <ul class="feature-list">
-      <li>Example 1: English → Japanese (watch an English talk with Japanese subtitles)</li>
-      <li>Example 2: Chinese → English (follow a Chinese news stream in English)</li>
-      <li>Example 3: Japanese → English (display a Japanese meeting in English for study)</li>
-    </ul>
+    <h3>System Audio Recording Permission (improved UI in v2.2.3+)</h3>
+    <p>In macOS 26, <strong>System Audio Recording Only</strong> is a separate TCC category — it is not the same as the classic Screen Recording permission. Live Translation requires this permission.</p>
+    <ol class="steps-list">
+      <li>On first launch, RocketWhisper runs an active probe (a brief self-generated 440Hz tone) to detect whether the permission is granted.</li>
+      <li>If not yet granted, macOS shows the standard system permission dialog.</li>
+      <li>Choose <strong>Allow</strong>. macOS will then show a <strong>"Quit and Relaunch"</strong> dialog — accept it. This is a macOS requirement and is needed only the first time, so the new permission can take effect.</li>
+      <li>After the app relaunches, click the Live Translation button again and translation starts right away.</li>
+    </ol>
     <div class="tip-box">
-      <p><strong>Tip:</strong> The first time you use a given language pair, macOS will automatically download the translation model (tens of MB). An internet connection is required the first time only — after that, translation runs entirely offline.</p>
+      <p><strong>If you accidentally denied the permission (v2.2.3+):</strong> A guide view appears inside the subtitle panel. Click <strong>Open System Settings</strong> to jump directly to the right page, then toggle RocketWhisper on under <strong>Privacy &amp; Security → System Audio Recording Only</strong>. macOS will ask you to Quit and Relaunch — accept, then click <strong>Retry</strong> and translation will start.</p>
     </div>
+    <div class="warning-box">
+      <p><strong>Note:</strong> Live Translation uses <em>System Audio Recording Only</em>, not the older <em>Screen Recording</em> permission. These are separate categories in System Settings, so make sure you toggle the right one.</p>
+    </div>
+
+    <h3>Language Settings</h3>
+    <p>In the Settings window's <strong>Live Translation</strong> tab, choose the <strong>source language</strong> (what you want to recognize) and the <strong>target language</strong> (what you want it translated into).</p>
+
+    <h4>Supported Languages</h4>
+    <p>You can pick any of the following 6 languages as source or target in RocketWhisper:</p>
+    <ul class="feature-list">
+      <li>English</li>
+      <li>日本語 / Japanese</li>
+      <li>中文(簡体) / Chinese Simplified</li>
+      <li>中文(繁體) / Chinese Traditional</li>
+      <li>한국어 / Korean</li>
+      <li>Español / Spanish</li>
+    </ul>
+    <p>Which pairs are actually usable depends on the translation models that Apple Translation ships on your specific macOS build. If you pick an unsupported pair, Live Translation will notify you when you start it.</p>
+
+    <h4>Example Pairs</h4>
+    <ul class="feature-list">
+      <li>English → Japanese (watch an English talk with Japanese subtitles)</li>
+      <li>Chinese → Japanese (follow a Chinese news stream in Japanese)</li>
+      <li>Japanese → English (display a Japanese meeting in English for study)</li>
+      <li>Korean → Japanese (K-pop interviews in Japanese)</li>
+      <li>Spanish → English (Spanish YouTube videos watched in English)</li>
+    </ul>
+
+    <h3>Translation Model Downloads</h3>
+    <p>The first time you use a given language pair, macOS Apple Translation automatically downloads the translation model (tens of MB and up).</p>
+    <ul class="feature-list">
+      <li><strong>Automatic download</strong>: When you start Live Translation, any pair that has not been downloaded yet will be fetched by macOS automatically. Progress is shown inside the subtitle panel until it finishes.</li>
+      <li><strong>Pre-download</strong>: You can also download the currently selected pair ahead of time from the Settings window's Live Translation tab. This is convenient if you want to have the model ready right before a meeting or viewing session.</li>
+      <li><strong>Offline usage</strong>: Once downloaded, translation runs entirely offline (no internet required).</li>
+    </ul>
+
+    <h3>About the "Listening…" State</h3>
+    <p>Right after Live Translation starts, or during quiet passages in a video, the subtitle panel shows "Listening…". This means system audio capture is working fine but no speech has been detected yet. Once the target app plays actual speech, recognition begins automatically and the text switches to the translated output. If the panel stays on "Listening…" for a long time with audio clearly playing, see the FAQ below.</p>
 
     <h3>Subtitle Panel Controls</h3>
     <ul class="feature-list">
@@ -1703,7 +1743,8 @@ footer {
     <div class="info-box">
       <p><strong>Watching an English YouTube video with Japanese subtitles</strong></p>
       <ol>
-        <li>Set source to English, target to Japanese.</li>
+        <li>Open the Settings window's Live Translation tab and set source to English, target to Japanese.</li>
+        <li>(Optional) Click Pre-download in that tab to fetch the translation model in advance.</li>
         <li>Open YouTube and start the video (so system audio is playing).</li>
         <li>Start Live Translation from the menu bar.</li>
         <li>Japanese subtitles appear in real-time at the bottom of the screen.</li>
@@ -1717,10 +1758,23 @@ footer {
         <p>Check the following in order:</p>
         <ul>
           <li>Are you on macOS 26 or later? (Check About This Mac.)</li>
-          <li>Is RocketWhisper enabled under System Settings → Privacy &amp; Security → Screen Recording?</li>
+          <li>Is RocketWhisper enabled under System Settings → Privacy &amp; Security → <strong>System Audio Recording Only</strong>? (Not the older "Screen Recording".)</li>
           <li>Is audio actually playing from the target app? (Muted apps produce nothing to recognize.)</li>
           <li>Has the initial translation model finished downloading? (Internet required the first time.)</li>
+          <li>If everything looks fine but the panel stays on "Listening…", try stopping Live Translation from the menu bar and starting it again.</li>
         </ul>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">How do I grant the System Audio Recording permission after I denied it?</button>
+      <div class="faq-answer">
+        <p>From v2.2.3, a dedicated guide appears inside the subtitle panel. Click Open System Settings to jump straight to the right page, toggle RocketWhisper on, accept the Quit and Relaunch dialog, and then click Retry — Live Translation will start. If you are on v2.2.2 or earlier and run into this, please update to v2.2.3 or later.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Does the "Quit and Relaunch" dialog show up every time?</button>
+      <div class="faq-answer">
+        <p>No — only the <strong>first time</strong> you grant the permission. macOS needs the app to relaunch once so the new System Audio Recording permission can take effect (same behavior as Screen Recording). It does not ask again afterwards.</p>
       </div>
     </div>
     <div class="faq-item">
@@ -1739,6 +1793,12 @@ footer {
       <button class="faq-question">Can I still use regular voice input while Live Translation is active?</button>
       <div class="faq-answer">
         <p>Yes. Live Translation runs in its own pipeline, so you can keep using the hotkey for voice input simultaneously.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Where can I see a full list of supported language pairs?</button>
+      <div class="faq-answer">
+        <p>The app UI lets you pick any of 6 languages (English, Japanese, Chinese Simplified, Chinese Traditional, Korean, Spanish), which is up to 6×5 = 30 possible pairs in theory. Which pairs are actually usable depends on the translation models that Apple Translation ships on your specific macOS build. If you pick an unsupported pair, Live Translation will tell you when you start it.</p>
       </div>
     </div>
 
