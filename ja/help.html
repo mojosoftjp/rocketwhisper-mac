@@ -1966,6 +1966,26 @@ footer {
     </div>
 
     <div class="faq-item">
+      <button class="faq-question">英語環境のはずなのに UI が日本語のまま表示される</button>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          <p>macOS の「per-app override」で RocketWhisper を <strong>English (Default)</strong> に設定しても、システム全体の<strong>「優先する言語」リスト</strong>にその言語が一つも入っていないと override は効きません。</p>
+          <p>解決手順:</p>
+          <ol>
+            <li><strong>システム設定</strong> &gt; <strong>一般</strong> &gt; <strong>言語と地域</strong> を開きます。</li>
+            <li>画面左上の「優先する言語」リストを確認します。</li>
+            <li>表示したい言語 (English 等) が一つも入っていない場合、<strong>「+」ボタン</strong>で追加します。</li>
+            <li>RocketWhisper を完全に終了して再起動します。</li>
+          </ol>
+          <p>これにより RocketWhisper の表示が選択した言語に切り替わります。app の per-app override 設定は、システムの優先言語リストに含まれる言語の中でしか選択できない仕様です。</p>
+          <p><strong>Terminal で強制する方法</strong> (システム設定を変更したくない場合):</p>
+          <pre style="background: rgba(0,0,0,0.3); padding: 8px 12px; border-radius: 6px; font-size: 0.85rem; overflow-x: auto;"><code>defaults write biz.mojosoft.RocketWhisper AppleLanguages '(en)'</code></pre>
+          <p>その後 RocketWhisper を再起動すると、システム言語に関わらず英語 UI で起動します。日本語に戻す場合は <code>(ja)</code> に置き換えるか、<code>defaults delete biz.mojosoft.RocketWhisper AppleLanguages</code> で削除してください。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
       <button class="faq-question">認識結果が空になる</button>
       <div class="faq-answer">
         <div class="faq-answer-content">

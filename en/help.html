@@ -1899,6 +1899,26 @@ footer {
     </div>
 
     <div class="faq-item">
+      <button class="faq-question">RocketWhisper UI shows in Japanese even though my system is set to English</button>
+      <div class="faq-answer">
+        <div class="faq-answer-content">
+          <p>The macOS per-app language override (in <strong>System Settings &gt; General &gt; Language &amp; Region</strong>) only works when the language you select is also present in your system's overall <strong>Preferred Languages</strong> list. If your Preferred Languages list does not contain English (for example, if it lists only Chinese, Korean, or another language), setting RocketWhisper to "English (Default)" will have no effect, and the app falls back to its development language (Japanese).</p>
+          <p>How to fix:</p>
+          <ol>
+            <li>Open <strong>System Settings &gt; General &gt; Language &amp; Region</strong>.</li>
+            <li>Look at the <strong>Preferred Languages</strong> list at the top-left.</li>
+            <li>If English is not in the list, click the <strong>"+"</strong> button to add it.</li>
+            <li>Quit RocketWhisper completely and relaunch.</li>
+          </ol>
+          <p>RocketWhisper will now display in English. The per-app override can only choose among languages that exist in your system's Preferred Languages list — this is a macOS limitation, not a RocketWhisper issue.</p>
+          <p><strong>Terminal workaround</strong> (if you prefer not to change system settings):</p>
+          <pre style="background: rgba(0,0,0,0.3); padding: 8px 12px; border-radius: 6px; font-size: 0.85rem; overflow-x: auto;"><code>defaults write biz.mojosoft.RocketWhisper AppleLanguages '(en)'</code></pre>
+          <p>Relaunch RocketWhisper afterward and the UI will start in English regardless of your system language. To revert, either replace <code>(en)</code> with <code>(ja)</code>, or remove the override with <code>defaults delete biz.mojosoft.RocketWhisper AppleLanguages</code>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
       <button class="faq-question">Recognition result is empty</button>
       <div class="faq-answer">
         <div class="faq-answer-content">
