@@ -1295,14 +1295,6 @@ footer {
   ]
 }
 </script>
-<style id="seo-navigation-style">
-.seo-navigation{max-width:1040px;margin:32px auto;padding:24px;line-height:1.8;border-top:1px solid #8886}
-.seo-navigation h2{font-size:1.2rem;margin:0 0 12px}.seo-navigation ul{padding-left:1.2em;display:flex;flex-wrap:wrap;gap:8px 28px}
-.seo-navigation a{text-decoration:underline;text-underline-offset:3px}.seo-navigation details{padding:12px 0;border-bottom:1px solid #8884}
-.seo-navigation summary{cursor:pointer;font-weight:600}.seo-navigation p{margin:10px 0}.seo-product-label{display:block;font-size:.35em;line-height:1.5;margin-bottom:.6em;letter-spacing:0}
-.seo-table-scroll{max-width:100%;overflow-x:auto;margin:16px 0}code{overflow-wrap:anywhere;word-break:break-word}
-@media(prefers-reduced-motion:reduce){.fade-in,.reveal,.reveal-scale,.rv{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}}
-</style><noscript><style>.fade-in,.reveal,.reveal-scale,.rv{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
 
@@ -1354,12 +1346,12 @@ footer {
       <div class="hero-icon-ring"></div>
       <div class="hero-icon-ring"></div>
       <div class="hero-icon-ring"></div>
-      <img src="../icon.png" alt="RocketWhisper" class="hero-icon" width="1024" height="1024" decoding="async">
+      <img src="../icon.png" alt="RocketWhisper" class="hero-icon">
     </div>
 
     <div class="hero-badge">Live Translation &#127916; Built-in &#x2728; v2.2.5</div>
     <a href="https://mojosoftjp.github.io/rocketwhisper/" style="display: block; margin-bottom: 16px; font-size: 0.85rem; color: rgba(255,255,255,0.55); text-decoration: none; border-bottom: none; transition: color 0.2s;" onmouseover="this.style.color='#60a5fa'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Windows version available &rarr;</a>
-    <h1><span class="seo-product-label">RocketWhisper for Mac</span>
+    <h1>
       <span class="gradient-text">Voice to Text.</span>
       <span class="line2">Instant. Accurate. Fully Offline.</span>
     </h1>
@@ -1461,42 +1453,42 @@ footer {
     </div>
     <div class="screenshots-grid stagger-children">
       <figure class="screenshot-card featured fade-in">
-        <img src="../screenshots/en/ss_en0.png" alt="RocketWhisper main popover" loading="lazy" width="1462" height="934" decoding="async">
+        <img src="../screenshots/en/ss_en0.png" alt="RocketWhisper main popover" loading="lazy">
         <figcaption>
           <strong>Main Popover</strong>
           <span>Launch instantly from the menu bar. Record, run LLM formatting, trigger custom instructions &mdash; all in one place.</span>
         </figcaption>
       </figure>
       <figure class="screenshot-card fade-in">
-        <img src="../screenshots/en/ss_en1.png" alt="Model tab - speech engine selection" loading="lazy" width="1360" height="1416" decoding="async">
+        <img src="../screenshots/en/ss_en1.png" alt="Model tab - speech engine selection" loading="lazy">
         <figcaption>
           <strong>Model &mdash; Speech Engine</strong>
           <span>Switch between Apple SpeechAnalyzer (macOS 26+) and four WhisperKit models with a single click.</span>
         </figcaption>
       </figure>
       <figure class="screenshot-card fade-in">
-        <img src="../screenshots/en/ss_en2.png" alt="Text Processing tab - punctuation, dictionary, corrections" loading="lazy" width="1360" height="1416" decoding="async">
+        <img src="../screenshots/en/ss_en2.png" alt="Text Processing tab - punctuation, dictionary, corrections" loading="lazy">
         <figcaption>
           <strong>Text Processing</strong>
           <span>Auto punctuation, word dictionary, regex-powered correction rules. Seven-stage rule engine tuned for natural output.</span>
         </figcaption>
       </figure>
       <figure class="screenshot-card fade-in">
-        <img src="../screenshots/en/ss_en3.png" alt="Launcher tab - voice commands and voice launcher" loading="lazy" width="1360" height="1416" decoding="async">
+        <img src="../screenshots/en/ss_en3.png" alt="Launcher tab - voice commands and voice launcher" loading="lazy">
         <figcaption>
           <strong>Launcher &mdash; Speak to Act</strong>
           <span>Voice commands, voice launcher, voice search. Say &ldquo;Search for ...&rdquo; and the right app or URL opens instantly.</span>
         </figcaption>
       </figure>
       <figure class="screenshot-card featured fade-in">
-        <img src="../screenshots/en/ss_en4.png" alt="AI Processing tab - LLM formatting and custom instructions" loading="lazy" width="1360" height="1416" decoding="async">
+        <img src="../screenshots/en/ss_en4.png" alt="AI Processing tab - LLM formatting and custom instructions" loading="lazy">
         <figcaption>
           <strong>AI Processing</strong>
           <span>Apple Intelligence, OpenAI, Claude, Gemini, Groq, or local LLMs &mdash; pick the provider that fits your workflow.</span>
         </figcaption>
       </figure>
       <figure class="screenshot-card fade-in">
-        <img src="../screenshots/en/ss_en5.png" alt="Per-App tab - per-application processing modes" loading="lazy" width="1360" height="1416" decoding="async">
+        <img src="../screenshots/en/ss_en5.png" alt="Per-App tab - per-application processing modes" loading="lazy">
         <figcaption>
           <strong>Per-App Modes</strong>
           <span>Punctuation in your editor, casual in chat. Automatically switch processing per app you're focused on.</span>
@@ -2027,7 +2019,7 @@ footer {
       <h2>4 <span class="gradient-text">AI Models</span></h2>
       <p>Select the optimal model based on speed and accuracy balance. All run on-device.</p>
     </div>
-    <div class="seo-table-scroll" role="region" tabindex="0" aria-label="Product specifications and comparison"><table class="models-table fade-in">
+    <table class="models-table fade-in">
       <thead>
         <tr>
           <th>Model</th>
@@ -2067,7 +2059,7 @@ footer {
           <td>Maximum accuracy</td>
         </tr>
       </tbody>
-    </table></div>
+    </table>
     <p class="models-note fade-in">* For Japanese speech recognition, <strong>Large V3 Turbo or higher</strong> is recommended. Small/Medium may have reduced accuracy for kanji and katakana words.</p>
   </div>
 </section>
@@ -2126,7 +2118,7 @@ footer {
 <section class="cta-section" id="download">
   <div class="container fade-in">
     <div class="cta-icon">
-      <img src="../icon.png" alt="RocketWhisper" width="1024" height="1024" decoding="async">
+      <img src="../icon.png" alt="RocketWhisper">
     </div>
     <h2><span class="gradient-text">Accelerate your work</span> with your voice.</h2>
     <p>7-day full trial. No credit card required.</p>
@@ -2182,7 +2174,6 @@ footer {
 </section>
 
 <!-- ========== Footer ========== -->
-<nav class="seo-navigation" aria-label="Related products"><h2>Related products</h2><ul><li><a href="https://mojosoft.biz/#products">All Mojosoft products</a></li><li><a href="https://mojosoftjp.github.io/rocketwhisper/en/">RocketWhisper for Windows</a></li><li><a href="https://mojosoftjp.github.io/rocketwhisper-linux/en/">RocketWhisper for Linux</a></li><li><a href="https://mojosoftjp.github.io/mira-ai/en/">Mira</a></li></ul></nav>
 <footer>
   <div class="container">
     <div class="footer-content">
