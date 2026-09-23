@@ -5,12 +5,12 @@
 <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex">
+<meta name="robots" content="noindex, follow">
 <meta name="description" content="RocketWhisper for Mac - AI speech recognition and transcription software. Fully offline, Apple Silicon native.">
 <link rel="canonical" href="https://mojosoftjp.github.io/rocketwhisper-mac/">
-<link rel="alternate" hreflang="ja" href="https://mojosoftjp.github.io/rocketwhisper-mac/ja/">
-<link rel="alternate" hreflang="en" href="https://mojosoftjp.github.io/rocketwhisper-mac/en/">
-<link rel="alternate" hreflang="x-default" href="https://mojosoftjp.github.io/rocketwhisper-mac/">
+
+
+
 <title>RocketWhisper for Mac - AI Speech Recognition & Transcription</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -113,29 +113,7 @@ p {
 }
 .hidden { display: none; }
 </style>
-<script>
-// Language detection and auto-redirect
-(function() {
-  // Check if user has a language preference stored
-  var storedLang = localStorage.getItem('rocketwhisper-lang');
-  if (storedLang) {
-    window.location.href = storedLang === 'ja' ? 'ja/index.html' : 'en/index.html';
-    return;
-  }
 
-  // Detect browser language
-  var userLang = navigator.language || navigator.userLanguage;
-  var isJapanese = userLang.toLowerCase().startsWith('ja');
-
-  // Auto-redirect after a short delay (gives user time to choose manually if they prefer)
-  setTimeout(function() {
-    // Only redirect if still on this page
-    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/')) {
-      window.location.href = isJapanese ? 'ja/index.html' : 'en/index.html';
-    }
-  }, 2000);
-})();
-</script>
 </head>
 <body>
 
