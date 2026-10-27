@@ -756,7 +756,7 @@ nav .container {
 .ai-section { background: linear-gradient(180deg, transparent, rgba(139, 92, 246, 0.03) 50%, transparent); }
 .ai-providers {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 16px;
   margin-top: 48px;
 }
@@ -1113,7 +1113,7 @@ footer {
   border-color: rgba(96, 165, 250, 0.25);
 }
 .neo-solution::after {
-  content: 'v2.2.5';
+  content: 'v2.3.0';
   position: absolute;
   top: 18px;
   right: 18px;
@@ -1326,7 +1326,7 @@ footer {
       <li><a href="help.html">Help</a></li>
       <li><a href="support.html">Support</a></li>
       <li><a href="../ja/index.html" class="lang-switch">日本語</a></li>
-      <li><a href="https://mojosoft.biz/RocketWhisper-2.2.5.dmg" class="nav-cta">Download</a></li>
+      <li><a href="https://mojosoft.biz/RocketWhisper-2.3.0.dmg" class="nav-cta">Download</a></li>
       <li><a href="https://mojosoft.biz/" target="_blank" rel="noopener" class="built-by">Built by Mojosoft</a></li>
     </ul>
     <div class="mobile-menu" onclick="document.querySelector('.nav-links').classList.toggle('show')">
@@ -1350,7 +1350,7 @@ footer {
       <img src="../icon.png" alt="RocketWhisper" class="hero-icon">
     </div>
 
-    <div class="hero-badge">Live Translation &#127916; Built-in &#x2728; v2.2.5</div>
+    <div class="hero-badge">&#128274; Runs entirely on your Mac's built-in AI &#x2728; v2.3.0</div>
     <div style="margin-bottom: 16px; font-size: 0.85rem; color: rgba(255,255,255,0.3);">
       <a href="https://mojosoftjp.github.io/rocketwhisper/en/" style="color: rgba(255,255,255,0.55); text-decoration: none; border-bottom: none; transition: color 0.2s;" onmouseover="this.style.color='#60a5fa'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Windows version available &rarr;</a>
       <span style="margin: 0 0.5rem;">|</span>
@@ -1361,9 +1361,9 @@ footer {
       <span class="line2">Instant. Accurate. Fully Offline.</span>
     </h1>
     <p class="hero-sub">
-      Apple Intelligence powered. Blazing-fast Apple SpeechAnalyzer + on-device AI formatting.<br>
-      No API keys. Fully offline. Your data never leaves your device.<br>
-      <strong style="color:#93c5fd;">New: real-time subtitle translation for audio from any video.</strong>
+      Your voice and your words never leave your Mac.<br>
+      Speech recognition, AI text formatting, and live translation all run on the Apple Intelligence built into macOS.<br>
+      <strong style="color:#93c5fd;">No API keys. Nothing sent to the cloud. AI voice input you can use with confidential work.</strong>
     </p>
     <div class="hero-stats">
       <div class="hero-stat">
@@ -1384,7 +1384,7 @@ footer {
       </div>
     </div>
     <div class="hero-buttons">
-      <a href="https://mojosoft.biz/RocketWhisper-2.2.5.dmg" class="btn-primary">
+      <a href="https://mojosoft.biz/RocketWhisper-2.3.0.dmg" class="btn-primary">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Free Download
       </a>
@@ -1427,7 +1427,7 @@ footer {
       <div class="highlight-item fade-in">
         <div class="highlight-icon">&#10024;</div>
         <div class="highlight-title">Apple Intelligence</div>
-        <div class="highlight-desc">Blazing-fast SpeechAnalyzer on macOS 26 + on-device Foundation Models for API-key-free AI formatting</div>
+        <div class="highlight-desc">Blazing-fast speech recognition and AI formatting with the on-device AI built into macOS &mdash; no API keys</div>
       </div>
       <div class="highlight-item fade-in">
         <div class="highlight-icon">&#9889;</div>
@@ -1445,6 +1445,54 @@ footer {
         <div class="highlight-desc">7 punctuation rules and custom terminology dictionary for natural text output</div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ========== Security ========== -->
+<section class="section" id="security">
+  <div class="container">
+    <div class="features-header fade-in">
+      <div class="label">Security</div>
+      <h2>Your voice and text <span class="gradient-text">never leave your Mac.</span></h2>
+      <p>For work where leaking data to cloud AI is a concern. From voice input to AI formatting and live translation, everything runs on the on-device AI built into macOS.</p>
+    </div>
+    <div class="features-grid stagger-children">
+
+      <div class="feature-card featured fade-in">
+        <div class="icon icon-purple">&#128737;</div>
+        <h3>Runs entirely on macOS's built-in AI</h3>
+        <p>On an Apple Intelligence&ndash;capable Mac with macOS 26 or later, speech recognition, AI text formatting, AI commands, and live translation are all processed by the on-device AI built into your Mac. No API keys, no cloud subscriptions.</p>
+      </div>
+
+      <div class="feature-card featured fade-in">
+        <div class="icon icon-blue">&#128274;</div>
+        <h3>Audio and text are never sent out</h3>
+        <p>Neither your recorded audio nor the recognized and formatted text is sent over the internet for processing. After the one-time language data download, it works fully offline.</p>
+      </div>
+
+      <div class="feature-card fade-in">
+        <div class="icon icon-green">&#128100;</div>
+        <h3>No account, no data collection</h3>
+        <p>No sign-up required. There is no telemetry that reports your usage, and license activation is completed offline.</p>
+      </div>
+
+      <div class="feature-card fade-in">
+        <div class="icon icon-pink">&#127970;</div>
+        <h3>For workplaces that restrict generative AI</h3>
+        <p>Even where company policy restricts external generative AI services, you can use AI voice input without your data leaving the company. Suitable for meeting notes, minutes, and other documents with confidential information.</p>
+      </div>
+
+      <div class="feature-card fade-in">
+        <div class="icon icon-blue">&#9729;</div>
+        <h3>Cloud AI only when you choose it</h3>
+        <p>When you need more advanced formatting, you can opt in to cloud AI such as OpenAI, Claude, or Gemini. Even then, the app connects directly to each provider with your own API key &mdash; no relay servers. With a local LLM (Ollama / LM Studio), you can use AI formatting without sending anything out even on macOS 14 / 15.</p>
+      </div>
+
+    </div>
+    <p class="fade-in" style="margin-top: 32px; font-size: 0.8rem; color: #6b7280; text-align: center; line-height: 1.7;">
+      * On-device AI formatting requires an Apple Intelligence&ndash;capable Mac with Apple silicon and macOS 26 or later. Live translation requires macOS 26 or later.<br>
+      On macOS 14 / 15, all speech recognition is still processed on your Mac. An internet connection is used only for the one-time download of language data and speech recognition models (unless you choose a cloud AI).
+    </p>
   </div>
 </section>
 
@@ -1670,7 +1718,7 @@ footer {
       </h2>
       <p>
         Apple&rsquo;s new entry-level Mac &mdash; the MacBook Neo &mdash; is &ldquo;Built for Apple Intelligence.&rdquo;<br>
-        RocketWhisper v2.2.5 is tuned to run instantly on the Neo&rsquo;s 8GB RAM / 256GB SSD
+        RocketWhisper v2.3.0 is tuned to run instantly on the Neo&rsquo;s 8GB RAM / 256GB SSD
         with <strong>zero model downloads</strong> and <strong>zero API keys</strong>.
       </p>
     </div>
@@ -1711,7 +1759,7 @@ footer {
       </div>
 
       <div class="neo-solution fade-in-right">
-        <div class="neo-card-label">&#10024; Our v2.2.5 Answer</div>
+        <div class="neo-card-label">&#10024; Our v2.3.0 Answer</div>
         <div class="neo-card-title">SpeechAnalyzer is the default on macOS 26+</div>
         <div class="neo-card-body">
           Starting with v2.1.0, the default speech engine on macOS 26+ has been
@@ -1768,7 +1816,7 @@ footer {
         <ul class="compare-list">
           <li><span class="check">&#10003;</span> <strong>Word Dictionary</strong> for company names, technical terms</li>
           <li><span class="check">&#10003;</span> <strong>Auto-correction rules</strong> with regex support</li>
-          <li><span class="check">&#10003;</span> <strong>AI formatting</strong> with Apple Intelligence + GPT-4o / Claude / Gemini</li>
+          <li><span class="check">&#10003;</span> <strong>AI formatting</strong> with Apple Intelligence + GPT / Claude / Gemini</li>
           <li><span class="check">&#10003;</span> <strong>AI Commands</strong> to edit selected text by voice</li>
           <li><span class="check">&#10003;</span> <strong>Voice commands</strong> like "new line", "delete"</li>
           <li><span class="check">&#10003;</span> <strong>App-specific modes</strong> with auto-switching</li>
@@ -1976,25 +2024,29 @@ footer {
   <div class="container">
     <div class="features-header fade-in">
       <div class="label">AI Integration</div>
-      <h2>Integrated with 5 <span class="gradient-text">AI Providers</span></h2>
-      <p>Choose the optimal AI based on your use case, budget, and privacy requirements.</p>
+      <h2>Integrated with 6 <span class="gradient-text">AI Providers</span></h2>
+      <p>Choose the optimal AI based on your use case, budget, and privacy requirements. For confidential work, use the Mac's built-in AI that sends nothing out.</p>
     </div>
     <div class="ai-providers fade-in">
       <div class="ai-provider">
+        <div class="name">Apple Intelligence</div>
+        <div class="models">Built into your Mac<br>No API key<br>Nothing sent out</div>
+      </div>
+      <div class="ai-provider">
         <div class="name">OpenAI</div>
-        <div class="models">GPT-4o<br>GPT-4o mini<br>GPT-4 Turbo</div>
+        <div class="models">GPT-6.1 Terra<br>GPT-6 Luna<br>GPT-6.1 Sol<br>GPT-6 Astra</div>
       </div>
       <div class="ai-provider">
         <div class="name">Claude</div>
-        <div class="models">Sonnet 4.5<br>Haiku 4.5<br>Opus 4.5</div>
+        <div class="models">Sonnet 5.5<br>Haiku 5.5<br>Opus 5.5</div>
       </div>
       <div class="ai-provider">
         <div class="name">Gemini</div>
-        <div class="models">2.5 Pro<br>2.5 Flash<br>2.0 Flash</div>
+        <div class="models">3.5 Flash-Lite<br>3.8 Flash<br>4 Argon</div>
       </div>
       <div class="ai-provider">
         <div class="name">Groq</div>
-        <div class="models">LLaMA 3.3 70B<br>LLaMA 3.1 8B<br>Ultra-fast, free tier</div>
+        <div class="models">GPT-OSS 120B<br>GPT-OSS 20B<br>Ultra-fast, free tier</div>
       </div>
       <div class="ai-provider">
         <div class="name">Local LLM</div>
@@ -2111,8 +2163,10 @@ footer {
         <ul>
           <li>100% local speech recognition</li>
           <li>No external transmission of audio data</li>
-          <li>AI formatting uses your API keys directly</li>
-          <li>App Sandbox + Hardened Runtime</li>
+          <li>Formatting and translation stay local with the Mac's built-in AI</li>
+          <li>Cloud AI connects directly with your API keys (no relay servers)</li>
+          <li>No telemetry (no usage reporting)</li>
+          <li>Hardened Runtime + notarized by Apple</li>
         </ul>
       </div>
     </div>
@@ -2128,12 +2182,12 @@ footer {
     <h2><span class="gradient-text">Accelerate your work</span> with your voice.</h2>
     <p>7-day full trial. No credit card required.</p>
     <div class="hero-buttons">
-      <a href="https://mojosoft.biz/RocketWhisper-2.2.5.dmg" class="btn-primary" style="font-size: 1.1rem; padding: 16px 40px;">
+      <a href="https://mojosoft.biz/RocketWhisper-2.3.0.dmg" class="btn-primary" style="font-size: 1.1rem; padding: 16px 40px;">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Free Download
       </a>
     </div>
-    <p style="margin-top: 12px; font-size: 0.85rem; color: rgba(255,255,255,0.45);">v2.2.5 | macOS 14.0 Sonoma or later | Apple Silicon &amp; Intel | Live Translation requires macOS 26+</p>
+    <p style="margin-top: 12px; font-size: 0.85rem; color: rgba(255,255,255,0.45);">v2.3.0 | macOS 14.0 Sonoma or later | Apple Silicon &amp; Intel | Live Translation requires macOS 26+</p>
   </div>
 </section>
 
@@ -2149,6 +2203,10 @@ footer {
       <details style="border-bottom: 1px solid rgba(255,255,255,0.08); padding: 20px 0;">
         <summary style="cursor: pointer; font-weight: 600; font-size: 1.05rem; color: #e0e0e8; list-style: none; display: flex; justify-content: space-between; align-items: center;">Does it work without internet?<span style="color: #60a5fa; font-size: 1.2rem; transition: transform 0.3s;">+</span></summary>
         <p style="margin-top: 12px; color: #9ca3af; line-height: 1.8;">Yes, completely offline. All audio data is processed locally on your Mac and is never sent to any external server.</p>
+      </details>
+      <details style="border-bottom: 1px solid rgba(255,255,255,0.08); padding: 20px 0;">
+        <summary style="cursor: pointer; font-weight: 600; font-size: 1.05rem; color: #e0e0e8; list-style: none; display: flex; justify-content: space-between; align-items: center;">Is it safe to use with confidential company information?<span style="color: #60a5fa; font-size: 1.2rem; transition: transform 0.3s;">+</span></summary>
+        <p style="margin-top: 12px; color: #9ca3af; line-height: 1.8;">On an Apple Intelligence&ndash;capable Mac with macOS 26 or later, choose &ldquo;Apple Intelligence (On-device)&rdquo; for AI formatting, and speech recognition, AI formatting, AI commands, and live translation are all processed on your Mac &mdash; your audio and text are never sent out. There is no account registration and no telemetry. Only if you choose a cloud AI (OpenAI, Claude, Gemini, Groq) is the text to be formatted sent directly to that provider with your own API key.</p>
       </details>
       <details style="border-bottom: 1px solid rgba(255,255,255,0.08); padding: 20px 0;">
         <summary style="cursor: pointer; font-weight: 600; font-size: 1.05rem; color: #e0e0e8; list-style: none; display: flex; justify-content: space-between; align-items: center;">How accurate is the recognition?<span style="color: #60a5fa; font-size: 1.2rem; transition: transform 0.3s;">+</span></summary>

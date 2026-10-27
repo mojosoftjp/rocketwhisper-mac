@@ -1192,23 +1192,23 @@ footer {
         </tr>
         <tr>
           <td><strong>OpenAI</strong></td>
-          <td>GPT-4.1, GPT-4.1 mini</td>
+          <td>GPT-6.1 Terra, GPT-6 Luna, GPT-6.1 Sol, GPT-6 Astra</td>
           <td>高精度、幅広い言語対応</td>
         </tr>
         <tr>
           <td><strong>Anthropic</strong> <span class="recommended-badge">推奨</span></td>
-          <td>Claude Sonnet 4.6, Opus 4.6</td>
+          <td>Claude Sonnet 5.5, Claude Haiku 5.5, Claude Opus 5.5</td>
           <td>自然な日本語、丁寧な出力</td>
         </tr>
         <tr>
           <td><strong>Groq</strong></td>
-          <td>LLaMA 3.3 70B, LLaMA 4 Scout</td>
+          <td>GPT-OSS 120B, GPT-OSS 20B</td>
           <td>超高速推論、無料枠あり</td>
         </tr>
         <tr>
           <td><strong>Google Gemini</strong> <span class="recommended-badge">推奨</span></td>
-          <td>Gemini 2.5 Flash-Lite / Flash / Pro</td>
-          <td>無料枠が豊富、マルチモーダル対応</td>
+          <td>Gemini 3.5 Flash-Lite, Gemini 3.8 Flash, Gemini 4 Argon（有料のみ）</td>
+          <td>無料枠あり、マルチモーダル対応</td>
         </tr>
         <tr>
           <td><strong>ローカルLLM</strong></td>
@@ -1272,7 +1272,7 @@ footer {
     </div>
 
     <div class="tip-box">
-      <p><strong>Tip:</strong> macOS 26 以降をお使いなら、<strong>Apple Intelligence</strong> がおすすめです。APIキー不要・完全オフラインでAI整形が利用できます。コストを抑えたい場合は <strong>Google Gemini</strong>（無料枠が豊富）も選択肢です。</p>
+      <p><strong>Tip:</strong> macOS 26 以降をお使いなら、<strong>Apple Intelligence</strong> がおすすめです。APIキー不要・完全オフラインでAI整形が利用できます。コストを抑えたい場合は <strong>Google Gemini</strong>（無料枠あり）も選択肢です。</p>
     </div>
 
     <h3>Vision対応プロバイダ &amp; 推奨モデル</h3>
@@ -1288,46 +1288,47 @@ footer {
       <tbody>
         <tr>
           <td><strong>Google Gemini</strong> <span class="recommended-badge">推奨</span></td>
-          <td>gemini-2.5-flash-lite</td>
-          <td>1日1000リクエストまで無料！</td>
+          <td>Gemini 3.5 Flash-Lite</td>
+          <td>無料枠あり！</td>
         </tr>
         <tr>
           <td><strong>Anthropic</strong></td>
-          <td>Claude Sonnet 4.6</td>
+          <td>Claude Sonnet 5.5</td>
           <td>高精度、自然な日本語出力</td>
         </tr>
         <tr>
           <td><strong>OpenAI</strong></td>
-          <td>GPT-4.1</td>
+          <td>GPT-6.1 Terra</td>
           <td>高精度、幅広い言語対応</td>
         </tr>
       </tbody>
     </table>
 
     <h3>Gemini 無料枠について</h3>
-    <p>Google Gemini API は、APIキーを取得するだけで（クレジットカード不要）以下の無料枠を利用できます。</p>
+    <p>Google Gemini API は、APIキーを取得するだけで（クレジットカード不要）以下のモデルで無料枠を利用できます。</p>
     <table class="command-table">
       <thead>
         <tr>
           <th>モデル</th>
-          <th>1日のリクエスト数</th>
-          <th>1分あたり上限</th>
+          <th>無料枠</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>Gemini 2.5 Flash-Lite</strong> <span class="recommended-badge">推奨</span></td>
-          <td>1,000回/日</td>
-          <td>15回/分</td>
+          <td><strong>Gemini 3.5 Flash-Lite</strong> <span class="recommended-badge">推奨</span></td>
+          <td>あり</td>
         </tr>
         <tr>
-          <td>Gemini 2.5 Flash</td>
-          <td>250回/日</td>
-          <td>10回/分</td>
+          <td>Gemini 3.8 Flash</td>
+          <td>あり</td>
+        </tr>
+        <tr>
+          <td>Gemini 4 Argon</td>
+          <td>なし（有料のみ）</td>
         </tr>
       </tbody>
     </table>
-    <p style="color:#9ca3af;font-size:0.9em;">※ 無料枠は毎日太平洋時間の午前0時にリセットされます。制限はプロジェクト単位で適用されます。Google が予告なく変更する場合があります。</p>
+    <p style="color:#9ca3af;font-size:0.9em;">※ 無料枠の内容や制限は Google により定められており、予告なく変更される場合があります。</p>
   </section>
 
   <!-- ========== Section 12: AIコマンドモード ========== -->
